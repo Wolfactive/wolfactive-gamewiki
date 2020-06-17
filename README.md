@@ -14,7 +14,7 @@ Nếu trong máy đã có rồi thì có thể bỏ qua</br>
 https://gamewiki.wolfactive.dev/
 <pre><code>npm install --global gulp-cli</code></pre>
 ## Cấu hình browser-sync</br>
-Bật file <strong>gulpfile.babel.js</strong> sau đó tìm
+Bật file <strong>gulpfile.babel.js</strong> sau đó tìm và sửa thành
 <pre><code>  server.init({
     proxy: "http://localhost/wolfactive-gamewiki" // put your local website link here
   });</code></pre>
