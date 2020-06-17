@@ -7,12 +7,13 @@ Base theme này sử dụng gulp và webpack. Các tính năng tích hợp: <br/
   <li> Nén hình ảnh</li>
   <li> Save file bất kỳ tự động reload browser và chạy lệnh terminal</li>
   <li> Hỗ trợ nén file</li></ul>
-
+## Domain link test: </br>
+  https://gamewiki.wolfactive.dev/
 ## Điều cần làm đầu tiên là chạy terminal lệnh sau</br>
 Nếu trong máy đã có rồi thì có thể bỏ qua</br>
-## Domain link test: </br>
-https://gamewiki.wolfactive.dev/
 <pre><code>npm install --global gulp-cli</code></pre>
+Sau đó bắt buộc chạy lệnh:
+<pre><code>npm install</code></pre>
 ## Cấu hình browser-sync</br>
 Bật file <strong>gulpfile.babel.js</strong> sau đó tìm và sửa thành
 <pre><code>  server.init({
