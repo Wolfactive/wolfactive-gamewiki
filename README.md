@@ -1,4 +1,4 @@
-# Wordpress-gulp-webpack-theme<br/>
+# Wordpress-gamewiki<br/>
 ## Giới thiệu <br/>
 Base theme này sử dụng gulp và webpack. Các tính năng tích hợp: <br/>
 <ul>
