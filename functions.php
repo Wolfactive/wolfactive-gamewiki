@@ -410,7 +410,7 @@ add_action( 'widgets_init', 'my_unregister_widgets' );
 // if( !defined('ACF_LITE') ) define('ACF_LITE',true);
 // inlucde ACF
 // 1. customize ACF path
-require( 'lib/acf/acf.php' );
+// require( 'lib/acf/acf.php' );
 function my_unregister_widgets() {
     unregister_widget('WP_Widget_Pages');
     unregister_widget('WP_Widget_Calendar');
@@ -654,3 +654,63 @@ add_action( 'init', 'stop_heartbeat', 1 );
 function stop_heartbeat() {
 wp_deregister_script('heartbeat');
 }
+
+//CPT List of latest videos
+function cpts_latest_videos()
+{
+
+    $label = array(
+        'name' => 'Latest Videos',
+        'singular_name' => 'Latest Videos'
+    );
+
+    $args = array(
+        'labels' => $label,
+        'description' => 'Latest Videos',
+        'supports' => array(
+            'title',
+            'excerpt',
+            'author',
+            'thumbnail',
+            'custom-fields'
+        ),
+        'hierarchical' => false,
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-playlist-video',
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'post'
+    );
+
+    register_post_type('latest_videos', $args);
+
+}
+add_action('init', 'cpts_latest_videos');
+
+function mc_taxonomy_video() {
+  $labels = array(
+          'name' => 'Category Video',
+          'singular' => 'Category Video',
+          'menu_name' => 'Category Video'
+  );
+  $args = array(
+          'labels'                     => $labels,
+          'hierarchical'               => false,
+          'public'                     => false,
+          'show_ui'                    => true,
+          'show_admin_column'          => true,
+          'show_in_nav_menus'          => true,
+          'show_tagcloud'              => true,
+  );
+  register_taxonomy('category-video', 'latest_videos', $args);
+
+}
+add_action( 'init', 'mc_taxonomy_video', 0 );
+// End CPT List of latest videos

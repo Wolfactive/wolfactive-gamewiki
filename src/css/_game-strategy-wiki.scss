@@ -1,0 +1,38 @@
+.game_strategy{
+    .title_game_strategy{
+        border-bottom: 1px solid #f6f6f6;
+        margin-bottom: 15px;
+        font-size: 20px;
+        display: flex;
+        .mc-ic{margin-right: 10px;margin-top: 3px;}
+        .name_ct{font-weight: 700;}
+    }
+    .mc-mg{
+        margin-right: 4px;
+        margin-bottom: 35px;
+        .images_game_str:hover{
+            opacity: 0.7;
+            transition: 0.5s all;
+        }
+        .title_game_str{
+            text-align: center;
+            a{
+                color:#1681b2;
+                font-weight: 700;
+            }
+        }
+    }
+    .gtr_see_more{
+        justify-content: center;
+        border: 2px;
+        box-shadow: 0 0 5px rgba(0,0,0,.1);
+        margin-bottom: 20px;
+        padding-top: 3px;
+        font-size: 17px;
+        display: flex;
+        .mc-ic{margin-right: 10px;margin-top: 1px;}
+        &:hover{
+            box-shadow: 0 0 10px rgba(0,0,0,.2);
+        }
+    }
+}
