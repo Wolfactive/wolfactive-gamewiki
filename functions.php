@@ -13,7 +13,7 @@ $file_includes = [
     'includes/theme-setup.php',                         // General theme setting
     'includes/acf-options.php',                         // ACF Option page
     'includes/resize.php',
-    'includes\customizer.php'
+    'includes/customizer.php'
 ];
 
 foreach ($file_includes as $file) {
