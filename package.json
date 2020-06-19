@@ -32,8 +32,8 @@
     "yargs": "^15.3.1"
   },
   "dependencies": {
-    "@splidejs/splide": "^2.3.8",
     "js-cookie": "^2.2.1",
+    "siema": "^1.5.1",
     "vanilla-lazyload": "^16.1.0"
   }
 }

@@ -1,4 +1,4 @@
-<section class="container latest_video" id="latestVideo">
+<section class="latest_video" id="latestVideo">
     <div class="big_title_latestvideo">
         <div class="mc-icon"><i class="fab fa-youtube"></i></div>
         <div class="big-title-style">List of latest videos</div>
@@ -23,7 +23,7 @@
     <?php endwhile; wp_reset_postdata();?>
     <?php else : esc_html_e( 'No testimonials in the diving taxonomy!', 'text-domain' ); endif;?>
     </div>
-    
+
     <script>
         // new Splide( '.slider_video', {
         //     perPage: 3,

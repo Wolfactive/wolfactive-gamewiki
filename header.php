@@ -27,9 +27,9 @@
                 ?>
   	        <img src="<?php echo $image[0]; ?>" alt="logo-gamewiki">
   	      </a>
-          <span class="text--light">
+          <h1 class="text--light">
             <?php echo get_theme_mod('title_top_menu',__('Largest in Japan! Game strategy information media')) ?>
-          </span>
+          </h1>
   	   </div>
        <div class="header__item">
          <form class="header__form-item" action="<?php bloginfo('url')?>" method="get">

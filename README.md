@@ -32,11 +32,10 @@ Chỉnh thuộc tính proxy thành đường dẫn web tại local
 Mọi file scss, js,images để code và chỉnh sửa nằm trong thư mục <strong> src</strong>, fonts sẽ nằm trong thư mục <strong>dist</strong><br/>
 Theme đã xóa bỏ hoàn toàn jquery ở frontend. Và tích hợp các thư viện sau:<br/>
 
-### Slider: Sử dụng thư viện splidejs <br/>
+### Slider: Sử dụng thư viện Siema <br/>
 
 Đã import sẵn vào js chỉ cần sử dụng thôi tham khảo link trang web <br/>
-<a href="https://splidejs.com/getting-started/" target="_blank">https://splidejs.com/getting-started/</a><br/>
-Trong css đã có sẳn 3 theme của slider thích theme nào thì import theme đó vào và nhớ xóa theme mặc định trong base theme<br/>
+<a href="https://pawelgrzybek.github.io/siema/" target="_blank">https://pawelgrzybek.github.io/siema/</a><br/>
 ### Cookie: Sử dụng thư viện js cookie <br/>
 Đã import sẵn vào js chỉ cần sử dụng thôi tham khảo link trang web <br/>
 <a href="https://github.com/js-cookie/js-cookie#es-module" target="_blank">https://github.com/js-cookie/js-cookie#es-module</a><br/>

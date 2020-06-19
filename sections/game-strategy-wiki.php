@@ -1,4 +1,4 @@
-<section class="game_strategy container" id="gameStrategy">
+<section class="game_strategy" id="gameStrategy">
     <div class="title_game_strategy">
         <div class="mc-ic"><i class="fas fa-book-open"></i></div>
         <div class="name_ct">Game Strategy Wiki</div>
