@@ -23,7 +23,7 @@ function gamewiki_customizer( $wp_customize ) {
      );
 
     /*----------------------------------------------------------------------*/
-    // Company Name
+    // Title top menu
       $wp_customize->add_setting(
           // $id
           'title_top_menu',
@@ -43,6 +43,45 @@ function gamewiki_customizer( $wp_customize ) {
                   'type' => 'text'
               )
      );
+     // Link facebook
+       $wp_customize->add_setting(
+           // $id
+           'link_face_book',
+           // $args
+           array(
+             'sanitize_callback'	=> 'sanitize_text_field',
+             'default'           => 'https://www.facebook.com/'
+           )
+         );
 
+
+       $wp_customize->add_control(
+               'link_face_book',
+               array(
+                   'label' => esc_html__( 'Link facebook', 'gamewiki' ),
+                   'section' => 'title_sub_footer_top_menu',
+                   'type' => 'text'
+               )
+      );
+      // Link facebook
+        $wp_customize->add_setting(
+            // $id
+            'link_twitter',
+            // $args
+            array(
+              'sanitize_callback'	=> 'sanitize_text_field',
+              'default'           => 'https://twitter.com/'
+            )
+          );
+
+
+        $wp_customize->add_control(
+                'link_twitter',
+                array(
+                    'label' => esc_html__( 'Link twitter', 'gamewiki' ),
+                    'section' => 'title_sub_footer_top_menu',
+                    'type' => 'text'
+                )
+       );
 }
 add_action( 'customize_register', 'gamewiki_customizer' );

@@ -44,13 +44,13 @@
           </div>
          </form>
          <div class="header__item-social">
-           <a href="#" target="_blank">
+           <a href="<?php echo get_theme_mod('link_face_book',__('https://www.facebook.com/')) ?>" target="_blank">
              <i class="fab fa-facebook-square icon"></i>
               <span>facebook</span>
            </a>
          </div>
          <div class="header__item-social">
-           <a  href="#" target="_blank">
+           <a  href="<?php echo get_theme_mod('link_twitter',__('https://twitter.com/')) ?>" target="_blank">
              <i class="fab fa-twitter icon"></i>
              <span>twitter</span>
            </a>
