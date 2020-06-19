@@ -28,7 +28,7 @@
   	        <img src="<?php echo $image[0]; ?>" alt="logo-gamewiki">
   	      </a>
           <span class="text--light">
-            The largest in Japan! Game strategy information media
+            <?php echo get_theme_mod('title_top_menu',__('Largest in Japan! Game strategy information media')) ?>
           </span>
   	   </div>
        <div class="header__item">
@@ -43,16 +43,16 @@
             <button type="submit" aria-label="search-header-button" name="button-search">Search</button>
           </div>
          </form>
-       </div>
-       <div class="header__item">
          <div class="header__item-social">
            <a href="#" target="_blank">
              <i class="fab fa-facebook-square icon"></i>
+              <span>facebook</span>
            </a>
          </div>
          <div class="header__item-social">
            <a  href="#" target="_blank">
              <i class="fab fa-twitter icon"></i>
+             <span>twitter</span>
            </a>
          </div>
        </div>

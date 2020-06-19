@@ -13,13 +13,13 @@ $file_includes = [
     'includes/theme-setup.php',                         // General theme setting
     'includes/acf-options.php',                         // ACF Option page
     'includes/resize.php',
+    'includes\customizer.php'
 ];
 
 foreach ($file_includes as $file) {
     if (!$filePath = locate_template($file)) {
         trigger_error(sprintf(__('Missing included file'), $file), E_USER_ERROR);
     }
-
     require_once $filePath;
 }
 
@@ -50,51 +50,6 @@ add_theme_support( 'custom-logo', array(
   ) );
 
 /* ------------------------------------ */
-
-//Slider Carousel
-function gamewiki_carousel(){
-    $label = array(
-        'name' => 'Slider',
-        'singular_name' => 'Slider' ,
-        'add_new'               => __( 'Thêm Slider', 'gamewiki' ),
-        'add_new_item'          => __( 'Tên Slider', 'gamewiki' ),
-        'new_item'              => __( 'Slider mới', 'gamewiki' ),
-        'edit_item'             => __( 'Chỉnh sửa Slider', 'gamewiki' ),
-        'view_item'             => __( 'Xem Slider', 'gamewiki' ),
-        'all_items'             => __( 'Tất cả Slider', 'gamewiki' ),
-        'search_items'          => __( 'Tìm kiếm Slider', 'gamewiki' ),
-        'featured_image'        => _x( 'Hình ảnh Slider', 'gamewiki' ),
-        'set_featured_image'    => _x( 'Chọn hình ảnh Slider', 'gamewiki' ),
-        'remove_featured_image' => _x( 'Xóa hình ảnh Slider', 'gamewiki' ),
-    );
-    $args = array(
-        'labels' => $label,
-        'description' => 'Phần Slider',
-        'supports' => array(
-            'title',
-            'custom-fields',
-        ),
-        'hierarchical' => false,
-        'order' => 'DESC',
-        'orderby' => 'date',
-        'posts_per_page' => 3,
-        'public' => false,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'show_in_nav_menus' => true,
-        'show_in_admin_bar' => true,
-        'menu_position' => 3,
-        'menu_icon'           => 'dashicons-images-alt2',
-        'can_export' => true,
-        'has_archive' => false,
-        'publicly_queryable' => true,
-        'capability_type' => 'post',
-    );
-
-    register_post_type('slider', $args);
-
-}
-add_action('init', 'gamewiki_carousel');
   //marcus post views
   function gt_get_post_view() {
       $count = get_post_meta( get_the_ID(), 'post_views_count', true );
@@ -669,12 +624,11 @@ function cpts_latest_videos()
         'description' => 'Latest Videos',
         'supports' => array(
             'title',
-            'excerpt',
             'author',
             'thumbnail',
             'custom-fields'
         ),
-        'hierarchical' => false,
+        'hierarchical' => true,
         'public' => false,
         'show_ui' => true,
         'show_in_menu' => true,
@@ -694,23 +648,23 @@ function cpts_latest_videos()
 }
 add_action('init', 'cpts_latest_videos');
 
-function mc_taxonomy_video() {
-  $labels = array(
-          'name' => 'Category Video',
-          'singular' => 'Category Video',
-          'menu_name' => 'Category Video'
-  );
-  $args = array(
-          'labels'                     => $labels,
-          'hierarchical'               => false,
-          'public'                     => false,
-          'show_ui'                    => true,
-          'show_admin_column'          => true,
-          'show_in_nav_menus'          => true,
-          'show_tagcloud'              => true,
-  );
-  register_taxonomy('category-video', 'latest_videos', $args);
-
-}
-add_action( 'init', 'mc_taxonomy_video', 0 );
+// function mc_taxonomy_video() {
+//   $labels = array(
+//           'name' => 'Category Video',
+//           'singular' => 'Category Video',
+//           'menu_name' => 'Category Video'
+//   );
+//   $args = array(
+//           'labels'                     => $labels,
+//           'hierarchical'               => false,
+//           'public'                     => false,
+//           'show_ui'                    => true,
+//           'show_admin_column'          => true,
+//           'show_in_nav_menus'          => true,
+//           'show_tagcloud'              => true,
+//   );
+//   register_taxonomy('category-video', 'latest_videos', $args);
+//
+// }
+// add_action( 'init', 'mc_taxonomy_video', 0 );
 // End CPT List of latest videos
