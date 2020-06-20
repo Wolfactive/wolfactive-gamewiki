@@ -1,0 +1,37 @@
+.postList{
+    margin-bottom: 30px;
+  .postList__contain{
+    .postList__item{
+      margin: 0px 15px;
+      position: relative;
+      &::after{
+        background: #21282e82;
+        content: "";
+        position: absolute;;
+        top:0;
+        display: block;
+        left:0;
+        height: 100%;
+        width:100%;
+        z-index: 10
+      }
+      .postList__item-title{
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        transform: translateY(5px);
+        transition: all 0.25s ease-in-out;
+        z-index: 30;
+        &>h3{
+          color: #fff;
+          font-size: 15px;
+        }
+      }
+      &:hover{
+       .postList__item-title{
+         transform: translateY(-8px);
+       }
+      }
+    }
+  }
+}

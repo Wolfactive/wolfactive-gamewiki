@@ -187,18 +187,6 @@ add_filter( 'post_row_actions', 'rd_duplicate_post_link', 10, 2 );
 function check_homepage(){
   if(is_front_page()) : echo 'homepage'; endif;
 }
-function check_about_us_page(){
-  if(is_page('about-us')) : echo 'aboutus'; endif;
-}
-function echo_element_field($field,$option,$default,$image){
-  if($option) : $ele =  get_field($field,'option');
-  else: $ele =  get_field($field);
-  endif;
-  if($ele): echo $ele;
-  elseif ($image) : echo get_theme_file_uri($image);
-  else: echo $default;
-  endif;
-}
 function title_check(){
   if(is_page()):
   the_title();
@@ -206,10 +194,6 @@ function title_check(){
   single_term_title();
   elseif (is_category()) :
   single_cat_title();
-  elseif (is_singular('post')) :
-  echo "News";
-  elseif (is_page('gioi-thieu')):
-  echo "Giới thiệu";
   endif;
 }
 function get_term_list($term_name){
@@ -217,7 +201,7 @@ function get_term_list($term_name){
   if ( $terms && ! is_wp_error( $terms ) ){
     foreach ($terms as $term ) {
       $slugcat = esc_html($term->slug);
-      echo '<a class="term__link" href="'.home_url().'/'.$term_name.'/'.$slugcat.'">'.esc_html($term->name).'</a>';
+      echo '<a class="term__link d--inline--block text--center" style="background:'.get_field('background_category',$term).';color:'.get_field('color_category',$term).';" href="'.home_url().'/'.$term_name.'/'.$slugcat.'">'.esc_html($term->name).'</a>';
     }
   }
 }

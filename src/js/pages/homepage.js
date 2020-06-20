@@ -1,5 +1,6 @@
 import Siema from 'siema';
 if(window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/"){
+    /*First Carousel*/
   var childCarouselItem = document.querySelectorAll('#carouselContainBig .carousel__item');
   var childCarouselBtn = document.querySelector('.carousel__big-btn');
   const carsouselHome = new Siema({
@@ -24,6 +25,8 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
     document.querySelector('button[aria-label="carousel-prev"]').addEventListener('click', () => carsouselHome.prev());
     document.querySelector('button[aria-label="carousel-next"]').addEventListener('click', () => carsouselHome.next());
   }
+    /*First Carousel*/
+    /*Carousel Video*/
 var carouselVideoHomeItem = document.querySelectorAll('#latestVideo .slider_video .images_latest_video');
 var carouselVideoHomeDot = document.querySelector('#latestVideo .slider_video-dot');
 var carouselVideoHomeDotPage = Math.ceil(carouselVideoHomeItem.length/3);
@@ -67,4 +70,21 @@ const carsouselVideoHome =  new Siema({
       });
     })
   }
+  /*Carousel Video*/
+  /*Post Carousel*/
+  const carsouselPostHome =  new Siema({
+    selector: '.postList__contain',
+    duration: 200,
+    easing: 'ease-out',
+    perPage: 4,
+    startIndex: 0,
+    draggable: true,
+    multipleDrag: true,
+    threshold: 20,
+    loop: false,
+    rtl: false,
+    onInit: () => {},
+    onChange: () => {},
+    });
+  /*Post Carousel*/
 }

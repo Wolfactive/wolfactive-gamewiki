@@ -10,6 +10,8 @@
      </div>
      <div class="col-divide-8">
        <?php get_template_part('sections/carousel') ?>
+       <?php get_template_part('sections/category-list') ?>
+       <?php get_template_part('sections/post-list') ?>
        <?php get_template_part('sections/game-strategy-wiki') ?>
        <?php get_template_part('sections/latest-videos') ?>
        <?php get_template_part('sections/youtube-channel') ?>
