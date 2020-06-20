@@ -6,12 +6,12 @@
 		</div>
 		<div class="footer_social">
 			<div class="ff_socail">
-				<a href="<?php echo get_field('footer_logo','option'); ?>">
+				<a href="<?php echo get_field('link_facebook','option'); ?>">
 					<i class="fab fa-facebook-square icon"></i>
 				</a>
 			</div>
 			<div class="ft_socail">
-				<a href="<?php echo get_field('footer_logo','option'); ?>">
+				<a href="<?php echo get_field('link_twitter','option'); ?>">
 				<i class="fab fa-twitter icon"></i>
 				</a>
 			</div>
