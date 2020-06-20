@@ -1,40 +1,55 @@
     <section class="footer">
 	    <!----------=========Main==========-------->
-	  <div class="footer__main main--background">
-      <div class="container">
+	<div class="footerlogo_and_social">
+		<div class="footer_logo">
+			<img src="<?php echo get_field('footer_logo','option'); ?>" alt="">
+		</div>
+		<div class="footer_social">
+			<div class="ff_socail">
+				<a href="<?php echo get_field('footer_logo','option'); ?>">
+					<i class="fab fa-facebook-square icon"></i>
+				</a>
+			</div>
+			<div class="ft_socail">
+				<a href="<?php echo get_field('footer_logo','option'); ?>">
+				<i class="fab fa-twitter icon"></i>
+				</a>
+			</div>
+		</div>
+		<div class="footer_big_menu">
+			<div class="container">
+				<?php 
+					wp_nav_menu( array(
+						'theme_location' => 'footer_big_nav',
+					) );
+				?>
+			</div>
+			
+		</div>
+		<div class="footer_small_list_menu">
+			<div class="container">
+				<div class="small_listmenu-contain">
+					<h4 class="list_hgm">List of handling games</h4>
+					<div class="small_listmenu-content">
+						<?php 
+						wp_nav_menu( array(
+							'theme_location' => 'footer_small_nav',
+						) );
+						?>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+	</div>
+	<!----------=========Main==========-------->
 
-    	</div>
-    	<div class="footer__container container">
-    		<div class="footer__list row-divide">
-    			<div class="footer__item divide--5-col">
-    					<a class="footer__brand d--block" href="<?php echo home_url() ?>">
-                <?php
-                 $custom_logo_id = get_theme_mod( 'custom_logo' );
-                 $image = wp_get_attachment_image_src( $custom_logo_id , 'full' ); ?>
-    						<img src="<?php echo $image[0];  ?>" class="logo" alt="logo-nha-pho-sai-gon">
-    					</a>
-    			</div>
-    			<p class="footer__item divide--5-col">
-    				<?php echo get_theme_mod('company_name'); ?>
-    			</p>
-    			<p class="footer__item divide--5-col">
-    				<i class="fas fa-map-marker-alt"></i>&nbsp;<?php echo get_theme_mod('company_address'); ?>
-    			</p>
-    			<p class="footer__item divide--5-col">
-    				<i class="fal fa-mobile-android"></i>&nbsp;<?php echo get_theme_mod('company_phone'); ?>
-    			</p>
-    			<p class="footer__item divide--5-col">
-    				<i class="fal fa-envelope"></i>&nbsp;<?php echo get_theme_mod('company_email'); ?>
-    			</p>
-    		</div>
-    	</div>
-	  </div>
-	    <!----------=========Main==========-------->
-
-		<!----------=========Sub==========-------->
-	  <div class="footer__sub">
-	    <div class="container"><p class="text--center">All Right Reserved.</p></div>
-	  </div>
+	<!----------=========Sub==========-------->
+	<div class="footer__sub">
+		<div class="container"><p class="text--center">Copyright © <a href="https://wolfactive.dev/">WolfActive Solution</a> : Largest in Japan! Game strategy information media , All Rights Reserved.</p></div>
+	</div>
 	    <!----------=========Sub==========-------->
  </section>
  <?php wp_footer(); ?>
