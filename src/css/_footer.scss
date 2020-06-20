@@ -1,0 +1,105 @@
+.footer{
+    padding: 40px 0 20px 0;
+    background: #21282e;
+    .footerlogo_and_social{
+        .footer_logo{
+            text-align:center;
+            img{
+                width: 140px;
+                object-fit: cover;
+            }
+        }
+        .footer_social{
+            margin: 18px 0 25px 0;
+            display: flex;
+            justify-content: center;
+            .ff_socail{
+                padding-right: 40px;
+                a{
+                    color: #b9cfe2;
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+            }
+            .ft_socail{
+                padding-left: 40px;
+                a{
+                    color: #b9cfe2;
+                    &:hover{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .footer_big_menu{
+            .menu-big-footer-menu-container{
+                .menu{
+                    display: flex;
+                    justify-content: center;
+                    border-top: 1px solid #464748;
+                    border-bottom: 1px solid #464748;
+                    li{
+                        list-style-type: none;
+                        padding: 0px 10px;
+                        margin: 5px 0;
+                        border-right: 1px solid #969696;
+                        a{
+                            font-size: 14px;
+                            color:#9dacb9;
+                            &:hover{
+                                color:#ff8039;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer_small_list_menu{
+            margin-left: 120px;
+            padding: 20px 0;
+            .small_listmenu-contain{
+                width: 80%;
+                margin: 0 auto;
+                .list_hgm{
+                    color: #9dacb9;
+                    font-size: 16px;
+                    font-weight: 700;
+                    letter-spacing: 1px;
+                    
+                }
+                .small_listmenu-content{
+                    .menu{
+                        display: flex;
+                        justify-content: flex-start;
+                        flex-wrap: wrap;
+                        li{
+                            flex: 0 0 25%;
+                            max-width: 24%;
+                            width: 100%;
+                            a{
+                                font-size: 13px;
+                                color:#9dacb9;
+                                &:hover{
+                                    color:#ff8039;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer__sub{
+        margin-top: 20px;
+        font-size: 13px;
+        color:#9dacb9;
+        a{
+            font-size: 13px;
+            color:#9dacb9;
+            &:hover{
+                color:#ff8039;
+            }
+        }
+    }
+}

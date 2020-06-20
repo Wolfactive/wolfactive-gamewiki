@@ -32,7 +32,8 @@ add_filter('show_admin_bar', '__return_false');
  		array(
  			'main_nav' => 'Menu Main',
  			'top_nav' => 'Menu Top',
- 			'footer_nav' => 'Menu Footer',
+       'footer_big_nav' => 'Footer Big Menu',
+       'footer_small_nav' => 'Footer Small Menu',
       'mobile_nav' => 'Menu Mobile',
  		));
   add_theme_support('title-tag');
