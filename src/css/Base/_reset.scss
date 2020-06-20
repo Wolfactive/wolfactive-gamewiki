@@ -69,7 +69,9 @@ img{
 .clear{
 	clear:both;
 }
-
+.page-container{
+  padding: 0px 10px;
+}
 .btn {
     display: inline-block;
     font-weight: 400;
@@ -325,6 +327,9 @@ img{
 }
 .d--block{
 	display:block;
+}
+.d--inline--block{
+	display:inline-block;
 }
 .d--flex{
 	display:flex;

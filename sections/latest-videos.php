@@ -15,14 +15,17 @@
             ?>
             <?php while($list_videoLatest->have_posts()) : $list_videoLatest->the_post(); ?>
             <div class="images_latest_video">
-                <a href="<?php echo get_field('link_video'); ?>"><?php the_post_thumbnail('medium')  ?></a>
+                <a href="<?php echo get_field('link_video'); ?>" class="d--block">
+                    <img class="d--block" src="<?php echo hk_get_thumb(get_the_id(),310,175) ?>" alt="<?php the_title(); ?>" />
+                    <i class="far fa-play-circle icon d--block center--position"></i>
+                </a>
                 <div class="title_latest_video">
                     <a href="<?php echo get_field('link_video'); ?>"><?php the_title();  ?></a>
                 </div>
             </div>
-            
+
         <?php endwhile; wp_reset_postdata();?>
-        <?php else : esc_html_e( 'No testimonials in the diving taxonomy!', 'text-domain' ); endif;?>
-        
+      <?php else : esc_html_e( 'No testimonials in the diving taxonomy!', 'gamewiki' ); endif;?>
     </div>
+    <div class="slider_video-dot text--center myt-20"></div>
 </section>

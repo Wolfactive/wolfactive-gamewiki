@@ -11,6 +11,44 @@
     .slider_video{
         .images_latest_video{
             margin: 10px;
+            &>a{
+              position: relative;
+              &::after{
+                position: absolute;
+                content: "";
+                display: block;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                background: #21282e36;
+                z-index: 10;
+                transform: scale(1);
+                transition: all 0.25s ease-out;
+              }
+              &>i{
+                font-size: 50px;
+                color: #fff;
+                padding: 0;
+                z-index: 50;
+              }
+            }
+          &:hover{
+            &>a{
+              width: 100%;
+              height: 100%;
+              overflow: hidden;
+              &::after{
+                transform: scale(0);
+              }
+            }
+          }
         }
     }
+  .dotVideo{
+    color: var(--primary-color);
+    &.active{
+      color: #2196f3;
+    }
+  }
 }

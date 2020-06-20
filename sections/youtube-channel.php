@@ -8,16 +8,14 @@
             <?php while(have_rows('youtube_channel_reapeter','option')) : the_row(); ?>
             <div class="col-divide-4 youtube-col-chanel">
                 <div class="thumbnail_image">
-                    <a href="">
-                        <img src="<?php echo get_sub_field('thumbnail_image','option'); ?>" alt="thumbnail_image">
-                    </a>
+                    <img src="<?php echo hk_get_image(get_sub_field('thumbnail_image','option'),200,200)  ?>" alt="<?php echo get_sub_field('title_youtube_channel','option'); ?>">
                 </div>
                 
                 <div class="name_channel">
                     <?php echo get_sub_field('title_youtube_channel','option'); ?>
                 </div>
                 <div class="content_channel">
-                    <?php echo get_sub_field('content_youtube_channel','option'); ?>          
+                    <?php echo get_sub_field('content_youtube_channel','option'); ?>
                 </div>
                 <div class="button_channel">
                     <a class="c_style twitter_style" href="<?php echo get_sub_field('link_twitter','option'); ?>"><i class="fab fa-twitter icon"></i> <span>Twitter</span> </a>
