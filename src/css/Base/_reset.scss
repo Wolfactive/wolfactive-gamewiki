@@ -118,6 +118,10 @@ img{
 .icon--img-svg{
 	width: 8px;
 }
+.col-divide-2.mc_fix_col{
+	flex: 0 0 17%;
+  	max-width: 17%;
+}
 /*---Row---*/
 .row-divide {
     display: flex;

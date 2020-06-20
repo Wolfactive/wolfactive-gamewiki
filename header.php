@@ -11,6 +11,7 @@
      <link rel="preload" href="<?php echo get_theme_file_uri('dist/css/webfonts/fa-regular-400.woff2') ?>" as="font" type="font/woff2" crossorigin>
      <link rel="preload" href="<?php echo get_theme_file_uri('dist/css/webfonts/fa-solid-900.woff2') ?>" as="font" type="font/woff2" crossorigin>
      <link rel="preload" href="<?php echo get_theme_file_uri('dist/fonts/Rokkitt-VariableFont_wght.ttf') ?>" as="font" type="font/ttf" crossorigin>
+     <link rel="preconnect" href="https://twitter.com/">
      <link rel="stylesheet" href="<?php echo get_theme_file_uri('dist/css/main.css') ?>">
      <script defer type='text/javascript' src="<?php echo get_theme_file_uri('dist/js/root.js') ?>"></script>
      <?php wp_head(); ?>
