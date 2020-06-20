@@ -10,6 +10,7 @@
        <?php get_template_part('sections/carousel') ?>
        <?php get_template_part('sections/game-strategy-wiki') ?>
        <?php get_template_part('sections/latest-videos') ?>
+       <?php get_template_part('sections/youtube-channel') ?>
      </div>
      <div class="col-divide-2"></div>
    </div>

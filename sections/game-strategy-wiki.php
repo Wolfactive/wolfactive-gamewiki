@@ -6,12 +6,11 @@
     <div class="row-divide">
     <?php
         $args = array(
-            'post_type' => 'post',
+            'post_type' => 'strategy_wiki',
             'post_status' => 'publish',
             'posts_per_page' =>  24,
             'order'              => 'DESC',
-            'orderby'            => 'date',
-            'category_name' => 'gme-strategy-wiki'
+            'orderby'            => 'date'
         );
         $list_gameStrategy = new WP_Query( $args );
         if($list_gameStrategy->have_posts()) :

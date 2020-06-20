@@ -668,3 +668,43 @@ add_action('init', 'cpts_latest_videos');
 // }
 // add_action( 'init', 'mc_taxonomy_video', 0 );
 // End CPT List of latest videos
+
+
+//CPT Game Strategy
+function cpts_strategy_wiki()
+{
+
+    $label = array(
+        'name' => 'Game Strategy Wiki',
+        'singular_name' => 'Game Strategy Wiki'
+    );
+
+    $args = array(
+        'labels' => $label,
+        'description' => 'Game Strategy Wiki',
+        'supports' => array(
+            'title',
+            'author',
+            'thumbnail',
+            'custom-fields'
+        ),
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => true,
+        'show_in_admin_bar' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-smiley',
+        'can_export' => true,
+        'has_archive' => true,
+        'exclude_from_search' => false,
+        'publicly_queryable' => true,
+        'capability_type' => 'post'
+    );
+
+    register_post_type('strategy_wiki', $args);
+
+}
+add_action('init', 'cpts_strategy_wiki');
+//End CPT Game Strategy

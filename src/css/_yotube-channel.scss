@@ -1,0 +1,70 @@
+.youtube_channel{
+    .big_title_youtubevideo{
+        font-size: 20px;
+        display:flex;
+        .mc-icon{
+            margin-top: 1px;
+            margin-right: 10px;
+        }
+        .big-title-style{font-weight: 700;}
+    }
+    .youtube_contain{
+        background: #f9f9f9;
+        margin-bottom: 30px;
+        .button_channel{
+            position: absolute;
+            bottom: 15px;
+            left: 10px;
+            display: flex;
+            justify-content: center;
+            justify-content: center;
+            margin-top: 12px;
+            width: 100%;
+            .c_style{
+                margin-right: 20px;
+                padding: 6px 15px;
+                display: flex;
+                align-items: center;
+                i{
+                    padding-right: 8px;
+                    font-size: 20px;
+                }
+            }
+            .twitter_style{
+                color: #fff;
+                background: #2ba7e0;
+            }
+            .faceb_style{
+                color: #fff;
+                background: #df2d27;
+            }
+        }
+        .youtube-col-chanel{
+            background: #fff;
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 0 5px rgba(0,0,0,.08);
+            position: relative;
+        }
+        .thumbnail_image{
+            text-align: center;
+            img{
+                width: 114px;
+                object-fit: cover;
+            }
+        }
+        .name_channel{
+            font-weight: 700;
+            font-size: 20px;
+            text-align: center;
+        }
+        .content_channel{
+            padding: 0 20px;
+            font-size: 16px;
+            padding-bottom: 70px;
+        }
+    }
+}
+.mc-pd-15{
+    padding: 15px;
+}
