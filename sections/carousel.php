@@ -1,6 +1,7 @@
 <div class="carousel">
   <div class="carousel__contain row-divide">
-    <div class="carousel__contain-big col-divide-8" id="carouselContainBig">
+  <div class="carousel__big col-divide-8">
+    <div class="carousel__contain-big" id="carouselContainBig">
           <!-- get post -->
             <?php $getposts = new WP_query();
             $getposts->query('post_status=publish&showposts=3&post_type=post&order=DESC&order_by=date'); ?>
@@ -16,6 +17,8 @@
               </div>
             <?php endwhile; wp_reset_postdata(); ?>
     </div>
+    <div class="carousel__big-btn"></div>
+  </div>
     <div class="carousel__contain-small col-divide-4">
           <!-- get post -->
             <?php $getposts = new WP_query();

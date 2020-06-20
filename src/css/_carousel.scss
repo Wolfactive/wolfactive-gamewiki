@@ -1,6 +1,7 @@
 .carousel{
   background: var(--primary-bg-color);
   padding: 30px;
+  margin-bottom: 30px;
   .carousel__contain{
     .carousel__item{
       position: relative;
@@ -64,6 +65,29 @@
               opacity: 1;
               font-size: 17px;
             }
+          }
+        }
+      }
+    }
+    .carousel__big{
+      position: relative;
+      .carousel__big-btn{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        display: flex;
+        .btn{
+          color: #fff;
+          background: #333;
+          padding: 5px;
+          margin: 0px 5px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          outline-color: transparent;
+          i{
+            display: block;
+            font-size: 20px;
           }
         }
       }
