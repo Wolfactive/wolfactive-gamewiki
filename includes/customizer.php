@@ -16,7 +16,7 @@ function gamewiki_customizer( $wp_customize ) {
       $wp_customize->add_section(
       'title_sub_footer_top_menu',
       array(
-          'title' => esc_html__( 'Config title header and social', 'gamewiki' ),
+          'title' => esc_html__( 'Config title header, social, Copyright', 'gamewiki' ),
           'panel'   =>  'theme_option',
           'priority' => 150
         )
@@ -83,5 +83,25 @@ function gamewiki_customizer( $wp_customize ) {
                     'type' => 'text'
                 )
        );
+       // Copyright
+         $wp_customize->add_setting(
+             // $id
+             'copyright_footer',
+             // $args
+             array(
+               'sanitize_callback'	=> 'sanitize_text_field',
+               'default'           => 'Largest in Japan! Game strategy information media'
+             )
+           );
+
+
+         $wp_customize->add_control(
+                 'copyright_footer',
+                 array(
+                     'label' => esc_html__( 'Copyright', 'gamewiki' ),
+                     'section' => 'title_sub_footer_top_menu',
+                     'type' => 'text'
+                 )
+        );
 }
 add_action( 'customize_register', 'gamewiki_customizer' );

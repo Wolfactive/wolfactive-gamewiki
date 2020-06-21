@@ -16,7 +16,9 @@
        <?php get_template_part('sections/latest-videos') ?>
        <?php get_template_part('sections/youtube-channel') ?>
      </div>
-     <div class="col-divide-2 mc_fix_col"></div>
+     <div class="col-divide-2 mc_fix_col">
+       <?php get_template_part('sections/right-sidebar')?>
+     </div>
    </div>
  </section>
 <?php
