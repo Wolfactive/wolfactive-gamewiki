@@ -1,5 +1,6 @@
 .postList{
     margin-bottom: 30px;
+    position: relative;
   .postList__contain{
     .postList__item{
       margin: 0px 15px;
@@ -31,6 +32,24 @@
        .postList__item-title{
          transform: translateY(-8px);
        }
+      }
+    }
+  }
+  .postList__btn{
+    position: absolute;
+    top: 0px;
+    left: 1.3%;
+    height: 100%;
+    width:  97.5%;
+    display: flex;
+    justify-content: space-between;
+    button.btn{
+      background: #21282e00;
+      outline-color: transparent;
+      color: #fff;
+      &:focus,&:hover{
+       background: #21282e7a;
+       outline: unset;
       }
     }
   }

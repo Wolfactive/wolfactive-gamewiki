@@ -1,15 +1,13 @@
 .categoryList{
   .categoryList__contain{
-    display: flex;
-    justify-content: center;
-    overflow-x: auto;
-    flex-wrap: nowrap;
+    display: flex;  
     margin-bottom: 30px;
     .term__link{
       padding: 5px 10px;
       border-radius: 5px;
       font-size: 17px;
       margin: 5px 10px;
+      cursor: pointer;
     }
   }
 }

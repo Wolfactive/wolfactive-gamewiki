@@ -47,6 +47,7 @@
     }
   .dotVideo{
     color: var(--primary-color);
+    cursor: pointer;
     &.active{
       color: #2196f3;
     }

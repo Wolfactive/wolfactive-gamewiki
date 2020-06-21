@@ -1,6 +1,8 @@
 import Siema from 'siema';
 if(window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/"){
     /*First Carousel*/
+  var protocol = window.location.protocol;
+  var hostname = window.location.hostname;
   var childCarouselItem = document.querySelectorAll('#carouselContainBig .carousel__item');
   var childCarouselBtn = document.querySelector('.carousel__big-btn');
   const carsouselHome = new Siema({
@@ -72,6 +74,8 @@ const carsouselVideoHome =  new Siema({
   }
   /*Carousel Video*/
   /*Post Carousel*/
+  var carsouselPostHomeBtn = document.querySelector('.postList .postList__btn');
+  var caroselPostList = document.querySelectorAll('.postList .postList__item');
   const carsouselPostHome =  new Siema({
     selector: '.postList__contain',
     duration: 200,
@@ -86,5 +90,74 @@ const carsouselVideoHome =  new Siema({
     onInit: () => {},
     onChange: () => {},
     });
+  if(caroselPostList.length > 4){
+    carsouselPostHomeBtn.innerHTML = `
+    <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
+    <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
+    `;
+    document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
+    document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+  }
   /*Post Carousel*/
+  /*Clik show post category*/
+  var categoryList = document.querySelectorAll('.categoryList .categoryList__contain .term__link');
+  categoryList.forEach((item)=>{
+    item.onclick = () =>{
+      let category = item.getAttribute("data-show");
+      let apiUrl =``;
+      if(window.location.pathname === "/"){
+        apiUrl =`${protocol}//${hostname}/wp-json/blog-api/v1/blog/offset=0&category=${category}`;
+      }else if (window.location.pathname === "/wolfactive-gamewiki/") {
+        apiUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-json/blog-api/v1/blog/offset=0&category=${category}`;
+      }
+      fetch(apiUrl)
+      .then(response => response.json())
+      .then((data)=>{
+        let content =``;
+        let categoryShow = document.querySelector('.postList .postList__contain');
+        categoryShow.innerHTML = ``;
+        data.forEach((item)=>{
+          content += `
+          <div class="postList__item d--block">
+            <div class="postList__item-img">
+              ${item.thumbnail}
+            </div>
+            <a href="${item.url}" class="postList__item-title">
+              <h3 class="title--item">${item.title}</h3>
+            </a>
+          </div>
+          `;
+        })
+        categoryShow.innerHTML = content;
+        /*Post Carousel*/
+        var carsouselPostHomeBtn = document.querySelector('.postList .postList__btn');
+        var caroselPostList = document.querySelectorAll('.postList .postList__item');
+        const carsouselPostHome =  new Siema({
+          selector: '.postList__contain',
+          duration: 200,
+          easing: 'ease-out',
+          perPage: 4,
+          startIndex: 0,
+          draggable: true,
+          multipleDrag: true,
+          threshold: 20,
+          loop: false,
+          rtl: false,
+          onInit: () => {},
+          onChange: () => {},
+          });
+        if(caroselPostList.length > 4){
+          carsouselPostHomeBtn.innerHTML = `
+          <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
+          <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
+          `;
+          document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
+          document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+        }
+        /*Post Carousel*/
+      })
+      .catch(err => console.log(err));
+    }
+  })
+  /*Click show post category*/
 }

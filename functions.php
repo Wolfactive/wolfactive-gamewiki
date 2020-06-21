@@ -13,7 +13,8 @@ $file_includes = [
     'includes/theme-setup.php',                         // General theme setting
     'includes/acf-options.php',                         // ACF Option page
     'includes/resize.php',
-    'includes/customizer.php'
+    'includes/customizer.php',
+    'includes/api.php'
 ];
 
 foreach ($file_includes as $file) {
@@ -201,7 +202,7 @@ function get_term_list($term_name){
   if ( $terms && ! is_wp_error( $terms ) ){
     foreach ($terms as $term ) {
       $slugcat = esc_html($term->slug);
-      echo '<a class="term__link d--inline--block text--center" style="background:'.get_field('background_category',$term).';color:'.get_field('color_category',$term).';" href="'.home_url().'/'.$term_name.'/'.$slugcat.'">'.esc_html($term->name).'</a>';
+      echo '<button class="term__link btn d--inline--block text--center" style="background:'.get_field('background_category',$term).';color:'.get_field('color_category',$term).';" data-show="'.$slugcat.'">'.esc_html($term->name).'</button>';
     }
   }
 }

@@ -15,12 +15,12 @@
             ?>
             <?php while($list_videoLatest->have_posts()) : $list_videoLatest->the_post(); ?>
             <div class="images_latest_video">
-                <a href="<?php echo get_field('link_video'); ?>" class="d--block">
+                <a href="<?php echo get_field('link_video'); ?>" class="d--block" target="_blank">
                     <img class="d--block" src="<?php echo hk_get_thumb(get_the_id(),310,175) ?>" alt="<?php the_title(); ?>" />
                     <i class="far fa-play-circle icon d--block center--position"></i>
                 </a>
                 <div class="title_latest_video">
-                    <a href="<?php echo get_field('link_video'); ?>"><?php the_title();  ?></a>
+                    <a href="<?php echo get_field('link_video'); ?>" target="_blank"><?php the_title();  ?></a>
                 </div>
             </div>
 

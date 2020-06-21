@@ -15,4 +15,5 @@
         </div>
       <?php endwhile; wp_reset_postdata(); ?>
   </div>
+  <div class="postList__btn"></div>
 </div>
