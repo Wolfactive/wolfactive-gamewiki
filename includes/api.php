@@ -2,7 +2,7 @@
 /*create search api for blog*/
 add_action('rest_api_init','blogRegisterApiSearch');
 function blogRegisterApiSearch(){
-  register_rest_route('blog-api/v1','/blog/offset=(?P<offset>\d+)&category=(?P<category>[a-z]+[[:punct:]]+[a-z]+|[a-z]+)',array(
+  register_rest_route('blog-api/v1','/blog/offset=(?P<offset>\d+)&category=(?P<category>[a-z]+[[:punct:]]+[a-z]+[[:punct:]]+[a-z]+|[a-z]+[[:punct:]]+[a-z]+|[a-z]+)',array(
     'methods'   =>  WP_REST_SERVER::READABLE,
     'callback'  =>  'blogApiQuery',
     'args' => [
