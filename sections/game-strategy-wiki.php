@@ -3,12 +3,12 @@
         <div class="mc-ic"><i class="fas fa-book-open"></i></div>
         <div class="name_ct">Game Strategy Wiki</div>
     </div>
-    <div class="row-divide">
+    <div class="row-divide game_strategy-list">
     <?php
         $args = array(
             'post_type' => 'strategy_wiki',
             'post_status' => 'publish',
-            'posts_per_page' =>  24,
+            'showposts'      =>  12,
             'order'              => 'DESC',
             'orderby'            => 'date'
         );
@@ -27,7 +27,7 @@
     <?php endwhile; wp_reset_postdata();?>
   <?php else : esc_html_e( 'No testimonials in the diving taxonomy!', 'gamewiki' ); endif;?>
     </div>
-    <a href="#" class="gtr_see_more">
+    <div class="gtr_see_more">
        <div class="mc-ic"><i class="fas fa-arrow-circle-right"></i></div><div>See more</div>
-    </a>
+    </div>
 </section>

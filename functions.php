@@ -670,8 +670,8 @@ function cpts_strategy_wiki()
         'description' => 'Game Strategy Wiki',
         'supports' => array(
             'title',
-            'author',
             'thumbnail',
+            'editor',
             'custom-fields'
         ),
         'hierarchical' => true,

@@ -160,4 +160,36 @@ const carsouselVideoHome =  new Siema({
     }
   })
   /*Click show post category*/
+  /*Click loadmore on game wiki*/
+   var loadmoreBtnWiki = document.querySelector('.game_strategy .gtr_see_more');
+   var loadmoreBtnShow = document.querySelector('.game_strategy .game_strategy-list');
+   var offsetLoad = 12;
+   loadmoreBtnWiki.onclick = () =>{
+     var loadmoreUrl=``;
+     if(window.location.pathname === "/"){
+       loadmoreUrl =`${protocol}//${hostname}/wp-json/gamewiki-api/v1/gamewiki/offset=${offsetLoad}`;
+     }else if (window.location.pathname === "/wolfactive-gamewiki/") {
+       loadmoreUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-json/gamewiki-api/v1/gamewiki/offset=${offsetLoad}`;
+     }
+     fetch(loadmoreUrl)
+     .then(response => response.json())
+     .then((data)=>{
+       let content = ``;
+       data.forEach((item) => {
+         content += `
+         <div class="col-divide-2 mc-mg">
+             <div class="images_game_str">
+                 <a href="${item.url}">${item.thumbnail}</a>
+             </div>
+             <div class="title_game_str">
+                 <a href="${item.url}">${item.title}</a>
+             </div>
+         </div>
+         `;
+       })
+       loadmoreBtnShow.innerHTML += content;
+       offsetLoad = offsetLoad + 11
+     })
+   }
+  /*Click loadmore on game wiki*/
 }
