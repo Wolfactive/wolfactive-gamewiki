@@ -188,7 +188,11 @@ const carsouselVideoHome =  new Siema({
          `;
        })
        loadmoreBtnShow.innerHTML += content;
-       offsetLoad = offsetLoad + 11
+       if(data.length !== 12){
+         loadmoreBtnWiki.style.display = "none";
+       }else if(data.length === 12){
+          offsetLoad = offsetLoad + 11;
+       }
      })
    }
   /*Click loadmore on game wiki*/
