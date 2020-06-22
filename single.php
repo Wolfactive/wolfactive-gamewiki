@@ -1,42 +1,43 @@
- <?php
- get_header();
- get_template_part('sections/breadcum');
-?>
- <section class="wrapper" id="singlePost">
-   <div class="container">
-     <div class="row-divide my-40">
-       <div class="col-divide-9 col-divide-sm-12">
-         <div class="post__contain">
-          <?php
-       if ( have_posts() ) {
-         // Load posts loop.
-         while ( have_posts() ) {
-           the_post();?>
-          <div class="post__item">
-           <div class="thumbnail max--height--400"><?php the_post_thumbnail('large') ?></div>
-           <div class="post__item-des row-divide myt-20">
-             <span class="text--dark post__category">
-               <?php
-               $categories = get_the_category();
-                   if ( ! empty( $categories ) ) {
-                     echo esc_html( $categories[0]->name );
-                   }
-               ?>
-             </span>
-             <span class="date text--dark"><i class="fal fa-history"></i>&nbsp;<?php echo get_the_date(); ?></span>
-           </div>
-            <h1 class="title--section text--center my-6"><?php the_title(); ?></h1>
-           <div class="post__item-content">
-             <span class="date text--dark"><?php gt_set_post_view(); ?></span>
-             <?php the_content() ?>
-           </div>
-
+ <?php get_header();?>
+ <section class="page-container">
+   <?php get_template_part('sections/breadcums'); ?>
+   <div class="row-divide">
+     <div class="col-divide-2 mc_fix_col">
+       <div class="sidebar__left">
+         <div class="sidebar__left-banner">
+           <a href="<?php the_field('link_banner_left_post_detail','option') ?>" target="_blank">
+             <img src="<?php the_field('banner_left_post_detail','option') ?>" alt="banner-left-ads">
+           </a>
          </div>
-       <?php }	}	?>
-        </div>
        </div>
-       <div class="col-divide-3 col-divide-sm-12">
-         <?php get_template_part('sections/sidebar') ?>
+     </div>
+     <div class="col-divide-8">
+      <div class="row-divide">
+        <div class="col-divide-3">
+          <?php get_template_part('sections/menu-category'); ?>
+        </div>
+        <div class="col-divide-6">
+          <?php while(have_posts()) : the_post() ; ?>
+             <h1 class="single__title title--section"><?php the_title(); ?></h1>
+             <p class="date"><strong><?php the_date(); ?></strong></p>
+             <div class="single__page-content">
+                 <?php the_content(); ?>
+             </div>
+           <?php endwhile; ?>
+        </div>
+        <div class="col-divide-3"></div>
+      </div>
+     </div>
+     <div class="col-divide-2 mc_fix_col">
+       <div class="sidebar__right">
+         <div class="sidebar__right-banner">
+           <a href="<?php the_field('link_banner_right_post_detail','option') ?>" target="_blank">
+             <img src="<?php the_field('banner_right_post_detail','option') ?>" alt="banner-right-ads">
+           </a>
+         </div>
+         <div class="twitter_embedded">
+             <?php echo get_field('link_twitter_embedded','option'); ?>
+         </div>
        </div>
      </div>
    </div>

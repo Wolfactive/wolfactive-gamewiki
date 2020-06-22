@@ -22,7 +22,7 @@
 	box-sizing: border-box
 }
 body{
-	font-size:15px;
+	font-size:17px;
 	font-weight:500;
 	line-height:1.5;
 	color:#333;
@@ -57,7 +57,7 @@ img{
 	height:auto;
 }
 .container{
-    max-width: 1140px;
+    max-width: 1210px;
     margin: 0 auto;
 }
 .clear{
@@ -138,7 +138,13 @@ img{
     max-width: 7%;
     width: 100%;
 }
-
+.twitter_embedded{
+  height: 100vh;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+}
 .col-divide-2 {
     flex: 0 0 14%;
     max-width: 14%;

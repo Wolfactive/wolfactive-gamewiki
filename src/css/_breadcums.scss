@@ -1,0 +1,15 @@
+.breadcrumbs{
+  padding: 12px 0px;
+  .breadcrumbs__contain{
+    #breadcrumbs{
+      a{
+        font-size: 18px;
+        color: #1681b2;
+        font-weight: 600;
+      }
+      .breadcrumb_last{
+        color: #333;
+      }
+    }
+  }
+}
