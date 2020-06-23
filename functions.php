@@ -206,6 +206,17 @@ function get_term_list($term_name){
     }
   }
 }
+function teaser($string,$limit) {
+  $excerpt = explode(' ', $string, $limit);
+  if (count($excerpt)>=$limit) {
+    array_pop($excerpt);
+    $excerpt = implode(" ",$excerpt).'[...]';
+  } else {
+    $excerpt = implode(" ",$excerpt);
+  }
+  $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
+  return $excerpt.'...';
+}
 // remove block-style
 add_filter('use_block_editor_for_post', '__return_false');
 function atulhost_optimize_scripts() {

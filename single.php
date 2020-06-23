@@ -42,10 +42,7 @@
            <a href="<?php the_field('link_banner_right_post_detail','option') ?>" target="_blank">
              <img src="<?php the_field('banner_right_post_detail','option') ?>" alt="banner-right-ads">
            </a>
-         </div>
-         <div class="twitter_embedded">
-             <?php echo get_field('link_twitter_embedded','option'); ?>
-         </div>
+         </div>        
        </div>
      </div>
    </div>

@@ -16,7 +16,7 @@ function gamewiki_customizer( $wp_customize ) {
       $wp_customize->add_section(
       'title_sub_footer_top_menu',
       array(
-          'title' => esc_html__( 'Config title header, social, Copyright', 'gamewiki' ),
+          'title' => esc_html__( 'Config title header, social, Menu post title ,Copyright', 'gamewiki' ),
           'panel'   =>  'theme_option',
           'priority' => 150
         )
@@ -83,6 +83,26 @@ function gamewiki_customizer( $wp_customize ) {
                     'type' => 'text'
                 )
        );
+       // Menu post detail title
+         $wp_customize->add_setting(
+             // $id
+             'menu_post_title_detail',
+             // $args
+             array(
+               'sanitize_callback'	=> 'sanitize_text_field',
+               'default'            => 'Menu Post'
+             )
+           );
+
+
+         $wp_customize->add_control(
+                 'menu_post_title_detail',
+                 array(
+                     'label' => esc_html__( 'Menu Post Title', 'gamewiki' ),
+                     'section' => 'title_sub_footer_top_menu',
+                     'type' => 'text'
+                 )
+        );
        // Copyright
          $wp_customize->add_setting(
              // $id

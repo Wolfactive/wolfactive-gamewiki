@@ -1,8 +1,12 @@
 .post-template-default.single.single-post{
   .page-container{
+    background-color: #f2f2f2;
+    &>.row-divide >.col-divide-8 {
+      padding: 0px;
+    }
     .col-divide-6{
-      flex: 0 0 55%;
-      max-width: 55%;
+      flex: 0 0 52%;
+      max-width: 52%;
     }
     .single__page-content{
       padding-bottom: 30px;
@@ -75,6 +79,32 @@
             left: -16px;
             top: 0px;
             color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+  .menuCategory{
+    .menuCategory__contain{
+      .title--section{
+        background: #38434b;
+        color: #fff;
+        padding: 5px 5px 5px 10px;
+        font-size: 18px;
+      }
+      .menuCategory__list{
+        .menuCategory__item{
+          background-color: #fff;
+          color: #2d8acb;
+          transition: .3s;
+          display: block;
+          font-size: 15px;
+          padding: 7px 8px 9px;
+          overflow: hidden;
+          width: 100%;
+          border-top: 1px solid #cbdff9;
+          &:nth-child(1){
+            border-top: unset;
           }
         }
       }
