@@ -1,6 +1,7 @@
 import LazyLoad from "vanilla-lazyload";
 import Cookies from 'js-cookie';
 import './pages/homepage';
+import 'shareon'
 /*VARIABLES*/
 var iframe = document.querySelectorAll('iframe');
 var img = document.querySelectorAll('img');

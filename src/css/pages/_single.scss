@@ -1,7 +1,13 @@
 .post-template-default.single.single-post{
   .page-container{
+    .col-divide-6{
+      flex: 0 0 55%;
+      max-width: 55%;
+    }
     .single__page-content{
       padding-bottom: 30px;
+      padding-top: 15px;
+      border-top: 1px solid #e7e7e7;
       h2{
         background-color: var(--primary-color);
         color: #fff;

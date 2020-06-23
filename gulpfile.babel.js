@@ -11,6 +11,7 @@ import del from 'del';
 import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify'
 import browserSync from "browser-sync";
+import gzip from "gulp-gzip";
 import zip from "gulp-zip";
 import info from "./package.json";
 import replace from "gulp-replace";
@@ -31,6 +32,7 @@ export const styles = () => {
   .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
   .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
   .pipe(dest('dist/css'))
+  .pipe(gzip({ append: true }))
   .pipe(server.stream());
 }
 
@@ -63,6 +65,7 @@ export const scripts = () => {
     },
   }))
   .pipe(uglify())
+  .pipe(gzip({ append: true }))
   .pipe(dest('dist/js'));
 }
 

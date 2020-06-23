@@ -20,6 +20,14 @@
           <?php while(have_posts()) : the_post() ; ?>
              <h1 class="single__title title--section"><?php the_title(); ?></h1>
              <p class="date"><strong><?php the_date(); ?></strong></p>
+             <div class="shareon" style="font-size: 25px;">
+                 <a class="facebook" style="color:#0f90f3"><i class="fab fa-facebook"></i></a>
+                 <a class="messenger" style="color:#0f90f3"><i class="fab fa-facebook-messenger"></i></a>
+                 <a class="pinterest" style="color:#e60023"><i class="fab fa-pinterest-square"></i></a>
+                 <a class="telegram" style="color:#27a5e7"><i class="fab fa-telegram"></i></a>
+                 <a class="twitter" style="color:#1da1f2"><i class="fab fa-twitter"></i></a>
+                 <a class="whatsapp" style="color:#0cc143"><i class="fab fa-whatsapp-square"></i></a>
+             </div>
              <div class="single__page-content">
                  <?php the_content(); ?>
              </div>

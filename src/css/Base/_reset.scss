@@ -3,7 +3,7 @@
 	--secondary-bg-color:#fff;
   --primary-color: #21282e;
 	--secondary-color:#000;
-	--title-section-size:36px;
+	--title-section-size:25px;
 	--title-item-size:20px;
 	--primary-padding: 10px;
 	--secondary-padding: 20px;
@@ -60,9 +60,10 @@ img{
     max-width: 1210px;
     margin: 0 auto;
 }
-.clear{
-	clear:both;
+.date{
+  color: #ff6555;
 }
+
 .page-container{
   padding: 0px 10px;
   &>.row-divide{
@@ -183,7 +184,7 @@ img{
 
 .col-divide-8 {
     flex: 0 0 65%;
-    max-width: 65%;
+    max-width: 64%;
     width: 100%;
 }
 
