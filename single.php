@@ -29,11 +29,13 @@
                  <a class="whatsapp" style="color:#0cc143"><i class="fab fa-whatsapp-square"></i></a>
              </div>
              <div class="single__page-content">
-                 <?php the_content(); ?>
+                 <?php if(the_content()):the_content();else: _e('Bài viết hiện chưa có nội dung');endif; ?>
              </div>
            <?php endwhile; ?>
         </div>
-        <div class="col-divide-3"></div>
+        <div class="col-divide-3">
+          <?php get_template_part('sections/menu-ranking'); ?>
+        </div>
       </div>
      </div>
      <div class="col-divide-2 mc_fix_col">
@@ -42,7 +44,7 @@
            <a href="<?php the_field('link_banner_right_post_detail','option') ?>" target="_blank">
              <img src="<?php the_field('banner_right_post_detail','option') ?>" alt="banner-right-ads">
            </a>
-         </div>        
+         </div>
        </div>
      </div>
    </div>

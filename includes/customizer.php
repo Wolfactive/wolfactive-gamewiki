@@ -103,6 +103,26 @@ function gamewiki_customizer( $wp_customize ) {
                      'type' => 'text'
                  )
         );
+        // Menu post detail title
+          $wp_customize->add_setting(
+              // $id
+              'menu_video_title_detail',
+              // $args
+              array(
+                'sanitize_callback'	=> 'sanitize_text_field',
+                'default'            => 'Menu Video '
+              )
+            );
+
+
+          $wp_customize->add_control(
+                  'menu_video_title_detail',
+                  array(
+                      'label' => esc_html__( 'Menu Video Title', 'gamewiki' ),
+                      'section' => 'title_sub_footer_top_menu',
+                      'type' => 'text'
+                  )
+         );
        // Copyright
          $wp_customize->add_setting(
              // $id
