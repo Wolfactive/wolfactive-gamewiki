@@ -32,7 +32,6 @@ export const styles = () => {
   .pipe(gulpif(PRODUCTION, cleanCss({compatibility:'ie8'})))
   .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
   .pipe(dest('dist/css'))
-  .pipe(gzip({ append: true }))
   .pipe(server.stream());
 }
 
@@ -65,7 +64,6 @@ export const scripts = () => {
     },
   }))
   .pipe(uglify())
-  .pipe(gzip({ append: true }))
   .pipe(dest('dist/js'));
 }
 
