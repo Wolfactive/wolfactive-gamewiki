@@ -11,15 +11,15 @@
          </div>
        </div>
      </div>
-     <div class="col-divide-8">
+     <div class="col-divide-8 col-divide-sm-12">
       <div class="row-divide">
-        <div class="col-divide-3">
+        <div class="col-divide-3 mc-mb-fix">
           <div class="menu-cate" id="sidebarMenuLeftcroll">
             <?php get_template_part('sections/menu-category'); ?>
           </div>
           
         </div>
-        <div class="col-divide-6">
+        <div class="col-divide-6 col-divide-sm-12">
           <?php while(have_posts()) : the_post() ; ?>
              <h1 class="single__title title--section"><?php the_title(); ?></h1>
              <p class="date"><strong><?php the_date(); ?></strong></p>
@@ -36,9 +36,9 @@
              </div>
            <?php endwhile; ?>
         </div>
-        <div class="col-divide-3">
+        <div class="col-divide-3 mc-mb-fix">
           <div class="menu-ranking" id="sidebarMenuRankingscroll">
-            <?php get_template_part('sections/menu-ranking'); ?>
+            <?php //get_template_part('sections/menu-ranking'); ?>
           </div>   
         </div>
       </div>
@@ -54,6 +54,7 @@
      </div>
    </div>
  </section>
+<button id="back-to-top-btn"><i class="fas fa-angle-double-up"></i></button>
 <?php
  get_footer();
 ?>

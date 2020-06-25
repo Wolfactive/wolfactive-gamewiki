@@ -115,7 +115,11 @@ img{
 }
 .col-divide-2.mc_fix_col{
 	flex: 0 0 17%;
-  	max-width: 17%;
+    max-width: 17%;
+    @include MediaQuery($xs){
+        display: none;
+      
+    }
 }
 /*---Row---*/
 .row-divide {
@@ -446,7 +450,10 @@ width: 80%;
         flex: auto;
         max-width: 100%;
     }
-
+    .col-divide-md-8{
+      flex: auto;
+        max-width: 62%;
+    }
 	.col-divide-md-6 {
         flex: auto;
         max-width: 48%;
