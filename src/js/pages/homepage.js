@@ -208,7 +208,8 @@ const carsouselVideoHome =  new Siema({
   // .catch(err => console.log(err));
   fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`,{
     method: 'GET',
-    mode: 'cors',
+    mode: 'no-cors',
+    credentials: 'same-origin',
     headers: new Headers({
     "Content-Type": 'application/json; charset=utf-8'
     })
@@ -241,7 +242,8 @@ const carsouselVideoHome =  new Siema({
   })
   fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`,{
     method: 'GET',
-    mode: 'cors',
+    mode: 'no-cors',
+    credentials: 'same-origin',
     headers: new Headers({
     "Content-Type": 'application/json; charset=utf-8'
     })
