@@ -38,7 +38,7 @@
         </div>
         <div class="col-divide-3 mc-mb-fix">
           <div class="menu-ranking" id="sidebarMenuRankingscroll">
-            <?php //get_template_part('sections/menu-ranking'); ?>
+            <?php get_template_part('sections/menu-ranking'); ?>
           </div>   
         </div>
       </div>

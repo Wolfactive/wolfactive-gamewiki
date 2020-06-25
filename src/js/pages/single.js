@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-var domBody = document.getElementsByClassName("single");
-if(domBody.length !== 0 ){    
-    window.onscroll = () => {scrollFixedSideBar()};
-=======
-
 var domBody = document.getElementsByClassName("single");
 if(domBody.length != 0 ){
     const backToTopButton = document.querySelector("#back-to-top-btn");
@@ -55,7 +49,7 @@ if(domBody.length != 0 ){
         return c/2*(t*t*t + 2) + b;
     };
     window.onscroll = function() {scrollFixedSideBar()};
->>>>>>> fa6e9b948ad7bbefbc2dcf8497ae9948754bc805
+
     var sidebarLeftscroll = document.getElementById("sideBarLeftScroll");
     var sidebarRightscroll = document.getElementById("sidebarRightscroll");
     var sidebarMenuRankingscroll = document.getElementById("sidebarMenuRankingscroll");
@@ -74,7 +68,6 @@ if(domBody.length != 0 ){
             sidebarMenuLeftcroll.classList.remove("roll_sidebar-menu");
         }
     }
-<<<<<<< HEAD
     fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)
     .then(response=> response.json())
     .then((data)=>{
@@ -130,8 +123,4 @@ if(domBody.length != 0 ){
     grossingGameRanking.innerHTML = content;
     })
 }
-=======
-}else{
-    console.log('False');
-}
->>>>>>> fa6e9b948ad7bbefbc2dcf8497ae9948754bc805
+
