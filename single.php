@@ -3,7 +3,7 @@
    <?php get_template_part('sections/breadcums'); ?>
    <div class="row-divide">
      <div class="col-divide-2 mc_fix_col">
-       <div class="sidebar__left">
+       <div class="sidebar__left" id="sideBarLeftScroll">
          <div class="sidebar__left-banner">
            <a href="<?php the_field('link_banner_left_post_detail','option') ?>" target="_blank">
              <img src="<?php the_field('banner_left_post_detail','option') ?>" alt="banner-left-ads">
@@ -14,7 +14,10 @@
      <div class="col-divide-8">
       <div class="row-divide">
         <div class="col-divide-3">
-          <?php get_template_part('sections/menu-category'); ?>
+          <div class="menu-cate" id="sidebarMenuLeftcroll">
+            <?php get_template_part('sections/menu-category'); ?>
+          </div>
+          
         </div>
         <div class="col-divide-6">
           <?php while(have_posts()) : the_post() ; ?>
@@ -34,12 +37,14 @@
            <?php endwhile; ?>
         </div>
         <div class="col-divide-3">
-          <?php get_template_part('sections/menu-ranking'); ?>
+          <div class="menu-ranking" id="sidebarMenuRankingscroll">
+            <?php get_template_part('sections/menu-ranking'); ?>
+          </div>   
         </div>
       </div>
      </div>
      <div class="col-divide-2 mc_fix_col">
-       <div class="sidebar__right">
+       <div class="sidebar__right" id="sidebarRightscroll">
          <div class="sidebar__right-banner">
            <a href="<?php the_field('link_banner_right_post_detail','option') ?>" target="_blank">
              <img src="<?php the_field('banner_right_post_detail','option') ?>" alt="banner-right-ads">
