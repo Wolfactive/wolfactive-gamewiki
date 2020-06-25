@@ -40,6 +40,9 @@
             }
         }
         .youtube-col-chanel{
+            @include MediaQuery($xs){
+                margin-bottom: 20px;
+              }
             background: #fff;
             padding: 15px;
             border-radius: 4px;

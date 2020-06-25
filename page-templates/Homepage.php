@@ -8,7 +8,7 @@
      <div class="col-divide-2 mc_fix_col">
        <?php get_template_part('sections/left-sidebar')?>
      </div>
-     <div class="col-divide-8">
+     <div class="col-divide-8 col-divide-sm-12 col-divide-md-8">
        <?php get_template_part('sections/carousel') ?>
        <?php get_template_part('sections/category-list') ?>
        <?php get_template_part('sections/post-list') ?>

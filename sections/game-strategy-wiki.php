@@ -16,7 +16,7 @@
         if($list_gameStrategy->have_posts()) :
     ?>
     <?php while($list_gameStrategy->have_posts()) : $list_gameStrategy->the_post(); ?>
-        <div class="col-divide-2 mc-mg">
+        <div class="col-divide-2 mc-mg col-divide-sm-6 col-divide-md-3 ">
             <div class="images_game_str">
                 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('thumbnail')  ?></a>
             </div>

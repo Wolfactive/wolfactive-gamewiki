@@ -39,7 +39,14 @@
                     justify-content: center;
                     border-top: 1px solid #464748;
                     border-bottom: 1px solid #464748;
+                    @include MediaQuery($xs){
+                        display: unset;
+                      }
                     li{
+                        @include MediaQuery($xs){
+                            border-right: none;
+                            text-align: center;
+                          }
                         list-style-type: none;
                         padding: 0px 10px;
                         margin: 5px 0;
@@ -61,6 +68,9 @@
         .footer_small_list_menu{
             margin-left: 120px;
             padding: 20px 0;
+            @include MediaQuery($xs){
+                margin-left: 0px;
+              }
             .small_listmenu-contain{
                 width: 80%;
                 margin: 0 auto;
@@ -77,6 +87,10 @@
                         justify-content: flex-start;
                         flex-wrap: wrap;
                         li{
+                            @include MediaQuery($xs){
+                                flex: 0 0 50%;
+                                max-width: 50%;
+                              }
                             flex: 0 0 25%;
                             max-width: 24%;
                             width: 100%;

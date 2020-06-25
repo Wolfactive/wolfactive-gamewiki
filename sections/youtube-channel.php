@@ -6,7 +6,7 @@
     <div class="youtube_contain">
         <div class="row-divide mc-pd-15">
             <?php while(have_rows('youtube_channel_reapeter','option')) : the_row(); ?>
-            <div class="col-divide-4 youtube-col-chanel">
+            <div class="col-divide-4 youtube-col-chanel col-divide-sm-12 col-divide-md-12">
                 <div class="thumbnail_image">
                     <img src="<?php echo hk_get_image(get_sub_field('thumbnail_image','option'),200,200)  ?>" alt="<?php echo get_sub_field('title_youtube_channel','option'); ?>">
                 </div>

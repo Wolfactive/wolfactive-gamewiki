@@ -1,11 +1,17 @@
 .header{
   margin-bottom: 30px;
   .header__contain{
+    @include MediaQuery($xs){
+      display: unset;
+    }
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 8px 0px;
     .header__item{
+      @include MediaQuery($xs){
+        display: unset;
+      }
       display: flex;
       align-items: center;
       justify-content: flex-start;
@@ -20,6 +26,11 @@
         margin-left: 20px;
       }
       .header__form-item{
+        @include MediaQuery($xs){
+          justify-content: center;
+          margin: 10px 0;
+          padding-bottom: 25px;
+        }
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -58,6 +69,9 @@
       }
       .header__item-social{
         margin-right:20px;
+        @include MediaQuery($xs){
+          display: none;
+        }
         &>a{
           display: block;
           &>i{
