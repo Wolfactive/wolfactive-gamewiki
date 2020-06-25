@@ -1,4 +1,6 @@
 import Siema from 'siema';
+// import store from 'app-store-scraper';
+
 if(window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/"){
     /*First Carousel*/
   var protocol = window.location.protocol;
@@ -161,39 +163,102 @@ const carsouselVideoHome =  new Siema({
   })
   /*Click show post category*/
   /*Click loadmore on game wiki*/
-   var loadmoreBtnWiki = document.querySelector('.game_strategy .gtr_see_more');
-   var loadmoreBtnShow = document.querySelector('.game_strategy .game_strategy-list');
-   var offsetLoad = 12;
-   loadmoreBtnWiki.onclick = () =>{
-     var loadmoreUrl=``;
-     if(window.location.pathname === "/"){
-       loadmoreUrl =`${protocol}//${hostname}/wp-json/gamewiki-api/v1/gamewiki/offset=${offsetLoad}`;
-     }else if (window.location.pathname === "/wolfactive-gamewiki/") {
-       loadmoreUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-json/gamewiki-api/v1/gamewiki/offset=${offsetLoad}`;
-     }
-     fetch(loadmoreUrl)
-     .then(response => response.json())
-     .then((data)=>{
-       let content = ``;
-       data.forEach((item) => {
-         content += `
-         <div class="col-divide-2 mc-mg">
-             <div class="images_game_str">
-                 <a href="${item.url}">${item.thumbnail}</a>
-             </div>
-             <div class="title_game_str">
-                 <a href="${item.url}">${item.title}</a>
-             </div>
-         </div>
-         `;
-       })
-       loadmoreBtnShow.innerHTML += content;
-       if(data.length !== 12){
-         loadmoreBtnWiki.style.display = "none";
-       }else if(data.length === 12){
+  var loadmoreBtnWiki = document.querySelector('.game_strategy .gtr_see_more');
+  var loadmoreBtnShow = document.querySelector('.game_strategy .game_strategy-list');
+  var offsetLoad = 12;
+  loadmoreBtnWiki.onclick = () =>{
+    var loadmoreUrl=``;
+    if(window.location.pathname === "/"){
+      loadmoreUrl =`${protocol}//${hostname}/wp-json/gamewiki-api/v1/gamewiki/offset=${offsetLoad}`;
+    }else if (window.location.pathname === "/wolfactive-gamewiki/") {
+      loadmoreUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-json/gamewiki-api/v1/gamewiki/offset=${offsetLoad}`;
+    }
+    fetch(loadmoreUrl)
+    .then(response => response.json())
+    .then((data)=>{
+      let content = ``;
+      data.forEach((item) => {
+        content += `
+        <div class="col-divide-2 mc-mg">
+            <div class="images_game_str">
+                <a href="${item.url}">${item.thumbnail}</a>
+            </div>
+            <div class="title_game_str">
+                <a href="${item.url}">${item.title}</a>
+            </div>
+        </div>
+        `;
+      })
+      loadmoreBtnShow.innerHTML += content;
+      if(data.length !== 12){
+        loadmoreBtnWiki.style.display = "none";
+      }else if(data.length === 12){
           offsetLoad = offsetLoad + 11;
-       }
-     })
-   }
+      }
+    })
+  }
   /*Click loadmore on game wiki*/
+  /*Render api app ranking*/
+  // store.list({
+  //   collection: store.collection.TOP_FREE_IPAD,
+  //   category: store.category.GAMES_ACTION,
+  //   num: 2
+  // })
+  // .then((data) => console.log(data))
+  // .catch(err => console.log(err));
+  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)
+  .then(response=> response.json())
+  .then((data)=>{
+    console.log(data.feed.entry);
+    let content = ``;
+    let freeGameRanking = document.querySelector('#freeGameRanking');
+    data.feed.entry.forEach((item)=>{      
+      content += `
+      <div class="app-ranking__item">
+        <div class="app-ranking__item-contain">
+          <div class="app-ranking__item-img">
+            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
+          </div>
+          <div class="app-ranking__description">
+            <p class="title--item">${item.title.label}</p>          
+          </div>
+        </div>
+        <div class="app-ranking__item-btn">
+          <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-cloud-download-alt"></i>
+          </a>
+        </div>
+      </div>
+      `;
+    })
+    freeGameRanking.innerHTML = content;
+  })
+  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)
+  .then(response=> response.json())
+  .then((data)=>{
+    console.log(data.feed.entry);
+    let content = ``;
+    let grossingGameRanking = document.querySelector('#grossingGameRanking');
+    data.feed.entry.forEach((item)=>{      
+      content += `
+      <div class="app-ranking__item">
+        <div class="app-ranking__item-contain">
+          <div class="app-ranking__item-img">
+            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
+          </div>
+          <div class="app-ranking__description">
+            <p class="title--item">${item.title.label}</p>          
+          </div>
+        </div>
+        <div class="app-ranking__item-btn">
+          <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-cloud-download-alt"></i>
+          </a>
+        </div>
+      </div>
+      `;
+    })
+    grossingGameRanking.innerHTML = content;
+  })
+  /*Render api app ranking*/
 }

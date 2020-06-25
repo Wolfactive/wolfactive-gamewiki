@@ -1,0 +1,62 @@
+.app-ranking {
+    .row-divide{
+        background-color: #f9f9f9;
+        padding: 7px 12px 4px;
+        border-radius: 4px;;
+    }
+    &__list {
+        padding:10px;
+        margin: 0 0 28px;  
+    }
+    &__list-contain {
+        background-color: #fff;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        .app-ranking__item{
+            display: flex;
+            align-items:center;
+            justify-content:space-between;
+            padding: 10px;
+            background-attachment: fixed;
+            border-top: 1px solid #e1f0fb;
+            height: 81px;
+            overflow: hidden;
+            .app-ranking__item-contain{
+                display: flex;
+                align-items:center;
+                justify-content:flex-start;
+                width:80%;
+                img{    
+                    display: block;
+                    object-fit: cover;
+                    width: 60px;
+                    border-radius: 8px;
+                }   
+                .title--item{
+                    font-size:14px;
+                    margin-left: 10px;
+                }
+            }
+            .app-ranking__item-btn{
+                a{
+                    color:#f46631;
+                    transition:all 0.25s linear;
+                    &:hover{
+                        color:#2196f3;
+                    }
+                }
+            }
+            &:hover{
+                .app-ranking__item-btn{
+                    a{                      
+                        color:#2196f3;                        
+                    }
+                }
+            }
+        }
+    }
+    &__list-title {
+    }
+    &__title {
+    }
+}

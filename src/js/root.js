@@ -1,5 +1,4 @@
 import LazyLoad from "vanilla-lazyload";
-import Cookies from 'js-cookie';
 import './pages/homepage';
 import './pages/single';
 import 'shareon'

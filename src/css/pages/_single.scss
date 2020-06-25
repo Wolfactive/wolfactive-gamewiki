@@ -144,4 +144,18 @@
     top: 0;
     width: 100%; 
   }
+  .app-ranking__list{
+    padding:0px;
+    .title--item{
+      font-size:15px;
+    }
+    .app-ranking__item{
+      .app-ranking__item-contain{
+        display:flex;
+        .app-ranking__description{          
+          display:none;
+        }
+      }
+    }
+  }
 }

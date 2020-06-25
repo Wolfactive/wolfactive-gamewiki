@@ -25,7 +25,14 @@
         z-index: 30;
         &>h3{
           color: #fff;
-          font-size: 15px;
+          font-size: 14px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          line-height: 1.3;
+          max-height: 61px;
         }
       }
       &:hover{
@@ -35,18 +42,21 @@
       }
     }
   }
-  .postList__btn{
-    position: absolute;
-    top: 0px;
-    left: 1.3%;
-    height: 100%;
-    width:  97.5%;
-    display: flex;
-    justify-content: space-between;
+  .postList__btn{    
     button.btn{
       background: #21282e00;
       outline-color: transparent;
       color: #fff;
+      position: absolute;         
+      top: 50%;
+      transform: translateY(-50%);
+      height: 100%;
+      &:nth-child(1){
+        left: 15px;
+      }
+      &:nth-child(2){
+        right: 15px;
+      }
       &:focus,&:hover{
        background: #21282e7a;
        outline: unset;

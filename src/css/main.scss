@@ -2,12 +2,13 @@
 @import'./Variables/colors';
 @import'./Variables/fonts';
 @import'./Variables/metrics';
-@import'./Base/reset';
 @import'./helper/mixin';
+@import'./Base/reset';
 @import'./header';
 @import'./carousel';
 @import './breadcums';
 @import './category-list';
+@import './app-ranking';
 @import './post-list';
 @import './game-strategy-wiki';
 @import './latest-videos';

@@ -2,6 +2,7 @@
   .categoryList__contain{
     display: flex;  
     margin-bottom: 30px;
+    flex-flow: wrap;
     .term__link{
       padding: 5px 10px;
       border-radius: 5px;

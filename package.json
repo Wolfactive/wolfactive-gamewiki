@@ -33,7 +33,7 @@
     "yargs": "^15.3.1"
   },
   "dependencies": {
-    "js-cookie": "^2.2.1",
+    "app-store-scraper": "^0.16.3",
     "shareon": "^1.1.2",
     "siema": "^1.5.1",
     "vanilla-lazyload": "^16.1.0"
