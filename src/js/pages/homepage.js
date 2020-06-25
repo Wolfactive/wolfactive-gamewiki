@@ -1,5 +1,5 @@
 import Siema from 'siema';
-// import store from 'app-store-scraper';
+import axios from 'axios';
 
 if(window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/"){
     /*First Carousel*/
@@ -206,13 +206,11 @@ const carsouselVideoHome =  new Siema({
   // })
   // .then((data) => console.log(data))
   // .catch(err => console.log(err));
-  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)
-  .then(response=> response.json())
-  .then((data)=>{
-    console.log(data.feed.entry);
+  axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)  
+  .then((res)=>{   
     let content = ``;
     let freeGameRanking = document.querySelector('#freeGameRanking');
-    data.feed.entry.forEach((item)=>{      
+    res.data.feed.entry.forEach((item)=>{      
       content += `
       <div class="app-ranking__item">
         <div class="app-ranking__item-contain">
@@ -233,13 +231,11 @@ const carsouselVideoHome =  new Siema({
     })
     freeGameRanking.innerHTML = content;
   })
-  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)
-  .then(response=> response.json())
-  .then((data)=>{
-    console.log(data.feed.entry);
+  axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)  
+  .then((res)=>{    
     let content = ``;
     let grossingGameRanking = document.querySelector('#grossingGameRanking');
-    data.feed.entry.forEach((item)=>{      
+    res.data.feed.entry.forEach((item)=>{      
       content += `
       <div class="app-ranking__item">
         <div class="app-ranking__item-contain">

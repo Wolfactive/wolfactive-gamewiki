@@ -1,4 +1,5 @@
 var domBody = document.getElementsByClassName("single");
+import axios from 'axios';
 if(domBody.length != 0 ){
     const backToTopButton = document.querySelector("#back-to-top-btn");
 
@@ -68,13 +69,11 @@ if(domBody.length != 0 ){
             sidebarMenuLeftcroll.classList.remove("roll_sidebar-menu");
         }
     }
-    fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)
-    .then(response=> response.json())
-    .then((data)=>{
-    console.log(data.feed.entry);
+    axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)    
+    .then((res)=>{    
     let content = ``;
     let freeGameRanking = document.querySelector('#freeGameRanking');
-    data.feed.entry.forEach((item)=>{      
+    res.data.feed.entry.forEach((item)=>{      
         content += `
         <div class="app-ranking__item">
         <div class="app-ranking__item-contain">
@@ -95,13 +94,11 @@ if(domBody.length != 0 ){
     })
     freeGameRanking.innerHTML = content;
     })
-    fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)
-    .then(response=> response.json())
-    .then((data)=>{
-    console.log(data.feed.entry);
+    axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)    
+    .then((res)=>{    
     let content = ``;
     let grossingGameRanking = document.querySelector('#grossingGameRanking');
-    data.feed.entry.forEach((item)=>{      
+    res.data.feed.entry.forEach((item)=>{      
         content += `
         <div class="app-ranking__item">
         <div class="app-ranking__item-contain">
