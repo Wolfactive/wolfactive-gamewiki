@@ -206,14 +206,7 @@ const carsouselVideoHome =  new Siema({
   // })
   // .then((data) => console.log(data))
   // .catch(err => console.log(err));
-  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`,{
-    method: 'GET',
-    mode: 'no-cors',
-    credentials: 'same-origin',
-    headers: new Headers({
-    "Content-Type": 'application/json; charset=utf-8'
-    })
-})
+  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)
   .then(response=> response.json())
   .then((data)=>{
     console.log(data.feed.entry);
@@ -240,14 +233,7 @@ const carsouselVideoHome =  new Siema({
     })
     freeGameRanking.innerHTML = content;
   })
-  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`,{
-    method: 'GET',
-    mode: 'no-cors',
-    credentials: 'same-origin',
-    headers: new Headers({
-    "Content-Type": 'application/json; charset=utf-8'
-    })
-})
+  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)
   .then(response=> response.json())
   .then((data)=>{
     console.log(data.feed.entry);
