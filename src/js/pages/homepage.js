@@ -203,32 +203,53 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
           `;
         })
         categoryShow.innerHTML = content;
-        /*Post Carousel*/
-        var carsouselPostHomeBtn = document.querySelector('.postList .postList__btn');
-        var caroselPostList = document.querySelectorAll('.postList .postList__item');
-        const carsouselPostHome =  new Siema({
-          selector: '.postList__contain',
-          duration: 200,
-          easing: 'ease-out',
-          perPage: 4,
-          startIndex: 0,
-          draggable: true,
-          multipleDrag: true,
-          threshold: 20,
-          loop: false,
-          rtl: false,
-          onInit: () => {},
-          onChange: () => {},
-          });
-        if(caroselPostList.length > 4){
-          carsouselPostHomeBtn.innerHTML = `
-          <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
-          <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
-          `;
-          document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
-          document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+        if(!mobileCheck){
+          const carsouselPostHome =  new Siema({
+            selector: '.postList__contain',
+            duration: 200,
+            easing: 'ease-out',
+            perPage: 4,
+            startIndex: 0,
+            draggable: true,
+            multipleDrag: true,
+            threshold: 20,
+            loop: false,
+            rtl: false,
+            onInit: () => {},
+            onChange: () => {},
+            });     
+            if(caroselPostList.length > 4){
+              carsouselPostHomeBtn.innerHTML = `
+              <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
+              <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
+              `;
+              document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
+              document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+            } 
+        } else if (mobileCheck){
+          const carsouselPostHome =  new Siema({
+            selector: '.postList__contain',
+            duration: 200,
+            easing: 'ease-out',
+            perPage: 1,
+            startIndex: 0,
+            draggable: true,
+            multipleDrag: true,
+            threshold: 20,
+            loop: false,
+            rtl: false,
+            onInit: () => {},
+            onChange: () => {},
+            }); 
+            if(caroselPostList.length > 4){
+              carsouselPostHomeBtn.innerHTML = `
+              <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
+              <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
+              `;
+              document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
+              document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+            }     
         }
-        /*Post Carousel*/
       })
       .catch(err => console.log(err));
     }
