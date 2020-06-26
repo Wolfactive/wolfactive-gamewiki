@@ -11,15 +11,15 @@
          </div>
        </div>
      </div>
-     <div class="col-divide-8 col-divide-sm-12">
+     <div class="col-divide-8 col-divide-md-12">
       <div class="row-divide">
-        <div class="col-divide-3 mc-mb-fix">
+        <div class="col-divide-3 mc-mb-fix dp--none">
           <div class="menu-cate" id="sidebarMenuLeftcroll">
             <?php get_template_part('sections/menu-category'); ?>
           </div>
           
         </div>
-        <div class="col-divide-6 col-divide-sm-12">
+        <div class="col-divide-6 col-divide-md-12">
           <?php while(have_posts()) : the_post() ; ?>
              <h1 class="single__title title--section"><?php the_title(); ?></h1>
              <p class="date"><strong><?php the_date(); ?></strong></p>
@@ -36,7 +36,7 @@
              </div>
            <?php endwhile; ?>
         </div>
-        <div class="col-divide-3 mc-mb-fix">
+        <div class="col-divide-3 mc-mb-fix dp--none">
           <div class="menu-ranking" id="sidebarMenuRankingscroll">
             <?php get_template_part('sections/menu-ranking'); ?>
           </div>   
