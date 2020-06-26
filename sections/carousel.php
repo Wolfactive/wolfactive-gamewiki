@@ -1,6 +1,6 @@
 <div class="carousel">
   <div class="carousel__contain row-divide">
-  <div class="carousel__big col-divide-8 col-divide-md-12">
+  <div class="carousel__big col-divide-8 col-divide-md-12"> 
     <div class="carousel__contain-big" id="carouselContainBig">
           <!-- get post -->
             <?php $getposts = new WP_query();
