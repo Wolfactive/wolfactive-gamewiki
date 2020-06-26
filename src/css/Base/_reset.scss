@@ -120,7 +120,7 @@ img{
 .col-divide-2.mc_fix_col{
 	flex: 0 0 17%;
     max-width: 17%;
-    @include MediaQuery($lg){
+    @include MediaQuery($md){
         display: none;
       
     }
