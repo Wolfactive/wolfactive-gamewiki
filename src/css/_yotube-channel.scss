@@ -25,6 +25,9 @@
                 padding: 6px 15px;
                 display: flex;
                 align-items: center;
+                @include MediaQuery($lg){
+                    display: block;
+                }
                 i{
                     padding-right: 8px;
                     font-size: 20px;
@@ -33,10 +36,12 @@
             .twitter_style{
                 color: #fff;
                 background: #2ba7e0;
+                display: block;
             }
             .faceb_style{
                 color: #fff;
                 background: #df2d27;
+                display: block;
             }
         }
         .youtube-col-chanel{
