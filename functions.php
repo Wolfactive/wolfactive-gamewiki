@@ -14,7 +14,8 @@ $file_includes = [
     'includes/acf-options.php',                         // ACF Option page
     'includes/resize.php',
     'includes/customizer.php',
-    'includes/api.php'
+    'includes/api.php',
+    'includes/request-app-ranking.php'
 ];
 
 foreach ($file_includes as $file) {

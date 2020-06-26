@@ -16,6 +16,9 @@
       align-items: center;
       justify-content: flex-start;
       &>.logo{
+        @include MediaQuery($xs){
+          padding: 20px 0px;
+        }
         img{
           display: block;
         }

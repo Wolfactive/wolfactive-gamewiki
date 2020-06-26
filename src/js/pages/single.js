@@ -1,5 +1,4 @@
 var domBody = document.getElementsByClassName("single");
-import axios from 'axios';
 if(domBody.length != 0 ){
     const backToTopButton = document.querySelector("#back-to-top-btn");
 
@@ -68,56 +67,6 @@ if(domBody.length != 0 ){
             sidebarMenuRankingscroll.classList.remove("roll_sidebar-menu");
             sidebarMenuLeftcroll.classList.remove("roll_sidebar-menu");
         }
-    }
-    axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)    
-    .then((res)=>{    
-    let content = ``;
-    let freeGameRanking = document.querySelector('#freeGameRanking');
-    res.data.feed.entry.forEach((item)=>{      
-        content += `
-        <div class="app-ranking__item">
-        <div class="app-ranking__item-contain">
-            <div class="app-ranking__item-img">
-            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
-            </div>
-            <div class="app-ranking__description">
-            <p class="title--item">${item.title.label}</p>          
-            </div>
-        </div>
-        <div class="app-ranking__item-btn">
-            <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-cloud-download-alt"></i>
-            </a>
-        </div>
-        </div>
-        `;
-    })
-    freeGameRanking.innerHTML = content;
-    })
-    axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)    
-    .then((res)=>{    
-    let content = ``;
-    let grossingGameRanking = document.querySelector('#grossingGameRanking');
-    res.data.feed.entry.forEach((item)=>{      
-        content += `
-        <div class="app-ranking__item">
-        <div class="app-ranking__item-contain">
-            <div class="app-ranking__item-img">
-            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
-            </div>
-            <div class="app-ranking__description">
-            <p class="title--item">${item.title.label}</p>          
-            </div>
-        </div>
-        <div class="app-ranking__item-btn">
-            <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-cloud-download-alt"></i>
-            </a>
-        </div>
-        </div>
-        `;
-    })
-    grossingGameRanking.innerHTML = content;
-    })
+    }    
 }
 

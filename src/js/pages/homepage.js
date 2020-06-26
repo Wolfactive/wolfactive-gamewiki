@@ -1,6 +1,5 @@
 import Siema from 'siema';
-import axios from 'axios';
-
+import {mobileAndTabletCheck} from '../partten/mobileAndTabletCheck';
 if(window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/"){
     /*First Carousel*/
   var protocol = window.location.protocol;
@@ -31,75 +30,148 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
   }
     /*First Carousel*/
     /*Carousel Video*/
-var carouselVideoHomeItem = document.querySelectorAll('#latestVideo .slider_video .images_latest_video');
-var carouselVideoHomeDot = document.querySelector('#latestVideo .slider_video-dot');
-var carouselVideoHomeDotPage = Math.ceil(carouselVideoHomeItem.length/3);
-const carsouselVideoHome =  new Siema({
-  selector: '.slider_video',
-  duration: 200,
-  easing: 'ease-out',
-  perPage: 3,
-  startIndex: 0,
-  draggable: true,
-  multipleDrag: true,
-  threshold: 20,
-  loop: false,
-  rtl: false,
-  onInit: () => {},
-  onChange: () => {},
-  });
-  if(carouselVideoHomeDotPage >1){
-    let content =``;
-    for(let i = 1; i <= carouselVideoHomeDotPage; i++){
-      content += `<span class="d--inline--block mxr-5 dotVideo"><i class="fas fa-circle"></i></span>`;
-    }
-    carouselVideoHomeDot.innerHTML = content;
-    var dotVideo =document.querySelectorAll('.dotVideo');
-    dotVideo[0].classList.add('active');
-    dotVideo.forEach((item,i)=>{
-      item.addEventListener('click', () => {
-        if(i!==0){
-          dotVideo.forEach((item)=>{
-            item.classList.remove('active');
-          })
-          item.classList.add('active');
-          carsouselVideoHome.goTo((i+1)*3-2);
-        }else{
-          dotVideo.forEach((item)=>{
-            item.classList.remove('active');
-          })
-          item.classList.add('active');
-          carsouselVideoHome.goTo(i);
-        }
+    var mobileCheck = mobileAndTabletCheck();
+    if(mobileCheck === false){
+    var carouselVideoHomeItem = document.querySelectorAll('#latestVideo .slider_video .images_latest_video');
+    var carouselVideoHomeDot = document.querySelector('#latestVideo .slider_video-dot');
+    var carouselVideoHomeDotPage = Math.ceil(carouselVideoHomeItem.length/3);
+    const carsouselVideoHome =  new Siema({
+      selector: '.slider_video',
+      duration: 200,
+      easing: 'ease-out',
+      perPage: 3,
+      startIndex: 0,
+      draggable: true,
+      multipleDrag: true,
+      threshold: 20,
+      loop: false,
+      rtl: false,
+      onInit: () => {},
+      onChange: () => {},
       });
-    })
-  }
+      if(carouselVideoHomeDotPage >1){
+        let content =``;
+        for(let i = 1; i <= carouselVideoHomeDotPage; i++){
+          content += `<span class="d--inline--block mxr-5 dotVideo"><i class="fas fa-circle"></i></span>`;
+        }
+        carouselVideoHomeDot.innerHTML = content;
+        var dotVideo =document.querySelectorAll('.dotVideo');
+        dotVideo[0].classList.add('active');
+        dotVideo.forEach((item,i)=>{
+          item.addEventListener('click', () => {
+            if(i!==0){
+              dotVideo.forEach((item)=>{
+                item.classList.remove('active');
+              })
+              item.classList.add('active');
+              carsouselVideoHome.goTo((i+1)*3-2);
+            }else{
+              dotVideo.forEach((item)=>{
+                item.classList.remove('active');
+              })
+              item.classList.add('active');
+              carsouselVideoHome.goTo(i);
+            }
+          });
+        })
+      }
+    }else if(mobileCheck === true){
+    var carouselVideoHomeItem = document.querySelectorAll('#latestVideo .slider_video .images_latest_video');
+    var carouselVideoHomeDot = document.querySelector('#latestVideo .slider_video-dot');
+    var carouselVideoHomeDotPage = Math.ceil(carouselVideoHomeItem.length/1);
+    const carsouselVideoHome =  new Siema({
+      selector: '.slider_video',
+      duration: 200,
+      easing: 'ease-out',
+      perPage: 1,
+      startIndex: 0,
+      draggable: true,
+      multipleDrag: true,
+      threshold: 20,
+      loop: false,
+      rtl: false,
+      onInit: () => {},
+      onChange: () => {},
+      });
+      if(carouselVideoHomeDotPage >1){
+        let content =``;
+        for(let i = 1; i <= carouselVideoHomeDotPage; i++){
+          content += `<span class="d--inline--block mxr-5 dotVideo"><i class="fas fa-circle"></i></span>`;
+        }
+        carouselVideoHomeDot.innerHTML = content;
+        var dotVideo =document.querySelectorAll('.dotVideo');
+        dotVideo[0].classList.add('active');
+        dotVideo.forEach((item,i)=>{
+          item.addEventListener('click', () => {
+            if(i!==0){
+              dotVideo.forEach((item)=>{
+                item.classList.remove('active');
+              })
+              item.classList.add('active');
+              carsouselVideoHome.goTo((i+1)*3-2);
+            }else{
+              dotVideo.forEach((item)=>{
+                item.classList.remove('active');
+              })
+              item.classList.add('active');
+              carsouselVideoHome.goTo(i);
+            }
+          });
+        })
+      }
+    }
   /*Carousel Video*/
   /*Post Carousel*/
   var carsouselPostHomeBtn = document.querySelector('.postList .postList__btn');
   var caroselPostList = document.querySelectorAll('.postList .postList__item');
-  const carsouselPostHome =  new Siema({
-    selector: '.postList__contain',
-    duration: 200,
-    easing: 'ease-out',
-    perPage: 4,
-    startIndex: 0,
-    draggable: true,
-    multipleDrag: true,
-    threshold: 20,
-    loop: false,
-    rtl: false,
-    onInit: () => {},
-    onChange: () => {},
-    });
-  if(caroselPostList.length > 4){
-    carsouselPostHomeBtn.innerHTML = `
-    <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
-    <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
-    `;
-    document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
-    document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+  if(!mobileCheck){
+    const carsouselPostHome =  new Siema({
+      selector: '.postList__contain',
+      duration: 200,
+      easing: 'ease-out',
+      perPage: 4,
+      startIndex: 0,
+      draggable: true,
+      multipleDrag: true,
+      threshold: 20,
+      loop: false,
+      rtl: false,
+      onInit: () => {},
+      onChange: () => {},
+      });     
+      if(caroselPostList.length > 4){
+        carsouselPostHomeBtn.innerHTML = `
+        <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
+        <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
+        `;
+        document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
+        document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+      } 
+  } else if (mobileCheck){
+    const carsouselPostHome =  new Siema({
+      selector: '.postList__contain',
+      duration: 200,
+      easing: 'ease-out',
+      perPage: 1,
+      startIndex: 0,
+      draggable: true,
+      multipleDrag: true,
+      threshold: 20,
+      loop: false,
+      rtl: false,
+      onInit: () => {},
+      onChange: () => {},
+      }); 
+      if(caroselPostList.length > 4){
+        carsouselPostHomeBtn.innerHTML = `
+        <button class="btn" aria-label="post-list-prev"><i class="fas fa-chevron-left icon"></i></button>
+        <button class="btn" aria-label="post-list-next"><i class="fas fa-chevron-right icon"></i></button>
+        `;
+        document.querySelector('button[aria-label="post-list-next"]').addEventListener('click', () => carsouselPostHome.prev());
+        document.querySelector('button[aria-label="post-list-prev"]').addEventListener('click', () => carsouselPostHome.next());
+      }     
   }
+  
   /*Post Carousel*/
   /*Clik show post category*/
   var categoryList = document.querySelectorAll('.categoryList .categoryList__contain .term__link');
@@ -179,7 +251,7 @@ const carsouselVideoHome =  new Siema({
       let content = ``;
       data.forEach((item) => {
         content += `
-        <div class="col-divide-2 mc-mg">
+        <div class="col-divide-2 mc-mg col-divide-sm-6 col-divide-md-3">
             <div class="images_game_str">
                 <a href="${item.url}">${item.thumbnail}</a>
             </div>
@@ -197,64 +269,6 @@ const carsouselVideoHome =  new Siema({
       }
     })
   }
-  /*Click loadmore on game wiki*/
-  /*Render api app ranking*/
-  // store.list({
-  //   collection: store.collection.TOP_FREE_IPAD,
-  //   category: store.category.GAMES_ACTION,
-  //   num: 2
-  // })
-  // .then((data) => console.log(data))
-  // .catch(err => console.log(err));
-  axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)  
-  .then((res)=>{   
-    let content = ``;
-    let freeGameRanking = document.querySelector('#freeGameRanking');
-    res.data.feed.entry.forEach((item)=>{      
-      content += `
-      <div class="app-ranking__item">
-        <div class="app-ranking__item-contain">
-          <div class="app-ranking__item-img">
-            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
-          </div>
-          <div class="app-ranking__description">
-            <p class="title--item">${item.title.label}</p>          
-          </div>
-        </div>
-        <div class="app-ranking__item-btn">
-          <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-cloud-download-alt"></i>
-          </a>
-        </div>
-      </div>
-      `;
-    })
-    freeGameRanking.innerHTML = content;
-  })
-  axios.get(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)  
-  .then((res)=>{    
-    let content = ``;
-    let grossingGameRanking = document.querySelector('#grossingGameRanking');
-    res.data.feed.entry.forEach((item)=>{      
-      content += `
-      <div class="app-ranking__item">
-        <div class="app-ranking__item-contain">
-          <div class="app-ranking__item-img">
-            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
-          </div>
-          <div class="app-ranking__description">
-            <p class="title--item">${item.title.label}</p>          
-          </div>
-        </div>
-        <div class="app-ranking__item-btn">
-          <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-cloud-download-alt"></i>
-          </a>
-        </div>
-      </div>
-      `;
-    })
-    grossingGameRanking.innerHTML = content;
-  })
+  /*Click loadmore on game wiki*/  
   /*Render api app ranking*/
 }
