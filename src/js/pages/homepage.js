@@ -337,7 +337,7 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
   })
   var grossingAppUrl ="";
   if(window.location.pathname === "/"){
-    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
+    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
   }else if (window.location.pathname === "/wolfactive-gamewiki/") {
     grossingAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
   }

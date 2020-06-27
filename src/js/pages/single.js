@@ -117,7 +117,7 @@ if(domBody.length != 0 ){
   if (protocol === "http:" && hostname === "localhost") {
     grossingAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
   }else if(protocol === "https:" || protocol === "http:"){
-    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
+    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
   } 
   fetch(grossingAppUrl)
   .then(response=> response.json())
