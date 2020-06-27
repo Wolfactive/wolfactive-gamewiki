@@ -290,75 +290,7 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
       }
     })
   }
-  var freeAppUrl ="";
-  if(window.location.pathname === "/"){
-    freeAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
-  }else if (window.location.pathname === "/wolfactive-gamewiki/") {
-    freeAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
-  }
-  fetch(freeAppUrl)
-  .then(response=> response.json())
-  .then((data)=>{
-    console.log(data);
-    let content = ``;
-    let freeGameRanking = document.querySelector('#freeGameRanking');
-    data.content.forEach((item,i)=>{  
-      if(i < 5){
-        content += `
-        <div class="app-ranking__item">
-          <div class="app-ranking__item-contain">
-            <div class="app-ranking__item-img">
-              <img src="${item.icon}" alt="${item.slug}" />
-            </div>
-            <div class="app-ranking__description">
-              <p class="title--item">${item.title}</p>          
-            </div>
-          </div>
-          <div class="app-ranking__item-btn">
-            <a href="https://apps.apple.com/vn/app/${item.slug}/id${item.id}" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-cloud-download-alt"></i>
-            </a>
-          </div>
-        </div>
-        `;
-      }     
-    })
-    freeGameRanking.innerHTML = content;
-  })
-  var grossingAppUrl ="";
-  if(window.location.pathname === "/"){
-    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
-  }else if (window.location.pathname === "/wolfactive-gamewiki/") {
-    grossingAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
-  }
-  fetch(grossingAppUrl)
-  .then(response=> response.json())
-  .then((data)=>{
-    let content = ``;
-    let grossingGameRanking = document.querySelector('#grossingGameRanking');
-    data.content.forEach((item,i)=>{  
-      if(i < 5){
-        content += `
-        <div class="app-ranking__item">
-          <div class="app-ranking__item-contain">
-            <div class="app-ranking__item-img">
-              <img src="${item.icon}" alt="${item.slug}" />
-            </div>
-            <div class="app-ranking__description">
-              <p class="title--item">${item.title}</p>          
-            </div>
-          </div>
-          <div class="app-ranking__item-btn">
-            <a href="https://apps.apple.com/vn/app/${item.slug}/id${item.id}" target="_blank" rel="noopener noreferrer">
-              <i class="fas fa-cloud-download-alt"></i>
-            </a>
-          </div>
-        </div>
-        `;
-      }     
-    })
-    grossingGameRanking.innerHTML = content;
-  })
+  
   /*Click loadmore on game wiki*/  
   /*Render api app ranking*/
 }

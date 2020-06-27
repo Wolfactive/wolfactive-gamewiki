@@ -228,7 +228,15 @@ img{
 .rotate--90{
 	transform: rotate(90deg);
 }
-
+.app--star{
+  margin-left: 15px;
+  i{
+    color: #f46631;
+    &.left{
+      color:#21282e8c;
+    }
+  }
+}
 /*---Background---*/
 .main--background{
 	background: var(--primary-bg-color);
