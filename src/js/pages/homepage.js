@@ -290,57 +290,72 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
       }
     })
   }
-  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topfreeapplications/genre=6014/limit=5/json?s=143471`)
+  var freeAppUrl ="";
+  if(window.location.pathname === "/"){
+    freeAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
+  }else if (window.location.pathname === "/wolfactive-gamewiki/") {
+    freeAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
+  }
+  fetch(freeAppUrl)
   .then(response=> response.json())
   .then((data)=>{
-    console.log(data.feed.entry);
+    console.log(data);
     let content = ``;
     let freeGameRanking = document.querySelector('#freeGameRanking');
-    data.feed.entry.forEach((item)=>{      
-      content += `
-      <div class="app-ranking__item">
-        <div class="app-ranking__item-contain">
-          <div class="app-ranking__item-img">
-            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
+    data.content.forEach((item,i)=>{  
+      if(i < 5){
+        content += `
+        <div class="app-ranking__item">
+          <div class="app-ranking__item-contain">
+            <div class="app-ranking__item-img">
+              <img src="${item.icon}" alt="${item.slug}" />
+            </div>
+            <div class="app-ranking__description">
+              <p class="title--item">${item.title}</p>          
+            </div>
           </div>
-          <div class="app-ranking__description">
-            <p class="title--item">${item.title.label}</p>          
+          <div class="app-ranking__item-btn">
+            <a href="https://apps.apple.com/vn/app/${item.slug}/id${item.id}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-cloud-download-alt"></i>
+            </a>
           </div>
         </div>
-        <div class="app-ranking__item-btn">
-          <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-cloud-download-alt"></i>
-          </a>
-        </div>
-      </div>
-      `;
+        `;
+      }     
     })
     freeGameRanking.innerHTML = content;
   })
-  fetch(`http://ax.itunes.apple.com/WebObjects/MZStoreServices.woa/ws/RSS/topgrossingapplications/genre=6014/limit=5/json?s=143471`)
+  var grossingAppUrl ="";
+  if(window.location.pathname === "/"){
+    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
+  }else if (window.location.pathname === "/wolfactive-gamewiki/") {
+    grossingAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
+  }
+  fetch(grossingAppUrl)
   .then(response=> response.json())
   .then((data)=>{
-    console.log(data.feed.entry);
     let content = ``;
     let grossingGameRanking = document.querySelector('#grossingGameRanking');
-    data.feed.entry.forEach((item)=>{      
-      content += `
-      <div class="app-ranking__item">
-        <div class="app-ranking__item-contain">
-          <div class="app-ranking__item-img">
-            <img src="${item["im:image"][0].label}" alt="${item["im:name"].label}" />
+    data.content.forEach((item,i)=>{  
+      if(i < 5){
+        content += `
+        <div class="app-ranking__item">
+          <div class="app-ranking__item-contain">
+            <div class="app-ranking__item-img">
+              <img src="${item.icon}" alt="${item.slug}" />
+            </div>
+            <div class="app-ranking__description">
+              <p class="title--item">${item.title}</p>          
+            </div>
           </div>
-          <div class="app-ranking__description">
-            <p class="title--item">${item.title.label}</p>          
+          <div class="app-ranking__item-btn">
+            <a href="https://apps.apple.com/vn/app/${item.slug}/id${item.id}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-cloud-download-alt"></i>
+            </a>
           </div>
         </div>
-        <div class="app-ranking__item-btn">
-          <a href="${item.id.label}" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-cloud-download-alt"></i>
-          </a>
-        </div>
-      </div>
-      `;
+        `;
+      }     
     })
     grossingGameRanking.innerHTML = content;
   })
