@@ -1,6 +1,7 @@
 import Siema from 'siema';
 import {mobileAndTabletCheck} from '../partten/mobileAndTabletCheck';
-if(window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/"){
+var  homepage = document.querySelector('body.home');
+if((window.location.pathname === "/" || window.location.pathname === "/wolfactive-gamewiki/") && homepage){
     /*First Carousel*/
   var protocol = window.location.protocol;
   var hostname = window.location.hostname;
@@ -296,7 +297,7 @@ if(window.location.pathname === "/" || window.location.pathname === "/wolfactive
   }else if (window.location.pathname === "/wolfactive-gamewiki/") {
     freeAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
   }
-  fetch(freeAppUrl)
+  fetch(freeAppUrl) 
   .then(response=> response.json())
   .then((data)=>{
     console.log(data);
