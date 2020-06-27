@@ -1,6 +1,8 @@
 var domBody = document.getElementsByClassName("single");
 if(domBody.length != 0 ){
-    const backToTopButton = document.querySelector("#back-to-top-btn");   
+    const backToTopButton = document.querySelector("#back-to-top-btn");
+    var protocol = window.location.protocol;
+    var hostname = window.location.hostname;
     window.addEventListener("scroll", scrollFunction);
 
     function scrollFunction() {
@@ -21,7 +23,7 @@ if(domBody.length != 0 ){
         }
     }
     }
-    
+
     backToTopButton.addEventListener("click", smoothScrollBackToTop);
 
     function smoothScrollBackToTop() {
@@ -66,6 +68,94 @@ if(domBody.length != 0 ){
             sidebarMenuRankingscroll.classList.remove("roll_sidebar-menu");
             sidebarMenuLeftcroll.classList.remove("roll_sidebar-menu");
         }
-    }      
+    }  
+    var freeAppUrl ="";
+    if (protocol === "http:" && hostname === "localhost") {
+        freeAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/free-data.json`; }
+    else if(protocol === "https:" || protocol === "http:"){
+        freeAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;  } 
+  fetch(freeAppUrl)
+  .then(response=> response.json())
+  .then((data)=>{
+    console.log(data);
+    let content = ``;
+    let freeGameRanking = document.querySelector('#freeGameRanking');
+    data.content.forEach((item,i)=>{  
+      if(i < 5){
+        let ratingCount = Math.round(item.rating);
+        let ratingLeft = 5 - Math.round(item.rating);
+        let rating ="";
+        for(i=0; i< ratingCount ; i++){
+          rating += `<i class="fas fa-star"></i>`;
+        }
+        for(i=0; i< ratingLeft ; i++){
+          rating += `<i class="fas fa-star left"></i>`;
+        }
+        content += `
+        <div class="app-ranking__item">
+          <div class="app-ranking__item-contain">
+            <div class="app-ranking__item-img">
+              <img src="${item.icon}" alt="${item.slug}" />
+            </div>
+            <div class="app-ranking__description">
+              <p class="title--item">${item.title}</p> 
+              <p class="app--star">${rating}</p>    
+            </div>
+          </div>
+          <div class="app-ranking__item-btn">
+            <a href="https://apps.apple.com/vn/app/${item.slug}/id${item.id}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-cloud-download-alt"></i>
+            </a>
+          </div>
+        </div>
+        `;
+      }     
+    })
+    freeGameRanking.innerHTML = content;
+  })
+  var grossingAppUrl ="";
+  if (protocol === "http:" && hostname === "localhost") {
+    grossingAppUrl =`${protocol}//${hostname}/wolfactive-gamewiki/wp-content/themes/wolfactive-gamewiki/json/grossing-data.json`;
+  }else if(protocol === "https:" || protocol === "http:"){
+    grossingAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
+  } 
+  fetch(grossingAppUrl)
+  .then(response=> response.json())
+  .then((data)=>{
+    let content = ``;
+    let grossingGameRanking = document.querySelector('#grossingGameRanking');
+    data.content.forEach((item,i)=>{  
+      if(i < 5){
+        let ratingCount = Math.round(item.rating);
+        let ratingLeft = 5 - Math.round(item.rating);
+        let rating ="";
+        for(i=0; i< ratingCount ; i++){
+          rating += `<i class="fas fa-star"></i>`;
+        }
+        for(i=0; i< ratingLeft ; i++){
+          rating += `<i class="fas fa-star left"></i>`;
+        }
+        content += `
+        <div class="app-ranking__item">
+          <div class="app-ranking__item-contain">
+            <div class="app-ranking__item-img">
+              <img src="${item.icon}" alt="${item.slug}" />
+            </div>
+            <div class="app-ranking__description">
+              <p class="title--item">${item.title}</p> 
+              <p class="app--star">${rating}</p>    
+            </div>
+          </div>
+          <div class="app-ranking__item-btn">
+            <a href="https://apps.apple.com/vn/app/${item.slug}/id${item.id}" target="_blank" rel="noopener noreferrer">
+              <i class="fas fa-cloud-download-alt"></i>
+            </a>
+          </div>
+        </div>
+        `;
+      }     
+    })
+    grossingGameRanking.innerHTML = content;
+  })
 }
 
