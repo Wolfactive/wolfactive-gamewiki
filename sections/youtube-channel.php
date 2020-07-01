@@ -10,17 +10,18 @@
                 <div class="thumbnail_image">
                     <img src="<?php echo hk_get_image(get_sub_field('thumbnail_image','option'),200,200)  ?>" alt="<?php echo get_sub_field('title_youtube_channel','option'); ?>">
                 </div>
-                
                 <div class="name_channel">
                     <?php echo get_sub_field('title_youtube_channel','option'); ?>
                 </div>
                 <div class="content_channel">
                     <?php echo get_sub_field('content_youtube_channel','option'); ?>
                 </div>
+                <?php if(get_sub_field('link_twitter','option') || get_sub_field('link_youtube','option')): ?>
                 <div class="button_channel">
                     <a class="c_style twitter_style" href="<?php echo get_sub_field('link_twitter','option'); ?>"><i class="fab fa-twitter icon"></i> <span>Twitter</span> </a>
                     <a class="c_style faceb_style" href="<?php echo get_sub_field('link_youtube','option'); ?>"><i class="fab fa-youtube"></i> <span>Youtube</span> </a>
                 </div>
+                <?php endif; ?>
             </div>
             <?php endwhile; ?>
         </div>

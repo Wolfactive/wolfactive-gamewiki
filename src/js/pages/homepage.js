@@ -32,7 +32,8 @@ if((window.location.pathname === "/" || window.location.pathname === "/wolfactiv
     /*First Carousel*/
     /*Carousel Video*/
     var mobileCheck = mobileAndTabletCheck();
-    if(mobileCheck === false){
+    var lastVideoCheck = document.querySelector('.slider_video');
+    if(mobileCheck === false && lastVideoCheck){
     var carouselVideoHomeItem = document.querySelectorAll('#latestVideo .slider_video .images_latest_video');
     var carouselVideoHomeDot = document.querySelector('#latestVideo .slider_video-dot');
     var carouselVideoHomeDotPage = Math.ceil(carouselVideoHomeItem.length/3);
@@ -76,7 +77,7 @@ if((window.location.pathname === "/" || window.location.pathname === "/wolfactiv
           });
         })
       }
-    }else if(mobileCheck === true){
+    }else if(mobileCheck === true && lastVideoCheck){
     var carouselVideoHomeItem = document.querySelectorAll('#latestVideo .slider_video .images_latest_video');
     var carouselVideoHomeDot = document.querySelector('#latestVideo .slider_video-dot');
     var carouselVideoHomeDotPage = Math.ceil(carouselVideoHomeItem.length/1);

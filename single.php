@@ -4,11 +4,13 @@
    <div class="row-divide">
      <div class="col-divide-2 mc_fix_col">
        <div class="sidebar__left" id="sideBarLeftScroll">
+       <?php if(get_field('banner_left_post_detail','option')): ?>
          <div class="sidebar__left-banner">
            <a href="<?php the_field('link_banner_left_post_detail','option') ?>" target="_blank">
              <img src="<?php the_field('banner_left_post_detail','option') ?>" alt="banner-left-ads">
            </a>
          </div>
+        <?php endif; ?>
        </div>
      </div>
      <div class="col-divide-8 col-divide-md-12">
@@ -45,11 +47,13 @@
      </div>
      <div class="col-divide-2 mc_fix_col">
        <div class="sidebar__right" id="sidebarRightscroll">
+        <?php if(get_field('banner_right_post_detail','option')): ?>
          <div class="sidebar__right-banner">
            <a href="<?php the_field('link_banner_right_post_detail','option') ?>" target="_blank">
              <img src="<?php the_field('banner_right_post_detail','option') ?>" alt="banner-right-ads">
            </a>
          </div>
+        <?php endif; ?>
        </div>
      </div>
    </div>
