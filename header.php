@@ -15,6 +15,11 @@
      <link rel="stylesheet" href="<?php echo get_theme_file_uri('dist/css/main.css') ?>">
      <script defer type='text/javascript' src="<?php echo get_theme_file_uri('dist/js/root.js') ?>"></script>
      <?php wp_head();?>
+     <?php $header_scripts = get_field('header_script','option');
+      if(isset($header_scripts) && $header_scripts){
+        echo $header_scripts;
+      }   
+     ?>
 </head>
 <body <?php body_class(); ?>>
 <section class="header">

@@ -8,20 +8,5 @@ if ( function_exists('acf_add_options_page') )
         'capability'    => 'edit_posts',
         'redirect'      => false
     )); 
-    
-    // acf_add_options_page(array(
-    //     'page_title'    => 'En',
-    //     'menu_title'    => 'En',
-    //     'menu_slug'     => 'En',
-    //     'capability'    => 'edit_posts',
-    //     'redirect'      => false
-    // ));
-    // acf_add_options_page(array(
-    //     'page_title'    => 'Vi',
-    //     'menu_title'    => 'Vi',
-    //     'menu_slug'     => 'Vi',
-    //     'capability'    => 'edit_posts',
-    //     'redirect'      => false
-    // ));
 }
 ?>

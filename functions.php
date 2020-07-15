@@ -10,6 +10,7 @@ define('THEME_URL', get_stylesheet_directory_uri());
  */
 
 $file_includes = [
+    'includes/custom-field.php', 
     'includes/theme-setup.php',                         // General theme setting
     'includes/acf-options.php',                         // ACF Option page
     'includes/resize.php',
@@ -253,74 +254,6 @@ function disable_emojis() {
     add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
 }
 add_action( 'init', 'disable_emojis' );
-//  add_action( 'phpmailer_init', function( $phpmailer ) {
-//     if ( !is_object( $phpmailer ) )
-//     $phpmailer = (object) $phpmailer;
-//      $phpmailer->Mailer     = 'smtp';
-//      $phpmailer->Host       = 'smtp.gmail.com';
-//      $phpmailer->SMTPAuth   = 1;
-//      $phpmailer->Port       = 587;
-//     $phpmailer->Username   = 'Cskh.mail.gamewiki@gmail.com';
-//     $phpmailer->Password   = 'Stealneaker@2020';
-//     $phpmailer->SMTPSecure = 'SSL';
-//     $phpmailer->From       = 'cskh.gamewiki@gmail.com';
-//     $phpmailer->FromName   = 'gamewiki';
-// });
-//
-// add_action('wp_ajax_Action_Sendmail', 'Action_Sendmail');
-// add_action('wp_ajax_nopriv_Action_Sendmail', 'Action_Sendmail');
-// function Action_Sendmail() {
-//     if(isset($_POST['email']) && $_POST['email']){
-//         // $firstName  = $_POST['firstName'];
-//         // $lastName  = $_POST['lastName'];
-//     	  // $email      = sanitize_email($_POST["email"]);
-//         // $phone      = $_POST['phone'];
-//         // $company   = $_POST['company'];
-//         // $comment  = $_POST['comment'];
-//         $headers[]  = 'From: gamewiki';
-//         $headers[]  = 'Content-Type: text/html; charset=UTF-8';
-//         $message    =  "Test thôi";
-//         wp_mail( 'Cskh.mail.gamewiki@gmail.com', 'gamewiki', $message, $headers);
-//         echo json_encode(array('status' => 1));
-//     }
-// die(); }
-
-// function itsme_disable_feed() {
-//   $homepage = home_url();
-//   wp_redirect($homepage);
-// }
-// add_action('do_feed', 'itsme_disable_feed', 1);
-// add_action('do_feed_rdf', 'itsme_disable_feed', 1);
-// add_action('do_feed_rss', 'itsme_disable_feed', 1);
-// add_action('do_feed_rss2', 'itsme_disable_feed', 1);
-// add_action('do_feed_atom', 'itsme_disable_feed', 1);
-// add_action('do_feed_rss2_comments', 'itsme_disable_feed', 1);
-// add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);
-// remove_action( 'wp_head', 'feed_links_extra', 3 );
-// remove_action( 'wp_head', 'feed_links', 2 );
-// add link video preload head tag
-// function add_link_video_preload(){
-//     if(is_front_page()):
-//       $aboutVideo = the_field('about_video_background','option');
-//       $carouselVideo = the_field('carousel_video_background','option');
-//       if($aboutVideo):
-//        echo '<link rel="preload" href="'.$aboutVideo.'" as="video" type="video/mp4">';
-//       elseif ($carouselVideo):
-//        echo '<link rel="preload" href="'.$carouselVideo.'" as="video" type="video/mp4">';
-//       endif;
-//      elseif(is_page('about-us')) :
-//        $aboutPageVideo= the_field('carousel_video_background');
-//        if($aboutPageVideo):
-//        echo'<link rel="preload" href="'.$aboutPageVideo.'" as="video" type="video/mp4">';
-//       endif;
-//      endif;
-// }
-// chèn code vào header
-
-// add_action( 'wp_head', 'hk_addcode_header' );
-// function hk_addcode_header(){
-// 	the_field('google_analytic','option');
-// }
 add_action('admin_init', 'rw_remove_dashboard_widgets');
   function rw_remove_dashboard_widgets() {
       remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // recent comments
@@ -348,22 +281,19 @@ add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_links' );
 add_action( 'admin_menu', 'my_remove_menus', 999 );
 function my_remove_menus() {
    //remove_menu_page( 'upload.php');
-   //remove_menu_page( 'edit-comments.php' );
-   //remove_menu_page( 'themes.php');
+   remove_menu_page( 'edit-comments.php' );
+  //remove_menu_page( 'themes.php');
    //remove_menu_page( 'plugins.php');
    //remove_menu_page( 'users.php');
-  // remove_menu_page( 'tools.php');
-   //remove_menu_page( 'options-general.php');
+  remove_menu_page( 'tools.php');
+  remove_menu_page( 'options-general.php');
   // remove_menu_page( 'wpseo_dashboard');
   //  remove_menu_page( 'wpcf-cpt');
-   //remove_submenu_page( 'themes.php', 'theme-editor.php');
-  // remove_submenu_page( 'plugins.php', 'plugin-editor.php');
+  remove_submenu_page( 'themes.php', 'theme-editor.php');
+  remove_submenu_page( 'plugins.php', 'plugin-editor.php');
 }
 add_action( 'widgets_init', 'my_unregister_widgets' );
-// if( !defined('ACF_LITE') ) define('ACF_LITE',true);
-// inlucde ACF
-// 1. customize ACF path
-// require( 'lib/acf/acf.php' );
+//if( !defined('ACF_LITE') ) define('ACF_LITE',true);
 function my_unregister_widgets() {
     unregister_widget('WP_Widget_Pages');
     unregister_widget('WP_Widget_Calendar');
@@ -382,72 +312,7 @@ function my_deregister_scripts(){
  wp_dequeue_script( 'wp-embed' );
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
-// function is_sold_out(){
-//   $sould_out_check = get_field('product_sold_out');
-//   return $sould_out_check;
-// }
-// function is_sale_off(){
-//   $sale_off_check = get_field('product_price_sale');
-//   if($sale_off_check) :
-//     return true;
-//   else :
-//     return false;
-//   endif;
-// }
-// function is_order(){
-//   $order_check = get_field('product_price');
-//   if(!$order_check) :
-//     return true;
-//   else:
-//     return false;
-//   endif;
-// }
-// function is_new_product(){
-//   $terms_check = get_the_terms($post->ID,'khuyen-mai');
-//   $check;
-//   foreach ($terms_check as $term) {
-//     if($term->slug == "san-pham-moi"){
-//       $check = true;
-//     }
-//   }
-//   return $check;
-// }
-// function percent_sale(){
-//   if(is_sale_off()):
-//     $price_sale = get_field('product_price_sale');
-//     $price_product = get_field('product_price');
-//     $percent = 100 - ceil(($price_sale / $price_product)*100);
-//     echo $percent;
-//   endif;
-// }
-// function get_section_homepage($field_mode){
-//   $section = 'sections/'.get_theme_mod($field_mode).'';
-//   return get_template_part($section);
-// }
-// function check_slider_home_page($field_mode){
-//   $check_slider = get_theme_mod($field_mode);
-//   if($check_slider) :
-//     return true;
-//   else:
-//     return false;
-//   endif;
-// }
-// function get_term_list_check($taxonamy_slug,$name_tag){
-//       $terms = get_terms( array(
-//             'taxonomy' => $taxonamy_slug,
-//             'hide_empty' => false,
-//         ) );
-//       $countTerm =1;
-//       foreach ($terms as $term) {
-//         if($term->name != "Tất cả"){
-//           echo '<div class="filter__form-item">
-//             <input type="radio" id="'.$name_tag.''.$countTerm.'" name="'.$name_tag.'" value="'.$term->slug.'">
-//             <label class="'.$name_tag.'" for="'.$name_tag.''.$countTerm.'">'.$term->name.'</label>
-//           </div>';
-//         }
-//       $countTerm++;
-//       }
-//   }
+
   // Setting hình crop hình đại diện
   function hk_get_thumb($id, $w, $h){
   	if(get_post_thumbnail_id($id)){
@@ -461,145 +326,7 @@ add_action( 'wp_footer', 'my_deregister_scripts' );
   function hk_get_image($url, $w, $h){
   	$image = huykira_image_resize($url, $w, $h, true, false);
   	return $image['url'];
-  }
-  // function convert_price($price){
-  //   $price_convert = strval($price);
-  //   $price_array = array_reverse(str_split($price_convert));
-  //   $price_array_return= array();
-  //   $count =0;
-  //   foreach ($price_array as $key) {
-  //     if(strlen($price_convert) == 6){
-  //       if($count == 2){
-  //         array_push($price_array_return,$key);
-  //         array_push($price_array_return,'.');
-  //       }
-  //     }else{
-  //       if($count == 2){
-  //         array_push($price_array_return,$key);
-  //         array_push($price_array_return,'.');
-  //         $count=0;
-  //       }else{
-  //         array_push($price_array_return,$key);
-  //         $count ++;
-  //       }
-  //     }
-  //   }
-  //   $price_convert = implode("",array_reverse($price_array_return));
-  //   return $price_convert;
-  // }
-//   if( !function_exists('redirect_404_to_homepage') ){
-//
-//     add_action( 'template_redirect', 'redirect_404_to_homepage' );
-//
-//     function redirect_404_to_homepage(){
-//        if(is_404()):
-//             wp_safe_redirect( site_url('trang-404') );
-//             exit;
-//         endif;
-//     }
-// }
-// function custom_login_logo() {
-// 	echo '<style type="text/css">
-// 	body{
-// 		background: #f0ebeb2e;
-// 		color:#2288a1;
-// 	}
-// 	#login{
-// 		width:450px;
-// 	}
-// 	.login form{
-// 	padding: 60px 50px;
-// 	background: #4fb4c624;
-//     border: 1px solid #e3f1f4;
-//     box-shadow: 0 1px 15px 10px rgba(158, 158, 158, 0.27);
-// 	}
-// 	.login label{
-// 	font-weight: 600;
-// 	font-size: 16px;
-// 	}
-// 	.login h1 a {
-// 	background-image: url('.get_bloginfo('template_directory').'/assets/images/Logo.svg);
-// 	background-size: cover;
-// 	height:250px;
-// 	width:80%;
-// 	}
-// 	.wp-core-ui .button, .wp-core-ui .button-secondary{
-// 		color:#267f97;
-// 	}
-// 	.wp-core-ui .button-primary{
-// 	background: #1b6081;
-//     border-color: #1f738e;
-// 	font-size: 18px;
-//     font-weight: 600;
-// 	color: #fff;
-// 	}
-// 	.login .wp-pwd{
-// 	margin-bottom: 20px;
-// 	}
-// 	.login #backtoblog a, .login #nav a{
-// 		display:none;
-// 	}
-// </style>';
-// }
-// add_action('login_head', 'custom_login_logo');
-//
-// function change_wp_login_url() {
-// 	return "http://wolfactive.net/";
-// }
-// add_filter('login_headerurl', 'change_wp_login_url');
-// function remove_footer_admin () {
-//
-// echo '<p>Designed by <a href="http://wolfactive.net/" target="_blank" style="font-weight:600">Wolfactive</a></p>';
-//
-// }
-//
-// add_filter('admin_footer_text', 'remove_footer_admin');
-//
-// // Stop Login by email
-// remove_filter( 'authenticate', 'wp_authenticate_email_password', 20 );
-// // Remove Welcome Panel
-// remove_action('welcome_panel', 'wp_welcome_panel');
-//
-// function remove_dashboard_widgets() {
-//
-//   remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-//   remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
-//   remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-//   remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
-//   remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-//   remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
-//   remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-//   remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
-//
-// }
-// //
-// add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
-//
-// // Add a new widget to the dashboard using a custom function
-// function wpmudev_add_dashboard_widgets() {
-// wp_add_dashboard_widget(
-//   'wpmudev_dashboard_widget', // Widget slug
-//   'Welcome', // Widget title
-//   'wpmudev_new_dashboard_widget_function' // Function name to display the widget
-// );
-// }
-// // Register the new dashboard widget with the 'wp_dashboard_setup' action
-// add_action( 'wp_dashboard_setup', 'wpmudev_add_dashboard_widgets' );
-//
-// // Initialize the function to output the contents of your new dashboard widget
-// function wpmudev_new_dashboard_widget_function() {
-// $link =get_bloginfo('template_directory');
-// echo '
-// <h1>Chào mừng đến với Admin Dashboard của Wolfactive</h1>
-// <p>
-//   <img src="'.$link.'/assets/images/Logo.svg" style="max-width:100%" />
-// </p>
-// ';
-// }
-// add_filter( 'wpseo_sitemap_post_single_change_freq', 'my_custom_post_freq', 10, 2 );
-// function my_custom_post_freq( $default, $url ) {
-// return hourly;
-// }
+  } 
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 add_filter('xmlrpc_enabled', '__return_false');
 remove_action( 'wp_head', 'wp_generator' );
@@ -646,28 +373,6 @@ function cpts_latest_videos()
 }
 add_action('init', 'cpts_latest_videos');
 
-// function mc_taxonomy_video() {
-//   $labels = array(
-//           'name' => 'Category Video',
-//           'singular' => 'Category Video',
-//           'menu_name' => 'Category Video'
-//   );
-//   $args = array(
-//           'labels'                     => $labels,
-//           'hierarchical'               => false,
-//           'public'                     => false,
-//           'show_ui'                    => true,
-//           'show_admin_column'          => true,
-//           'show_in_nav_menus'          => true,
-//           'show_tagcloud'              => true,
-//   );
-//   register_taxonomy('category-video', 'latest_videos', $args);
-//
-// }
-// add_action( 'init', 'mc_taxonomy_video', 0 );
-// End CPT List of latest videos
-
-
 //CPT Game Strategy
 function cpts_strategy_wiki()
 {
@@ -706,3 +411,154 @@ function cpts_strategy_wiki()
 }
 add_action('init', 'cpts_strategy_wiki');
 //End CPT Game Strategy
+
+  
+    if( !function_exists('redirect_404_to_homepage') ){
+  
+      add_action( 'template_redirect', 'redirect_404_to_homepage' );
+  
+      function redirect_404_to_homepage(){
+         if(is_404()):
+              wp_safe_redirect( site_url('trang-404') );
+              exit;
+          endif;
+      }
+  }
+  /**
+   * custom_login_logo
+   *
+   * @return void
+   */
+  function custom_login_logo() {
+    echo '<style type="text/css">
+    body{
+      background: #f0ebeb2e;
+      color:#2288a1;
+    }
+    #login{
+      width:450px;
+    }
+    .login form{
+    padding: 60px 50px;
+    background: #4fb4c624;
+      border: 1px solid #e3f1f4;
+      box-shadow: 0 1px 15px 10px rgba(158, 158, 158, 0.27);
+    }
+    .login label{
+    font-weight: 600;
+    font-size: 16px;
+    }
+    .login h1 a {
+    background-image: url('.get_bloginfo('template_directory').'/thumb.jpg);
+    background-size: cover;
+    height:250px;
+    width:80%;
+    }
+    .wp-core-ui .button, .wp-core-ui .button-secondary{
+      color:#267f97;
+    }
+    .wp-core-ui .button-primary{
+    background: #1b6081;
+      border-color: #1f738e;
+    font-size: 18px;
+      font-weight: 600;
+    color: #fff;
+    }
+    .login .wp-pwd{
+    margin-bottom: 20px;
+    }
+    .login #backtoblog a, .login #nav a{
+      display:none;
+    }
+  </style>';
+  }
+  add_action('login_head', 'custom_login_logo');
+  
+  /**
+   * change_wp_login_url
+   *
+   * @return void
+   */
+  function change_wp_login_url() {
+    return "http://wolfactive.net/";
+  }
+  add_filter('login_headerurl', 'change_wp_login_url');
+  function remove_footer_admin () {
+  
+  echo '<p>Designed by <a href="http://wolfactive.net/" target="_blank" style="font-weight:600">Wolfactive</a></p>';
+  
+  }
+  
+  add_filter('admin_footer_text', 'remove_footer_admin');
+  
+  // Stop Login by email
+  remove_filter( 'authenticate', 'wp_authenticate_email_password', 20 );
+  // Remove Welcome Panel
+  remove_action('welcome_panel', 'wp_welcome_panel');
+  
+  /**
+   * remove_dashboard_widgets
+   *
+   * @return void
+   */
+  function remove_dashboard_widgets() {
+  
+    remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+    remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+    remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+    remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+    remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+    remove_meta_box( 'dashboard_secondary', 'dashboard', 'side' );
+  
+  }
+  //
+  add_action( 'wp_dashboard_setup', 'remove_dashboard_widgets' );
+  
+  // Add a new widget to the dashboard using a custom function
+  /**
+   * wpmudev_add_dashboard_widgets
+   *
+   * @return void
+   */
+  function wpmudev_add_dashboard_widgets() {
+  wp_add_dashboard_widget(
+    'wpmudev_dashboard_widget', // Widget slug
+    'Welcome', // Widget title
+    'wpmudev_new_dashboard_widget_function' // Function name to display the widget
+  );
+  }
+  // Register the new dashboard widget with the 'wp_dashboard_setup' action
+  add_action( 'wp_dashboard_setup', 'wpmudev_add_dashboard_widgets' );
+  
+  // Initialize the function to output the contents of your new dashboard widget
+  /**
+   * wpmudev_new_dashboard_widget_function
+   *
+   * @return void
+   */
+  function wpmudev_new_dashboard_widget_function() {
+  $link =get_bloginfo('template_directory');
+  echo '
+  <h1>Chào mừng đến với Admin Dashboard của Wolfactive</h1>
+  <p>
+    <img src="'.$link.'/thumb.jpg" style="max-width:100%" />
+  </p>
+  ';
+  }
+  add_filter( 'wpseo_sitemap_post_single_change_freq', 'my_custom_post_freq', 10, 2 );
+  /**
+   * my_custom_post_freq
+   *
+   * @param  mixed $default
+   * @param  mixed $url
+   * @return void
+   */
+  function my_custom_post_freq( $default, $url ) {
+  return hourly;
+  }
+  remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+  add_filter('xmlrpc_enabled', '__return_false');
+  remove_action( 'wp_head', 'wp_generator' );
+  add_action( 'init', 'stop_heartbeat', 1 );
