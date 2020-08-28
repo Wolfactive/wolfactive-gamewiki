@@ -1,4 +1,4 @@
- <?php get_header();?>
+?php get_header();?>
  <section class="page-container">
      <?php get_template_part('sections/breadcums'); ?>
      <div class="row-divide">
@@ -19,23 +19,30 @@
                      <div class="menu-cate" id="sidebarMenuLeftcroll">
                          <?php get_template_part('sections/menu-category'); ?>
                      </div>
-
                  </div>
                  <div class="gamewiki__container-content col-divide-6 col-divide-md-12">
                      <?php while(have_posts()) : the_post() ; ?>
-                     <h1 class="single__title title--section"><?php //the_title(); ?></h1>
-             <p class="date"><strong><?php the_date(); ?></strong></p>
-             <div class="shareon" style="font-size: 25px;">
-                 <a class="facebook" style="color:#0f90f3"><i class="fab fa-facebook"></i></a>
-                 <a class="messenger" style="color:#0f90f3"><i class="fab fa-facebook-messenger"></i></a>
-                 <a class="pinterest" style="color:#e60023"><i class="fab fa-pinterest-square"></i></a>
-                 <a class="telegram" style="color:#27a5e7"><i class="fab fa-telegram"></i></a>
-                 <a class="twitter" style="color:#1da1f2"><i class="fab fa-twitter"></i></a>
-                 <a class="whatsapp" style="color:#0cc143"><i class="fab fa-whatsapp-square"></i></a>
-             </div>
-                     
-                     <div class="single__page-content">
-                         <?php if(the_content()):the_content();else: _e('Bài viết hiện chưa có nội dung');endif; ?>
+                     <div class="gamewiki__title-table">
+                         <div class="gamewiki__title-table-content position--relative">
+                            <div class="gamewiki__title-table-feature">
+                              <?php 
+                              if(get_field('image_features') && get_field('image_features')!=null): ?>
+                                <img src="<?php echo hk_get_image(get_field('image_features'),515,290); ?>" alt="img features">
+                              <?php endif; ?>
+                            </div>
+                            <div class="gamewiki__title position--absolute">
+                                <div class="gamewiki__title-item">
+                                  <?php if(get_field('title') && get_field('title')!=null): ?>
+                                    <h2><?php the_field('title'); ?></h2>
+                                  <?php endif; ?>
+                                </div>
+                            </div>
+                            <div class="gamewiki__des">
+                              <div class="gamewiki__des-content">
+                                <?php if(the_content()):the_content();endif; ?>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <?php endwhile; ?>
                  </div>
