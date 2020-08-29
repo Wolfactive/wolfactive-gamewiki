@@ -23,33 +23,10 @@
                 <div class="gamewiki__container-content col-divide-6 col-divide-md-12">
                     <?php while(have_posts()) : the_post() ;
                         get_template_part('sections/game-trategy-wiki/header-trategy-wiki');
+                        get_template_part('sections/game-trategy-wiki/lasted-update-wiki');
+                        get_template_part('sections/game-trategy-wiki/infomation-beginer');
                     ?>
-                    <div class="gamewiki__lasted-update">
-                        <div class="gamewiki__lasted-update-container">
-                            <?php if(get_field('title_new') && get_field('title_new')!=''): ?>
-                            <h2 class="title-section"><?php  the_field('title_new'); ?></h2>
-                            <?php endif;
-                            if(get_field('sub_title_new') && get_field('sub_title_new')!=''):
-                            ?>
-                            <div class="sub-title-section row-divide">
-                                <?php if(get_field('icon_arrow') && get_field('icon_arrow')!=''): ?>
-                                    <img src="<?php echo hk_get_image(get_field('icon_arrow'),24,33); ?>" alt="arrow" class="icon-arrow">
-                                <?php endif; ?>
-                                <?php if(get_field('sub_title_new') && get_field('sub_title_new')!=''): ?>
-                                    <h3><?php the_field('sub_title_new'); ?></h3>
-                                <?php endif; ?>
-                            </div>
-                            <?php endif; ?>
-                            <div class="gamewiki__lasted-update-features">
-                                <a href="<?php the_field('link');?>">
-                                    <?php if(get_field('image_features_new') && get_field('image_features_new')!=''): ?>
-                                    <img src="<?php echo hk_get_image(get_field('image_features_new'),515,206); ?>"
-                                        alt="img features">
-                                    <?php endif; ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <?php endwhile; ?>
                 </div>
                 <div class="col-divide-3 mc-mb-fix dp--none">
