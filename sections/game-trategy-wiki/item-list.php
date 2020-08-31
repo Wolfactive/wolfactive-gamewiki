@@ -103,6 +103,38 @@
                                 }
                              endif;
                         ?>
+                        <?php if(get_sub_field('open_button')==1):
+                                $button_list = get_sub_field('list_button_item');
+                                if($button_list['status_button_1']==1 && $button_list['status_button_2']==1):
+                                    $button_name_1 = $button_list['button_name_item_1'];
+                                    $button_link_1 = $button_list['button_link_item_1'];
+                                    $button_name_2 = $button_list['button_name_item_2'];
+                                    $button_link_2 = $button_list['button_link_item_2']; ?>
+                                    <div class="col-divide-6 list__item-content btn-item-more">
+                                        <a href="<?php if($button_link_1 && $button_link_1 !=''): _e($button_link_1); else:_e('javascript:void(0)'); endif; ?>"><?php if($button_name_1 && $button_name_1!=''): _e($button_name_1); endif; ?></a>
+                                    </div>
+                                    <div class="col-divide-6 list__item-content btn-item-more">
+                                        <a href="<?php if($button_link_2 && $button_link_2 !=''): _e($button_link_2); else:_e('javascript:void(0)'); endif; ?>"><?php if($button_name_2 && $button_name_2!=''): _e($button_name_2); endif; ?></a>
+                                    </div>
+                        <?php 
+                                endif;
+                                if($button_list['status_button_1']==1 && $button_list['status_button_2']!=1 || $button_list['status_button_1']!=1 && $button_list['status_button_2']==1):
+                                    $button_name='';
+                                    $button_link='';
+                                    if($button_list['status_button_1']==1):
+                                        $button_name=$button_list['button_name_item_1'];
+                                        $button_link=$button_list['button_link_item_1'];
+                                    else:
+                                        $button_name=$button_list['button_name_item_2'];
+                                        $button_link=$button_list['button_link_item_2'];
+                                    endif;
+                                    ?>
+                                         <div class="col-divide-12 list__item-content btn-item-more">
+                                            <a href="<?php if($button_link && $button_link !=''): _e($button_link); else:_e('javascript:void(0)'); endif; ?>"><?php if($button_name && $button_name!=''): _e($button_name); endif; ?></a>
+                                        </div>
+                                    <?php
+                                endif;
+                              endif; ?>
                     </div>
                 </div>
             </div>

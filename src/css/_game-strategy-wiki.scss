@@ -392,6 +392,11 @@
                                             .col-divide-4 {
                                                 max-width: 33.33%;
                                             }
+                                            .col-divide-6 {
+                                                flex: 0 0 50%;
+                                                max-width: 50%;
+                                                margin-bottom: 0px;
+                                            }
                                             .list__item-content {
                                                 padding: 8px 15px;
                                                 text-align: center;
@@ -426,10 +431,30 @@
                                                     border-left: 0;
                                                     border-right: 0;
                                                 }
+                                                &.col-divide-12 {
+                                                    border-right: 0;
+                                                }
                                                 &.divide--5-col:nth-child(5n) {
                                                     border: 1px solid #ccc;
                                                     border-bottom: 0;
                                                     border-left: 0;
+                                                    border-right: 0;
+                                                }
+                                            }
+                                            .btn-item-more {
+                                                a {
+                                                    display: block;
+                                                    background: #d98500;
+                                                    color: #fff;
+                                                    padding: 6px 0;
+                                                    font-weight: 700;
+                                                    border-radius: 3px;
+                                                    font-size: 16px;
+                                                    &:hover {
+                                                        background: #c16400;
+                                                    }
+                                                }
+                                                &.col-divide-6:nth-last-child(1) {
                                                     border-right: 0;
                                                 }
                                             }
