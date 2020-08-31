@@ -63,6 +63,13 @@
                                 endif;
                             endif; ?>
                     </div>
+                    <?php if(get_field('button_open_list_post')==1):
+                        if(get_field('read_more_post_beginner') && get_field('read_more_post_beginner')!='' && get_field('read_more_post_beginner_link') && get_field('read_more_post_beginner_link')!=''):
+                        ?>
+                    <div class="gamewiki__info-beginner-post--readmore">
+                        <a href="<?php the_field('read_more_post_beginner_link')?>" class="btn"><?php the_field('read_more_post_beginner'); ?></a>
+                    </div>
+                        <?php endif; endif; ?>
                 </div>
             </div>
         </div>

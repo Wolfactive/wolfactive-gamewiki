@@ -1,273 +1,367 @@
-                .game_strategy {
-                    .title_game_strategy {
-                        border-bottom: 1px solid #f6f6f6;
-                        margin-bottom: 15px;
-                        font-size: 20px;
-                        display: flex;
-                        .mc-ic {
-                            margin-right: 10px;
-                            margin-top: 3px;
-                        }
-                        .name_ct {
-                            font-weight: 700;
-                        }
-                    }
-                    .mc-mg {
-                        margin-right: 4px;
-                        margin-bottom: 35px;
-                        .images_game_str {
-                            text-align: center;
-                            &:hover {
-                                opacity: 0.7;
-                                transition: 0.5s all;
+.game_strategy {
+    .title_game_strategy {
+        border-bottom: 1px solid #f6f6f6;
+        margin-bottom: 15px;
+        font-size: 20px;
+        display: flex;
+        .mc-ic {
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        .name_ct {
+            font-weight: 700;
+        }
+    }
+    .mc-mg {
+        margin-right: 4px;
+        margin-bottom: 35px;
+        .images_game_str {
+            text-align: center;
+            &:hover {
+                opacity: 0.7;
+                transition: 0.5s all;
+            }
+            img {
+                width: 87px;
+                border-radius: 18px;
+            }
+        }
+        .title_game_str {
+            text-align: center;
+            a {
+                color: #1681b2;
+                font-weight: 700;
+            }
+        }
+    }
+    .gtr_see_more {
+        justify-content: center;
+        border: 2px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+        margin-bottom: 20px;
+        padding-top: 3px;
+        font-size: 17px;
+        display: flex;
+        .mc-ic {
+            margin-right: 10px;
+            margin-top: 1px;
+        }
+        &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        }
+    }
+}
+
+.eclips-2-line {
+    text-overflow: clip;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.single-strategy_wiki {
+    .title-section {
+        background: #3a3a3a;
+        color: #fff;
+        padding: 8px 10px;
+        margin: 20px 0 10px 0;
+        font-size: 20px;
+    }
+    .sub-title-section {
+        justify-content: flex-start;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 15px;
+        padding: 4px 0;
+        border-bottom: 1px solid #383838;
+        .icon-arrow {
+            width: 14px;
+            display: block;
+            height: 20px;
+        }
+        h3 {
+            margin-left: 5px;
+            color: #383838;
+        }
+    }
+    .page-container {
+        .row-divide {
+            .gamewiki__container {
+                .row-divide {
+                    .gamewiki__container-content {
+                        .gamewiki__title-table {
+                            &-content {
+                                .gamewiki__title-table-feature {
+                                    img {
+                                        display: block;
+                                    }
+                                    .gamewiki__title {
+                                        top: 0;
+                                        font-size: 9px;
+                                        color: #fff;
+                                        font-weight: 700;
+                                        padding: 2px 10px;
+                                        width: 100%;
+                                        border-bottom: 1px solid #ffffff52;
+                                    }
+                                    .gamewiki__table {
+                                        bottom: 5%;
+                                        padding: 0 5px;
+                                        &-content {
+                                            &-item {
+                                                background: #f1f2f200;
+                                                &.col-divide-3 {
+                                                    flex: 0 0 24%;
+                                                    max-width: 24%;
+                                                }
+                                                text-align: center;
+                                                a {
+                                                    color: #fff;
+                                                    &:hover {
+                                                        color: #d2891d;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .gamewiki__des {
+                                    padding: 3px 6px;
+                                    background: #f0f1f1;
+                                    &-content {
+                                        margin: 8px 8px 6px;
+                                        font-size: 15px;
+                                    }
+                                }
                             }
-                            img {
-                                width: 87px;
-                                border-radius: 18px;
-                            }
                         }
-                        .title_game_str {
-                            text-align: center;
-                            a {
-                                color: #1681b2;
-                                font-weight: 700;
-                            }
-                        }
-                    }
-                    .gtr_see_more {
-                        justify-content: center;
-                        border: 2px;
-                        box-shadow: 0 0 5px rgba(0, 0, 0, .1);
-                        margin-bottom: 20px;
-                        padding-top: 3px;
-                        font-size: 17px;
-                        display: flex;
-                        .mc-ic {
-                            margin-right: 10px;
-                            margin-top: 1px;
-                        }
-                        &:hover {
-                            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-                        }
-                    }
-                }
-                
-                .single-strategy_wiki {
-                    .page-container {
-                        .row-divide {
-                            .gamewiki__container {
-                                .row-divide {
-                                    .gamewiki__container-content {
-                                        .gamewiki__title-table {
-                                            &-content {
-                                                .gamewiki__title-table-feature {
+                        .gamewiki__lasted-update {
+                            &-container {
+                                .gamewiki__lasted-update-features {
+                                    a {
+                                        img {
+                                            transition: all .3s ease-in-out;
+                                            display: block;
+                                        }
+                                        &:hover {
+                                            img {
+                                                opacity: 0.8;
+                                            }
+                                        }
+                                    }
+                                    .btn {
+                                        display: block;
+                                        text-align: center;
+                                        background: #d98500;
+                                        color: #fff;
+                                        font-weight: 600;
+                                        padding: 5px 10px;
+                                        margin: 5px 0 10px 0;
+                                        &:hover {
+                                            background: #c16400;
+                                        }
+                                    }
+                                }
+                                .gamewiki__list-post-news {
+                                    &--container {
+                                        .gamewiki__news-item {
+                                            margin: 5px 0 10px;
+                                            padding: 8px;
+                                            border: 1px solid #000;
+                                            border-radius: 3px;
+                                            &-feature {
+                                                align-self: center;
+                                                a {
                                                     img {
                                                         display: block;
                                                     }
-                                                    .gamewiki__title {
-                                                        top: 0;
-                                                        font-size: 9px;
-                                                        color: #fff;
-                                                        font-weight: 700;
-                                                        padding: 2px 10px;
-                                                        width: 100%;
-                                                        border-bottom: 1px solid #ffffff52;
-                                                    }
-                                                    .gamewiki__table {
-                                                        bottom: 5%;
-                                                        padding: 0 5px;
-                                                        &-content {
-                                                            &-item {
-                                                                background: #f1f2f200;
-                                                                &.col-divide-3 {
-                                                                    flex: 0 0 24%;
-                                                                    max-width: 24%;
-                                                                }
-                                                                text-align: center;
-                                                                a {
-                                                                    color: #fff;
-                                                                    &:hover {
-                                                                        color: #d2891d;
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
                                                 }
-                                                .gamewiki__des {
-                                                    padding: 3px 6px;
-                                                    background: #f0f1f1;
-                                                    &-content {
-                                                        margin: 8px 8px 6px;
-                                                        font-size: 15px;
-                                                    }
+                                            }
+                                            &-title {
+                                                align-self: center;
+                                                color: #1681b2;
+                                                a {
+                                                    color: #1681b2;
+                                                    border-bottom: 1px solid #1681b2;
+                                                }
+                                                .description {
+                                                    font-size: 15px;
                                                 }
                                             }
                                         }
-                                        .gamewiki__lasted-update {
-                                            &-container {
-                                                .title-section {
-                                                    background: #3a3a3a;
-                                                    color: #fff;
-                                                    padding: 8px 10px;
-                                                    margin: 20px 0 10px 0;
+                                    }
+                                }
+                            }
+                        }
+                        .gamewiki__infomation-beginner {
+                            &-container {
+                                .gamewiki__info-beginner-news {
+                                    &--title {
+                                        .gamewiki__info-beginner-feature {
+                                            margin: 20px 0 10px;
+                                            img {
+                                                max-height: 49px;
+                                                height: 100%;
+                                                display: block;
+                                            }
+                                            .gamewiki__info-beginner-title {
+                                                top: 50%;
+                                                left: 7%;
+                                                color: #fff;
+                                                transform: translateY(-50%);
+                                                h2 {
                                                     font-size: 20px;
                                                 }
-                                                .sub-title-section {
-                                                    justify-content: flex-start;
-                                                    align-items: center;
-                                                    margin: 10px 0;
-                                                    font-size: 15px;
-                                                    padding: 4px 0;
-                                                    border-bottom: 1px solid #383838;
-                                                    .icon-arrow {
-                                                        width: 14px;
-                                                        display: block;
-                                                        height: 20px;
-                                                    }
-                                                    h3 {
-                                                        margin-left: 5px;
-                                                        color: #383838;
-                                                    }
+                                            }
+                                        }
+                                    }
+                                    &--post {
+                                        .gamewiki__info-beginner-post--title {
+                                            margin: 10px 0;
+                                            img {
+                                                max-height: 39px;
+                                                height: 100%;
+                                                display: block;
+                                            }
+                                            .sub-title {
+                                                top: 50%;
+                                                left: 7%;
+                                                color: #444;
+                                                transform: translateY(-50%);
+                                                h3 {
+                                                    font-size: 18px;
                                                 }
-                                                .gamewiki__lasted-update-features {
-                                                    a {
-                                                        img {
-                                                            transition: all .3s ease-in-out;
-                                                            display: block;
-                                                        }
-                                                        &:hover {
+                                            }
+                                        }
+                                        .gamewiki__info-beginner-post {
+                                            .for__beginner-post {
+                                                .col-divide-6 {
+                                                    max-width: 50%;
+                                                    flex: 0 0 50%;
+                                                }
+                                                &-item {
+                                                    margin-bottom: 0;
+                                                    &:nth-child(2n) {
+                                                        border: 1px solid #C89701;
+                                                        border-left: none;
+                                                        border-bottom: none;
+                                                    }
+                                                    &:nth-child(2n-1) {
+                                                        border: 1px solid #C89701;
+                                                        border-bottom: none;
+                                                    }
+                                                    &:nth-last-child(2) {
+                                                        border-bottom: 1px solid;
+                                                        border-color: #C89701;
+                                                    }
+                                                    &:nth-last-child(1) {
+                                                        border-bottom: 1px solid;
+                                                        border-color: #C89701;
+                                                    }
+                                                    &--content {
+                                                        a {
                                                             img {
-                                                                opacity: 0.8;
+                                                                max-width: 200px;
+                                                                display: block;
+                                                                margin: 0 auto;
                                                             }
                                                         }
-                                                    }
-                                                    .btn {
-                                                        display: block;
-                                                        text-align: center;
-                                                        background: #d98500;
-                                                        color: #fff;
-                                                        font-weight: 600;
-                                                        padding: 5px 10px;
-                                                        margin: 5px 0 10px 0;
-                                                    }
-                                                }
-                                                .gamewiki__list-post-news {
-                                                    &--container {
-                                                        .gamewiki__news-item {
-                                                            margin: 5px 0 10px;
-                                                            padding: 8px;
-                                                            border: 1px solid #000;
-                                                            border-radius: 3px;
-                                                            &-feature {
-                                                                align-self: center;
-                                                                a {
-                                                                    img {
-                                                                        display: block;
-                                                                    }
-                                                                }
-                                                            }
-                                                            &-title {
-                                                                align-self: center;
-                                                                color: #1681b2;
-                                                                a {
-                                                                    color: #1681b2;
-                                                                    border-bottom: 1px solid #1681b2;
-                                                                }
-                                                                .description {
-                                                                    font-size: 15px;
+                                                        .title-post {
+                                                            text-align: center;
+                                                            a {
+                                                                font-weight: 700;
+                                                                color: #448acb;
+                                                                &:hover {
+                                                                    color: #2a6398;
                                                                 }
                                                             }
                                                         }
                                                     }
                                                 }
                                             }
-                                        }
-                                        .gamewiki__infomation-beginner {
-                                            &-container {
-                                                .gamewiki__info-beginner-news {
-                                                    &--title {
-                                                        .gamewiki__info-beginner-feature {
-                                                            margin: 20px 0 10px;
-                                                            img {
-                                                                max-height: 49px;
-                                                                height: 100%;
-                                                                display: block;
-                                                            }
-                                                            .gamewiki__info-beginner-title {
-                                                                top: 50%;
-                                                                left: 7%;
-                                                                color: #fff;
-                                                                transform: translateY(-50%);
-                                                                h2 {
-                                                                    font-size: 20px;
-                                                                }
-                                                            }
-                                                        }
+                                            &--readmore {
+                                                margin: 15px 0;
+                                                a {
+                                                    display: block;
+                                                    border: 1px solid #34b792;
+                                                    color: #34b792;
+                                                    font-weight: 700;
+                                                    &:hover {
+                                                        background: #34b792;
+                                                        color: #fff;
                                                     }
-                                                    &--post {
-                                                        .gamewiki__info-beginner-post--title {
-                                                            margin: 10px 0;
-                                                            img {
-                                                                max-height: 39px;
-                                                                height: 100%;
-                                                                display: block;
-                                                            }
-                                                            .sub-title {
-                                                                top: 50%;
-                                                                left: 7%;
-                                                                color: #444;
-                                                                transform: translateY(-50%);
-                                                                h3 {
-                                                                    font-size: 18px;
-                                                                }
-                                                            }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .gamewiki__infor-helper {
+                            &-container {
+                                .gamewiki__infor-helper-features {
+                                    a {
+                                        img {
+                                            display: block;
+                                        }
+                                    }
+                                    &--more {
+                                        .btn {
+                                            display: block;
+                                            background: #d98500;
+                                            color: #fff;
+                                            font-weight: 600;
+                                            padding: 5px 10px;
+                                            margin: 5px 0 10px 0;
+                                            &:hover {
+                                                background: #c16400;
+                                            }
+                                        }
+                                    }
+                                }
+                                .gamewiki__basic-information {
+                                    &-container {
+                                        .basic__helper-container {
+                                            border: 1px solid #ccc;
+                                            border-bottom: 0;
+                                            box-shadow: 0px 1px 2px 0px #a7a0a04d;
+                                            .basic__helper-item {
+                                                &-title {
+                                                    h3 {
+                                                        padding: 6px 12px;
+                                                        text-align: center;
+                                                        font-size: 18px;
+                                                        background: #efefef;
+                                                    }
+                                                    .row-divide {
+                                                        border-top: 1px solid #ccc;
+                                                        .col-divide-6 {
+                                                            max-width: 50%;
+                                                            flex: 0 0 50%;
+                                                            margin-bottom: 0;
+                                                            padding: 0;
                                                         }
-                                                        .gamewiki__info-beginner-post {
-                                                            .for__beginner-post {
-                                                                .col-divide-6 {
-                                                                    max-width: 50%;
-                                                                    flex: 0 0 50%;
-                                                                }
-                                                                &-item {
-                                                                    margin-bottom: 0;
-                                                                    &:nth-child(2n) {
-                                                                        border: 1px solid #C89701;
-                                                                        border-left: none;
-                                                                        border-bottom: none;
-                                                                    }
-                                                                    &:nth-child(2n-1) {
-                                                                        border: 1px solid #C89701;
-                                                                        border-bottom: none;
-                                                                    }
-                                                                    &:nth-last-child(2) {
-                                                                        border-bottom: 1px solid;
-                                                                        border-color: #C89701;
-                                                                    }
-                                                                    &:nth-last-child(1) {
-                                                                        border-bottom: 1px solid;
-                                                                        border-color: #C89701;
-                                                                    }
-                                                                    &--content {
-                                                                        a {
-                                                                            img {
-                                                                                max-width: 200px;
-                                                                                display: block;
-                                                                                margin: 0 auto;
-                                                                            }
-                                                                        }
-                                                                        .title-post {
-                                                                            text-align: center;
-                                                                            a {
-                                                                                font-weight: 700;
-                                                                                color: #448acb;
-                                                                                &:hover {
-                                                                                    color: #2a6398;
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                }
+                                                        .col-divide-4 {
+                                                            max-width: 33.33%;
+                                                        }
+                                                        .basic__helper-item-col {
+                                                            border-bottom: 1px solid #ccc;
+                                                            padding: 5px 15px 8px 8px;
+                                                            i {
+                                                                font-size: 10px;
+                                                            }
+                                                            a {
+                                                                font-size: 16px;
+                                                                color: #1681b2;
+                                                                text-decoration: underline;
+                                                            }
+                                                            &.col-divide-6:nth-child(2n-1) {
+                                                                border-right: 1px solid #ccc;
+                                                            }
+                                                            &.col-divide-4:nth-child(3n-1) {
+                                                                border-right: 1px solid #ccc;
+                                                                border-left: 1px solid #ccc;
                                                             }
                                                         }
                                                     }
@@ -278,5 +372,68 @@
                                 }
                             }
                         }
+                        .gamewiki__information-item {
+                            &-container {
+                                .information__list-item {
+                                    &-content {
+                                        border: 1px solid #ccc;
+                                        box-shadow: 0px 1px 2px 0px #a7a0a04d;
+                                        h3 {
+                                            padding: 6px 12px;
+                                            text-align: center;
+                                            font-size: 18px;
+                                            background: #efefef;
+                                        }
+                                        .row-divide {
+                                            .col-divide-3 {
+                                                max-width: 25%;
+                                                flex: 0 0 25%;
+                                            }
+                                            .col-divide-4 {
+                                                max-width: 33.33%;
+                                            }
+                                            .list__item-content {
+                                                padding: 8px 15px;
+                                                text-align: center;
+                                                a {
+                                                    img {
+                                                        display: block;
+                                                        width: 50px;
+                                                        margin: 0 auto;
+                                                    }
+                                                }
+                                                &:nth-child(1n) {
+                                                    border: 1px solid #ccc;
+                                                    border-bottom: 0;
+                                                    border-left: 0;
+                                                }
+                                                &.col-divide-3:nth-child(4n) {
+                                                    border: 1px solid #ccc;
+                                                    border-bottom: 0;
+                                                    border-left: 0;
+                                                    border-right: 0;
+                                                }
+                                                &.col-divide-4:nth-child(3n) {
+                                                    border: 1px solid #ccc;
+                                                    border-bottom: 0;
+                                                    border-left: 0;
+                                                    border-right: 0;
+                                                }
+                                                &.divide--5-col:nth-child(5n) {
+                                                    border: 1px solid #ccc;
+                                                    border-bottom: 0;
+                                                    border-left: 0;
+                                                    border-right: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
+            }
+        }
+    }
+}
