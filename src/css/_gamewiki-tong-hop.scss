@@ -1,0 +1,54 @@
+.gamewiki__trang-tong-hop {
+    .gamewiki__post-tong-hop {
+        border: 1px solid #cfcfcf;
+        border-bottom: 0;
+        .col-divide-10 {
+            max-width: 85%;
+            flex: 0 0 85%;
+        }
+        &-item {
+            padding: 8px;
+            border-bottom: 1px solid #cfcfcf;
+            .gamewiki__tong-hop-item--feature {
+                .ranking-post {
+                    top: -10%;
+                    left: 0;
+                    width: 25px;
+                    height: 25px;
+                    text-align: center;
+                    color: #fff;
+                    &-item {
+                        @for $i from 1 to 3 {
+                            &-#{1} {
+                                background: #eebf65;
+                            }
+                            &-#{2} {
+                                background: #8aa8b4;
+                            }
+                            &-#{3} {
+                                background: #e18e4a;
+                            }
+                        }
+                        background:#999696;
+                        display:block;
+                        border-radius: 50%;
+                    }
+                }
+                a {
+                    img {
+                        max-width: 150px;
+                        max-height: 75px;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+            }
+            .gamewiki__tong-hop-item--content {
+                a {
+                    color: var(--blue-color-tag-a);
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

@@ -39,6 +39,11 @@
             @content;
         }
     }
+    @else if $type==$table {
+        @media screen and (max-width: $table) {
+            @content;
+        }
+    }
     @else {
         @media screen and (max-width: $xl) {
             @content;

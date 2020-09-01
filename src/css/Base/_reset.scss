@@ -7,6 +7,7 @@
     --title-item-size: 20px;
     --primary-padding: 10px;
     --secondary-padding: 20px;
+    --blue-color-tag-a: #1681b2;
 }
 
 
@@ -214,6 +215,12 @@ img {
 .col-divide-6 {
     flex: 0 0 50%;
     max-width: 48%;
+    width: 100%;
+}
+
+.col-divide--6 {
+    flex: 0 0 50%;
+    max-width: 50%;
     width: 100%;
 }
 
@@ -538,6 +545,10 @@ a:hover {
     .col-divide-lg-6 {
         flex: auto;
         max-width: 48%;
+    }
+    .col-divide-lg-5 {
+        flex: auto;
+        max-width: 75%;
     }
     .col-divide-lg-4 {
         flex: auto;

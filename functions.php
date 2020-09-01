@@ -16,7 +16,8 @@ $file_includes = [
     'includes/resize.php',
     'includes/customizer.php',
     'includes/api.php',
-    'includes/request-app-ranking.php'
+    'includes/request-app-ranking.php',
+    'includes/theme-minis.php'
 ];
 
 foreach ($file_includes as $file) {

@@ -89,7 +89,20 @@
         .row-divide {
             .gamewiki__container {
                 .row-divide {
+                    .mc-mb-fix {
+                        &.col-divide-3 {
+                            @include MediaQuery($table) {
+                                display: none;
+                            }
+                        }
+                    }
                     .gamewiki__container-content {
+                        &.col-divide-6 {
+                            @include MediaQuery($table) {
+                                max-width: 100%;
+                                flex: auto;
+                            }
+                        }
                         .gamewiki__title-table {
                             &-content {
                                 .gamewiki__title-table-feature {
@@ -107,7 +120,10 @@
                                     }
                                     .gamewiki__table {
                                         bottom: 5%;
+                                        left: 50%;
                                         padding: 0 5px;
+                                        transform: translateX(-50%);
+                                        width: 100%;
                                         &-content {
                                             &-item {
                                                 background: #f1f2f200;
@@ -172,6 +188,10 @@
                                             border-radius: 3px;
                                             &-feature {
                                                 align-self: center;
+                                                @include MediaQuery($table) {
+                                                    max-height: 65px;
+                                                    overflow: hidden;
+                                                }
                                                 a {
                                                     img {
                                                         display: block;
