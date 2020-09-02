@@ -1,4 +1,6 @@
- <?php get_header();?>
+ <?php get_header();
+ gt_set_post_view()
+ ?>
  <section class="page-container">
      <?php get_template_part('sections/breadcums'); ?>
      <div class="row-divide">

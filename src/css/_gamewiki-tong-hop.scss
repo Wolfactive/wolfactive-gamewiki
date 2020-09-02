@@ -2,9 +2,17 @@
     .gamewiki__post-tong-hop {
         border: 1px solid #cfcfcf;
         border-bottom: 0;
+        margin-bottom: 10px;
         .col-divide-10 {
             max-width: 85%;
             flex: 0 0 85%;
+        }
+        &--title {
+            text-align: center;
+            color: #fff;
+            background: #333;
+            font-weight: 500;
+            padding: 5px;
         }
         &-item {
             padding: 8px;

@@ -90,6 +90,101 @@
             .gamewiki__container {
                 .row-divide {
                     .mc-mb-fix {
+                        .menu-ranking {
+                            .gamewiki__post-related {
+                                &-container {
+                                    .row-divide {
+                                        .gamewiki__post-popular,
+                                        .gamewiki__post-new {
+                                            border-bottom: 1px solid var(--blue-color-tag-a);
+                                            .tab-item {
+                                                display: block;
+                                                color: #565656;
+                                                background: #d9d9d9;
+                                                font-size: 17px;
+                                                font-weight: 700;
+                                                text-align: center;
+                                                cursor: pointer;
+                                                padding: 5px 0;
+                                                &.active {
+                                                    background: var(--blue-color-tag-a);
+                                                    color: #fff;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .gamewiki__post-container {
+                                        .tab-content {
+                                            border: 1px solid #cfcfcf;
+                                            .gamewiki__post-tong-hop-item {
+                                                padding: 7px;
+                                                border-bottom: 1px solid #cfcfcf;
+                                                &:hover {
+                                                    .row-divide {
+                                                        .gamewiki__tong-hop-item--feature {
+                                                            a {
+                                                                position: relative;
+                                                                img {
+                                                                    opacity: 0.8;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                &:nth-last-child(1) {
+                                                    border-bottom: 0;
+                                                    text-align: center;
+                                                    font-size: 18px;
+                                                    a {
+                                                        color: var(--blue-color-tag-a);
+                                                        font-weight: 700;
+                                                    }
+                                                }
+                                                .row-divide {
+                                                    .gamewiki__tong-hop-item--feature {
+                                                        .ranking-post {
+                                                            top: -10%;
+                                                            left: -5px;
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            text-align: center;
+                                                            color: #fff;
+                                                            font-size: 13px;
+                                                            &-item {
+                                                                @for $i from 1 to 3 {
+                                                                    &-#{1} {
+                                                                        background: #eebf65;
+                                                                    }
+                                                                    &-#{2} {
+                                                                        background: #8aa8b4;
+                                                                    }
+                                                                    &-#{3} {
+                                                                        background: #e18e4a;
+                                                                    }
+                                                                }
+                                                                background:#999696;
+                                                                display:block;
+                                                                border-radius: 50%;
+                                                            }
+                                                        }
+                                                        img {
+                                                            transition: all .3s ease-in-out;
+                                                            height: 100%;
+                                                        }
+                                                    }
+                                                    .gamewiki__tong-hop-item--content {
+                                                        a {
+                                                            color: var(--blue-color-tag-a);
+                                                            font-weight: 700;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         &.col-divide-3 {
                             @include MediaQuery($table) {
                                 display: none;
