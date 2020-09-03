@@ -410,6 +410,31 @@ function cpts_strategy_wiki()
 
 }
 add_action('init', 'cpts_strategy_wiki');
+
+function app_rankings() {
+  register_post_type( 'app_ranking',array(
+    'public' => true,
+    'supports' => array(
+      'title',
+      'custom-fields'
+    ),
+    'labels' => array(
+      'name' => 'App Ranking',
+      'show_ui' => true,
+      'show_in_menu' => true,
+      'show_in_nav_menus' => true,
+      'show_in_admin_bar' => true,
+      'menu_position' => 5,
+      'menu_icon' => 'dashicons-smiley',
+      'can_export' => true,
+      'has_archive' => false,
+      'exclude_from_search' => false,
+      'publicly_queryable' => true,
+      'capability_type' => 'post'
+    )
+    ));
+}
+add_action('init', 'app_rankings');
 //End CPT Game Strategy
 
   

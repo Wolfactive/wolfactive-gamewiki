@@ -49,12 +49,12 @@
                 foreach( $choice_post as $post ): 
                                     setup_postdata($post); ?>
                 <div class="gamewiki__news-item row-divide">
-                    <div class="gamewiki__news-item-feature col-divide-3 col-divide-lg-3">
+                    <div class="gamewiki__news-item-feature col-divide-3 col-divide-lg-3 col-divide-sm-4">
                         <a href=<?php the_permalink(); ?>">
                             <img src="<?php echo hk_get_thumb(get_the_id(),134,67)?>" alt="img">
                         </a>
                     </div>
-                    <div class="gamewiki__news-item-title col-divide-9 col-divide-lg-5">
+                    <div class="gamewiki__news-item-title col-divide-9 col-divide-lg-5 col-divide-sm-8">
                         <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         <div class="description">
                             <?php echo wp_trim_words(get_the_excerpt(get_the_ID()),12); ?>

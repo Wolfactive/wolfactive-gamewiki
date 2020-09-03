@@ -56,19 +56,18 @@
             <div class="gamewiki__tab-new tab-content d--none" id="newTabContent">
                 <?php
                 $i=1;
-                        $pho_bien_query = array(
+                        $new_query = array(
                             'post_type' => 'post',
                             'post_status' => 'publish',
                             'showposts'     => '6',
                             'cat' => (int)$category,
                         );
-                        $query = new WP_Query( $pho_bien_query );
+                        $query = new WP_Query( $new_query );
                         while( $query->have_posts()):$query->the_post();?>
                 <div class="gamewiki__post-tong-hop-item">
                     <div class="row-divide">
                         <div class="col-divide-4 gamewiki__tong-hop-item--feature position--relative">
                             <div class="ranking-post position--absolute">
-                                <span class="ranking-post-item ranking-post-item-<?php if($i<=5) _e($i);?>"><?php if($i<=5) _e($i); ?></span>
                             </div>
                             <a href="<?php the_permalink();?>">
                                 <img src="<?php echo hk_get_thumb(get_the_id(),150,75)?>" alt="img">

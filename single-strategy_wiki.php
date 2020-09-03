@@ -27,8 +27,10 @@
                         get_template_part('sections/game-trategy-wiki/infomation-beginer');
                         get_template_part('sections/game-trategy-wiki/information-helper');
                         get_template_part('sections/game-trategy-wiki/item-list');
+                        
                     ?>
                     <?php endwhile; ?>
+                    
                 </div>
                 <div class="col-divide-3 mc-mb-fix dp--none">
                     <div class="menu-ranking" id="sidebarMenuRankingscroll">
