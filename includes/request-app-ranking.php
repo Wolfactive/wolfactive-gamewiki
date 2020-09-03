@@ -37,7 +37,6 @@
             update_post_meta($app_id,'star', $data[$i]['rating']);
             update_post_meta($app_id,'image', $data[$i]['icon']);
             update_post_meta($app_id,'link', 'https://apps.apple.com/vn/app/'.$data[$i]['slug'].'/id'.$data[$i]['id']);
-            var_dump(update_post_meta($app_id,'link', 'https://apps.apple.com/vn/app/'.$data[$i]['slug'].'/id'.$data[$i]['id']));
         }
         endforeach;
     }

@@ -223,7 +223,9 @@
                                         width: 100%;
                                         &-content {
                                             &-item {
-                                                line-height: 0.75;
+                                                @include MediaQuery($xs) {
+                                                    line-height: 1;
+                                                }
                                                 background: #f1f2f200;
                                                 &.col-divide-3 {
                                                     flex: 0 0 24%;

@@ -27,7 +27,6 @@
                         get_template_part('sections/game-trategy-wiki/infomation-beginer');
                         get_template_part('sections/game-trategy-wiki/information-helper');
                         get_template_part('sections/game-trategy-wiki/item-list');
-                        
                     ?>
                     <?php endwhile; ?>
                     
