@@ -21,7 +21,7 @@
                             'meta_key' => 'post_views_count',
                             'order' => 'DESC',
                             'cat' => (int)$category,
-                            'showposts' => 10
+                            'showposts' => 5
                             
                         );
                         $query = new WP_Query( $pho_bien_query );
@@ -59,7 +59,7 @@
                         $new_query = array(
                             'post_type' => 'post',
                             'post_status' => 'publish',
-                            'showposts'     => '6',
+                            'showposts'     => 5,
                             'cat' => (int)$category,
                         );
                         $query = new WP_Query( $new_query );
