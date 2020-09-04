@@ -1,3 +1,12 @@
+.page-container {
+    @include MediaQuery ($xs) {
+        padding: 0;
+        .container {
+            max-width: 100%;
+        }
+    }
+}
+
 .gamewiki__trang-tong-hop {
     .gamewiki__post-tong-hop {
         border: 1px solid #cfcfcf;
@@ -13,8 +22,8 @@
         }
         &--title {
             text-align: center;
-            color: #fff;
-            background: #333;
+            color: #333;
+            background: #eaeaea;
             font-weight: 500;
             padding: 5px;
         }
