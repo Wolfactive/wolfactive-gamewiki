@@ -17,20 +17,24 @@ $cat = $_GET['cat'];
           <?php 
             if($tab && $cat):
                 if($tab=='pho-bien'):
+                    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
                     $trang_tong_hop_post = array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'meta_key' => 'post_views_count',
                         'order' => 'DESC',
                         'cat' => (int)$cat,
-                        'showposts' => 10
+                        'showposts' => 10,
+                        'paged' => $paged
                     );
                 elseif($tab=='new'):
+                    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
                     $trang_tong_hop_post = array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
                         'cat' => (int)$cat,
-                        'showposts' => 10
+                        'showposts' => 10,
+                        'paged' => $paged
                     );
                 else:
                     _e('Bài viết đang được cập nhật');
@@ -41,7 +45,7 @@ $cat = $_GET['cat'];
                 ?>
                     <div class="gamewiki__post-tong-hop-item">
                         <div class="row-divide">
-                            <div class="col-divide-2 gamewiki__tong-hop-item--feature position--relative">
+                            <div class="col-divide-2 col-divide-sm-4 gamewiki__tong-hop-item--feature position--relative">
                                 <div class="ranking-post position--absolute">
                                     <span class="ranking-post-item ranking-post-item-<?php _e($i);?>"><?php _e($i) ?></span>
                                 </div>
@@ -49,7 +53,7 @@ $cat = $_GET['cat'];
                                     <img src="<?php echo hk_get_thumb(get_the_id(),150,75)?>" alt="img">
                                 </a>
                             </div>
-                            <div class="col-divide-10 gamewiki__tong-hop-item--content">
+                            <div class="col-divide-10 col-divide-sm-8 gamewiki__tong-hop-item--content">
                                 <a href="<?php the_permalink()?>">
                                     <?php the_title()?>
                                 </a>
@@ -66,6 +70,15 @@ $cat = $_GET['cat'];
             </div>
           </div>
       </div>
+      <div class="navigation container">
+                <?php 
+                        $GLOBALS['wp_query']->max_num_pages = $query_post_tong_hop->max_num_pages;
+                        the_posts_pagination( array(
+                            'mid_size' => 3,
+                            
+                            ) );
+                        ?>
+                </div>
   </div>
 </section>
 <?php
