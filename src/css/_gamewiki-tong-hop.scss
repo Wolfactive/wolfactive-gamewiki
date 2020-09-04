@@ -15,10 +15,10 @@
         .col-divide-10 {
             max-width: 85%;
             flex: 0 0 85%;
-        }
-        .col-divide-sm-8 {
-            flex: auto;
-            max-width: 65%;
+            @include MediaQuery ($xs) {
+                flex: auto;
+                max-width: 65%;
+            }
         }
         &--title {
             text-align: center;
