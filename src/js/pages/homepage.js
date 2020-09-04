@@ -295,13 +295,13 @@ if ((window.location.pathname === "/" || window.location.pathname === "/wolfacti
     var freeAppUrl = "";
     if (window.location.pathname === "/") {
         // freeAppUrl =`${protocol}//${hostname}/wp-content/themes/wolfactive-gamewiki/json/free-data.json`;
-        freeAppUrl = `${protocol}//${hostname}wp-json/ranking-api/v1/free`;
+        freeAppUrl = `${protocol}//${hostname}/wp-json/ranking-api/v1/free`;
     } else if (window.location.pathname === "/wolfactive-gamewiki/") {
         freeAppUrl = `${protocol}//${hostname}/wolfactive-gamewiki/wp-json/ranking-api/v1/free`;
     } else if (window.location.pathname === "/game-wiki/") {
         freeAppUrl = `${protocol}//${hostname}/game-wiki/wp-json/ranking-api/v1/free`;
     }
-    console.log(freeAppUrl);
+    //console.log(freeAppUrl);
     fetch(freeAppUrl)
         .then(response => response.json())
         .then((data) => {
@@ -343,9 +343,9 @@ if ((window.location.pathname === "/" || window.location.pathname === "/wolfacti
         })
     var grossingAppUrl = "";
     if (window.location.pathname === "/") {
-        grossingAppUrl = `${protocol}//${hostname}/wp-json/ranking-api/v1/free`;
+        grossingAppUrl = `${protocol}//${hostname}/wp-json/ranking-api/v1/grossing`;
     } else if (window.location.pathname === "/wolfactive-gamewiki/") {
-        grossingAppUrl = `${protocol}//${hostname}/wolfactive-gamewiki/wp-json/ranking-api/v1/free`;
+        grossingAppUrl = `${protocol}//${hostname}/wolfactive-gamewiki/wp-json/ranking-api/v1/grossing`;
     } else if (window.location.pathname === "/game-wiki/") {
         grossingAppUrl = `${protocol}//${hostname}/game-wiki/wp-json/ranking-api/v1/grossing`;
     }
