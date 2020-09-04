@@ -1,7 +1,7 @@
 <div class="gamewiki__information-item">
     <div class="gamewiki__information-item-container">
         <?php if(get_field('title_section_item_list') && get_field('title_section_item_list')!=''): ?>
-            <h2 class="title-section"><?php  the_field('title_section_item_list'); ?></h2>
+            <h2 class="title-section" id="section4"><?php  the_field('title_section_item_list'); ?></h2>
         <?php endif;?>
         <?php if(have_rows('list_content_item')):
                 while(have_rows('list_content_item')):the_row();
@@ -17,7 +17,7 @@
               <div class="information__list-item">
                 <div class="information__list-item-content">
                     <?php if(get_sub_field('sub_title_item') && get_sub_field('sub_title_item')!=''): ?>
-                        <h3><?php the_sub_field('sub_title_item'); ?></h3>
+                        <h3 ><?php the_sub_field('sub_title_item'); ?></h3>
                     <?php endif; ?>
                     <div class="row-divide">
                         <?php 

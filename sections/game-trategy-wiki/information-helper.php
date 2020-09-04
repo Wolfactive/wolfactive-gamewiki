@@ -9,7 +9,7 @@
             <?php if(get_field('icon_arrow') && get_field('icon_arrow')!=''): ?>
             <img src="<?php echo hk_get_image(get_field('icon_arrow'),24,33); ?>" alt="arrow" class="icon-arrow">
             <?php endif; ?>
-            <h3><?php the_field('sub_title_helper_1'); ?></h3>
+            <h3 id="section3"><?php the_field('sub_title_helper_1'); ?></h3>
         </div>
         <?php endif;
             if(get_field('image_features_helper') && get_field('image_features_helper')):

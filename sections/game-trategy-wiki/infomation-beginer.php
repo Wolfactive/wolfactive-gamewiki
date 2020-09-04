@@ -8,7 +8,7 @@
                     <div class="gamewiki__info-beginner-feature position--relative">
                         <img src="<?php echo hk_get_image(get_field('feature_main_beginer'),416,49); ?>" alt="img">
                         <div class="gamewiki__info-beginner-title position--absolute">
-                            <h2><?php the_field('title_beginner'); ?></h2>
+                            <h2 id="section2"><?php the_field('title_beginner'); ?></h2>
                         </div>
                     </div>
                 <?php endif;

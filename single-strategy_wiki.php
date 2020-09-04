@@ -27,6 +27,11 @@
                         get_template_part('sections/game-trategy-wiki/infomation-beginer');
                         get_template_part('sections/game-trategy-wiki/information-helper');
                         get_template_part('sections/game-trategy-wiki/item-list');
+                        get_template_part('sections/new-post-ranking');
+                        if(wp_is_mobile()):
+                            get_template_part('sections/menu-category');
+                            //get_template_part('sections/menu-ranking');
+                        endif;
                     ?>
                     <?php endwhile; ?>
                     
@@ -37,14 +42,6 @@
                         <?php get_template_part('sections/menu-ranking'); ?>
                     </div>
                 </div>
-                <?php if(wp_is_mobile()): ?>
-                    <div class="col-divide-3 col-divide-lg-12 mc-mb-fix dp--none">
-                        <div class="menu-cate" id="sidebarMenuLeftcroll">
-                            <?php get_template_part('sections/new-app-ranking'); ?>
-                            <?php get_template_part('sections/menu-category'); ?>
-                        </div>
-                    </div>
-                <?php endif ?>
             </div>
         </div>
         <div class="col-divide-2 mc_fix_col .main_menu .main_menu_hide_on_mobile">

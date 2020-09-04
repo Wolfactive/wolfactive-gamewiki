@@ -14,6 +14,7 @@
             </div>
             <div class="gamewiki__table position--absolute">
                 <?php if(have_rows('table')):
+                $i=1;
                                 ?>
                 <div class="gamewiki__table-content row-divide">
                     <?php
@@ -22,10 +23,10 @@
                                     ?>
                     <div class="gamewiki__table-content-item col-divide-3">
                         <div class="gamewiki__table-title">
-                            <a href="#"><?php the_sub_field('ten_table'); ?></a>
+                            <a href="#section<?php _e($i)?>"><?php the_sub_field('ten_table'); ?></a>
                         </div>
                     </div>
-                    <?php
+                    <?php $i++;
                                         endif;
                                     endwhile;
                                     ?>

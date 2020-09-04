@@ -77,3 +77,16 @@
         endforeach;
         return $result;
     }
+    register_activation_hook( __FILE__, 'request_data_every_day' );
+    function request_data_every_day() {
+        $timestamp = wp_next_scheduled( 'request_data_every_day_event' );
+        if( $timestamp == false ){       
+            wp_schedule_event( strtotime('00:00:00'), 'daily', 'request_data_every_day_event' );
+        }
+        
+    }
+    add_action( 'init', 'request_data_every_day');
+    add_action('request_data_every_day_event', 'do_request_data_every_day');
+    function do_request_data_every_day(){
+        wa_save_app_ranking_to_database();
+    }

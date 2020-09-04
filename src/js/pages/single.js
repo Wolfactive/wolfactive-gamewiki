@@ -127,8 +127,8 @@ if (domBody.length != 0) {
             let grossingGameRanking = document.querySelector('#grossingGameRanking');
             data.forEach((item, i) => {
                 if (i < 5) {
-                    let ratingCount = Math.round(item.rating);
-                    let ratingLeft = 5 - Math.round(item.rating);
+                    let ratingCount = Math.round(item.star);
+                    let ratingLeft = 5 - Math.round(item.star);
                     let rating = "";
                     for (i = 0; i < ratingCount; i++) {
                         rating += `<i class="fas fa-star"></i>`;

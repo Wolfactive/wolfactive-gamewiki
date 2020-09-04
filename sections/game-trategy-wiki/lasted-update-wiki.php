@@ -1,7 +1,7 @@
 <div class="gamewiki__lasted-update">
     <div class="gamewiki__lasted-update-container">
         <?php if(get_field('title_new') && get_field('title_new')!=''): ?>
-        <h2 class="title-section"><?php  the_field('title_new'); ?></h2>
+        <h2 class="title-section" id="section1"><?php  the_field('title_new'); ?></h2>
         <?php endif;
                             if(get_field('sub_title_new') && get_field('sub_title_new')!=''):
                             ?>
@@ -55,7 +55,7 @@
                         </a>
                     </div>
                     <div class="gamewiki__news-item-title col-divide-9 col-divide-lg-5 col-divide-sm-8">
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        <a href="<?php the_permalink(); ?>"><?php echo wp_trim_words(get_the_title(),10); ?></a>
                         <div class="description">
                             <?php echo wp_trim_words(get_the_excerpt(get_the_ID()),12); ?>
                         </div>

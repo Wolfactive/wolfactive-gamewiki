@@ -6,14 +6,14 @@
     <div class="gamewiki__post-related-container">
         <div class="row-divide">
             <div class="gamewiki__post-popular col-divide--6">
-                <span class="tab-item active" id="popularTab">Bài viết phổ biến</span>
+                <span class="gamewiki__tab-item active" id="popularTab">Bài viết phổ biến</span>
             </div>
             <div class="gamewiki__post-new col-divide--6">
-                <span class="tab-item" id="newTab">Bài viết Mới</span>
+                <span class="gamewiki__tab-item" id="newTab">Bài viết Mới</span>
             </div>
         </div>
         <div class="gamewiki__post-container">
-            <div class="gamewiki__tab-popular tab-content" id="popularTabContent">
+            <div class="gamewiki__tab-popular gamewiki__tab-content" id="popularTabContentItem">
                 <?php   $i=1;
                         $pho_bien_query = array(
                             'post_type' => 'post',
@@ -45,7 +45,7 @@
                 </div>
                 <?php
                 $i++;
-                        endwhile; //wp_reset_postdata();
+                        endwhile; wp_reset_postdata();
                     ?>
                 <div class="gamewiki__post-tong-hop-item">
                     <a href="<?php echo site_url('trang-tong-hop'); ?>/?tab=pho-bien&cat=<?php echo $category; ?>">Xem
@@ -53,7 +53,7 @@
                         bài viết phổ biến</a>
                 </div>
             </div>
-            <div class="gamewiki__tab-new tab-content d--none" id="newTabContent">
+            <div class="gamewiki__tab-new gamewiki__tab-content d--none" id="newTabContentItem">
                 <?php
                 $i=1;
                         $new_query = array(
@@ -82,7 +82,7 @@
                 </div>
                 <?php
                 $i++;
-                        endwhile; //wp_reset_postdata();
+                        endwhile; wp_reset_postdata();
                     ?>
                 <div class="gamewiki__post-tong-hop-item">
                     <a href="<?php echo site_url('trang-tong-hop'); ?>/?tab=new&cat=<?php echo $category; ?>">Xem thêm bài viết mới</a>

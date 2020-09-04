@@ -13,10 +13,10 @@
             <a href="<?php the_permalink($post) ?>" class="menuCategory__item">
               <?php the_title($post) ?>
             </a>
-        <?php }else: _e('Chưa có bài viết liên quan');endif;?>
+        <?php }else: _e('');endif;?>
         </div>
       </div>
-      <?php endwhile; ?>
+      <?php endwhile; wp_reset_postdata(); ?>
     <?php endif;?>
   </div>
 </div>
