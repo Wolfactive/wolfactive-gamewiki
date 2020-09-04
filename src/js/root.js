@@ -2,6 +2,7 @@ import LazyLoad from "vanilla-lazyload";
 import './pages/homepage';
 import './pages/single';
 import './pages/gamewiki-tab';
+import './pages/scroll-section';
 import 'shareon'
 /*VARIABLES*/
 var iframe = document.querySelectorAll('iframe');

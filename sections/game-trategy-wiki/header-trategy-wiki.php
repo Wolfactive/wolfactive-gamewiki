@@ -23,7 +23,7 @@
                                     ?>
                     <div class="gamewiki__table-content-item col-divide-3">
                         <div class="gamewiki__table-title">
-                            <a href="#section<?php _e($i)?>"><?php the_sub_field('ten_table'); ?></a>
+                            <a href="javascript:void(0)" target-scroll="section<?php _e($i)?>"><?php the_sub_field('ten_table'); ?></a>
                         </div>
                     </div>
                     <?php $i++;
