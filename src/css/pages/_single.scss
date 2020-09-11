@@ -142,7 +142,6 @@
       }
     }
   }
-  
   .roll_sidebar{
     position: sticky;
     top: 0;
@@ -230,5 +229,247 @@
     @include MediaQuery($xs){
       display: none;
     }
+  }
+}
+.gamewiki__post-related {
+  margin-bottom: 20px;
+  box-shadow: 0px 1px 2px 0px #a7a0a04d;
+  &-container {
+      .row-divide {
+          .gamewiki__post-popular,
+          .gamewiki__post-new {
+              border-bottom: 1px solid var(--blue-color-tag-a);
+              .tab-item {
+                  display: block;
+                  color: #565656;
+                  background: #d9d9d9;
+                  height: 100%;
+                  font-size: 17px;
+                  font-weight: 700;
+                  text-align: center;
+                  cursor: pointer;
+                  padding: 5px 0;
+                  &.active {
+                      background: var(--blue-color-tag-a);
+                      color: #fff;
+                  }
+                  @media screen and (max-width:1360px) {
+                      font-size: 12px;
+                  }
+              }
+          }
+      }
+      .gamewiki__post-container {
+          .tab-content {
+              border: 1px solid #cfcfcf;
+              .gamewiki__post-tong-hop-item {
+                  padding: 7px;
+                  border-bottom: 1px solid #cfcfcf;
+                  &:nth-last-child(1) {
+                      border-bottom: 0;
+                      text-align: center;
+                      font-size: 18px;
+                      a {
+                          color: var(--blue-color-tag-a);
+                          font-weight: 700;
+                          font-size: 15px;
+                          display: block;
+                          @media screen and (max-width: 1360px) {
+                              font-size: 12px;
+                          }
+                          @media screen and (max-width:1080px) {
+                              font-size: 13px;
+                          }
+                      }
+                  }
+                  .row-divide {
+                      .gamewiki__tong-hop-item--feature {
+                          .ranking-post {
+                              top: -10%;
+                              left: -5px;
+                              width: 20px;
+                              height: 20px;
+                              text-align: center;
+                              color: #fff;
+                              font-size: 13px;
+                              z-index: 1;
+                              &-item {
+                                  @for $i from 1 to 3 {
+                                      &-#{1} {
+                                          background: #eebf65;
+                                      }
+                                      &-#{2} {
+                                          background: #8aa8b4;
+                                      }
+                                      &-#{3} {
+                                          background: #e18e4a;
+                                      }
+                                  }
+                                  background:#999696;
+                                  display:block;
+                                  border-radius: 50%;
+                              }
+                          }
+                          a {
+                              &:after {
+                                  content: '';
+                                  background: #fff;
+                                  width: 100%;
+                                  height: 100%;
+                                  position: absolute;
+                                  top: 0;
+                                  left: 0;
+                                  opacity: 0;
+                                  transition: all .3s ease-in-out;
+                              }
+                          }
+                          img {
+                              transition: all .3s ease-in-out;
+                              height: 100%;
+                              display: block;
+                          }
+                      }
+                      .gamewiki__tong-hop-item--content {
+                          a {
+                              
+                              color: var(--blue-color-tag-a);
+                              font-weight: 700;
+                              @media screen and (min-width: 768px) {
+                                  font-size: 12px;
+                              }
+                          }
+                      }
+                  }
+                  &:hover {
+                      .row-divide {
+                          .gamewiki__tong-hop-item--feature {
+                              a {
+                                  &:after {
+                                      opacity: 0.8;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+.gamewiki__post-related {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  box-shadow: 0px 1px 2px 0px #a7a0a04d;
+  &-container {
+      .row-divide {
+          .gamewiki__post-popular,
+          .gamewiki__post-new {
+              border-bottom: 1px solid var(--blue-color-tag-a);
+              .gamewiki__tab-item {
+                  display: block;
+                  color: #565656;
+                  background: #d9d9d9;
+                  height: 100%;
+                  font-size: 17px;
+                  font-weight: 700;
+                  text-align: center;
+                  cursor: pointer;
+                  padding: 5px 0;
+                  &.active {
+                      background: var(--blue-color-tag-a);
+                      color: #fff;
+                  }
+              }
+          }
+      }
+      .gamewiki__post-container {
+          .gamewiki__tab-content {
+              border: 1px solid #cfcfcf;
+              .gamewiki__post-tong-hop-item {
+                  padding: 7px;
+                  border-bottom: 1px solid #cfcfcf;
+                  &:nth-last-child(1) {
+                      border-bottom: 0;
+                      text-align: center;
+                      font-size: 18px;
+                      a {
+                        white-space: inherit;
+                          color: var(--blue-color-tag-a);
+                          font-weight: 700;
+                      }
+                  }
+                  .row-divide {
+                      .gamewiki__tong-hop-item--feature {
+                        a{
+                          white-space: inherit;
+                        }
+                          .ranking-post {
+                              top: -5%;
+                              left: -5px;
+                              width: 20px;
+                              height: 20px;
+                              text-align: center;
+                              color: #fff;
+                              font-size: 13px;
+                              z-index: 1;
+                              
+                              &-item {
+                                  @for $i from 1 to 3 {
+                                      &-#{1} {
+                                          background: #eebf65;
+                                      }
+                                      &-#{2} {
+                                          background: #8aa8b4;
+                                      }
+                                      &-#{3} {
+                                          background: #e18e4a;
+                                      }
+                                  }
+                                  background:#999696;
+                                  display:block;
+                                  border-radius: 50%;
+                              }
+                          }
+                          a {
+                              &:after {
+                                  content: '';
+                                  background: #fff;
+                                  width: 100%;
+                                  height: 100%;
+                                  position: absolute;
+                                  top: 0;
+                                  left: 0;
+                                  opacity: 0;
+                                  transition: all .3s ease-in-out;
+                              }
+                          }
+                          img {
+                              transition: all .3s ease-in-out;
+                              height: 100%;
+                              display: block;
+                          }
+                      }
+                      .gamewiki__tong-hop-item--content {
+                          a {
+                            white-space: inherit;
+                              color: var(--blue-color-tag-a);
+                              font-weight: 700;
+                          }
+                      }
+                  }
+                  &:hover {
+                      .row-divide {
+                          .gamewiki__tong-hop-item--feature {
+                              a {
+                                  &:after {
+                                      opacity: 0.8;
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
   }
 }

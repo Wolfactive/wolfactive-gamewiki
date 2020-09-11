@@ -1,5 +1,9 @@
 <?php 
-    $category = get_field('bai_viet_lien_quan');
+    if(is_singular('post')):
+        $category = yoast_get_primary_term_id('category', $post->ID);
+        else :
+        $category = get_field('bai_viet_lien_quan'); 
+    endif;
     if($category):
 ?>
 <div class="gamewiki__post-related">
@@ -29,9 +33,7 @@
                 <div class="gamewiki__post-tong-hop-item">
                     <div class="row-divide">
                         <div class="col-divide-4 gamewiki__tong-hop-item--feature position--relative">
-                            <div class="ranking-post position--absolute">
-                            <span class="ranking-post-item ranking-post-item-<?php if($i<=5) _e($i);?>"><?php if($i<=5) _e($i); ?></span>
-                            </div>
+                            
                             <a href="<?php the_permalink();?>">
                                 <img src="<?php echo hk_get_thumb(get_the_id(),150,75)?>" alt="img">
                             </a>
@@ -60,6 +62,7 @@
                             'post_type' => 'post',
                             'post_status' => 'publish',
                             'showposts'     => 5,
+                            'order' => 'DESC',
                             'cat' => (int)$category,
                         );
                         $query = new WP_Query( $new_query );

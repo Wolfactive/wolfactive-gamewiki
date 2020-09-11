@@ -19,7 +19,7 @@ const PRODUCTION = yargs.argv.prod;
 const server = browserSync.create();
 export const serve = done => {
     server.init({
-        proxy: "http://localhost/game-wiki" // put your local website link here
+        proxy: "https://localhost/game-wiki" // put your local website link here
     });
     done();
 };

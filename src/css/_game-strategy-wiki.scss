@@ -1,3 +1,31 @@
+.menuRanking {
+    &__content {
+        .app-ranking {
+            .row-divide {
+                .col-divide-12 {
+                    .app-ranking__list {
+                        &-contain {
+                            .app-ranking__item {
+                                &-contain {
+                                    .app-ranking__description {
+                                        display: block;
+                                        .title--item,
+                                        .app--star {
+                                            font-size: 12px;
+                                            @media screen and (max-width: 1360px) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 .game_strategy {
     .title_game_strategy {
         border-bottom: 1px solid #f6f6f6;
@@ -215,34 +243,7 @@
                                     }
                                 }
                             }
-                            .menuRanking {
-                                &__content {
-                                    .app-ranking {
-                                        .row-divide {
-                                            .col-divide-12 {
-                                                .app-ranking__list {
-                                                    &-contain {
-                                                        .app-ranking__item {
-                                                            &-contain {
-                                                                .app-ranking__description {
-                                                                    display: block;
-                                                                    .title--item,
-                                                                    .app--star {
-                                                                        font-size: 12px;
-                                                                        @media screen and (max-width: 1360px) {
-                                                                            display: none;
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            
                         }
                         &.col-divide-3 {
                             @include MediaQuery($table) {

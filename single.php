@@ -19,9 +19,18 @@
              <div class="row-divide">
                  <div class="col-divide-3 mc-mb-fix dp--none">
                      <div class="menu-cate" id="sidebarMenuLeftcroll">
-                         <?php get_template_part('sections/menu-category'); ?>
+                         <?php 
+                            $cat_related_id = yoast_get_primary_term_id('category', $post->ID);
+                            $field = get_field('strategy_id','term_'.$cat_related_id);
+                            if($field){
+                                foreach( $field as $post ):
+                                    setup_postdata($post);
+                                        get_template_part('sections/menu-category');
+                                endforeach;
+                                wp_reset_postdata();
+                            }
+                            ?>
                      </div>
-
                  </div>
                  <div class="gamewiki__container-content col-divide-6 col-divide-md-12">
                      <?php while(have_posts()) : the_post() ; ?>
@@ -37,12 +46,14 @@
              </div>
                      
                      <div class="single__page-content">
-                         <?php if(the_content()):the_content();else: _e('Bài viết hiện chưa có nội dung');endif; ?>
+                         <?php if(get_the_content()):the_content();else: _e('Bài viết hiện chưa có nội dung');endif; ?>
+                         <?php get_template_part('sections/new-post-ranking'); ?>
                      </div>
                      <?php endwhile; ?>
                  </div>
                  <div class="col-divide-3 mc-mb-fix dp--none">
                      <div class="menu-ranking" id="sidebarMenuRankingscroll">
+                        <?php get_template_part('sections/new-app-ranking'); ?>
                          <?php get_template_part('sections/menu-ranking'); ?>
                      </div>
                  </div>
@@ -50,6 +61,7 @@
          </div>
          <div class="col-divide-2 mc_fix_col">
              <div class="sidebar__right" id="sidebarRightscroll">
+                 
                  <?php if(get_field('banner_right_post_detail','option')): ?>
                  <div class="sidebar__right-banner">
                      <a href="<?php the_field('link_banner_right_post_detail','option') ?>" target="_blank">
