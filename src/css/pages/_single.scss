@@ -132,38 +132,32 @@
       }
     }
   }
-  .menuRanking{
-    .menuRanking__contain{
-      .title--section{ 
-        background: #38434b;
-        color: #fff;
-        padding: 5px 5px 5px 10px;
-        font-size: 18px;
-      }
-    }
-  }
-  .roll_sidebar{
-    position: sticky;
-    top: 0;
-    width: 100%;
-  }
-  .roll_sidebar-menu{
-    position: sticky;
-    top: 0;
-    width: 100%; 
-  }
-  .app-ranking__list{
-    padding:0px;
-    .title--item{
-      font-size:15px;
-    }
-    .app-ranking__item{
-      .app-ranking__item-contain{
-        display:flex;
-        .app-ranking__description{          
-          display:none;
+  .menuRanking {
+    &__content {
+        .app-ranking {
+            .row-divide {
+                .col-divide-12 {
+                    .app-ranking__list {
+                        &-contain {
+                            .app-ranking__item {
+                                &-contain {
+                                    .app-ranking__description {
+                                        display: block;
+                                        .title--item,
+                                        .app--star {
+                                            font-size: 12px;
+                                            @media screen and (max-width: 1360px) {
+                                                display: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
-      }
     }
   }
 }
