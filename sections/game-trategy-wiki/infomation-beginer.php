@@ -2,17 +2,13 @@
     <div class="gamewiki__infomation-beginner-container">
         <div class="gamewiki__info-beginner-news">
             <div class="gamewiki__info-beginner-news--title">
-                <?php if(get_field('feature_main_beginer') &&  get_field('feature_main_beginer') !=''):
+                <?php 
                     if(get_field('title_beginner') && get_field('title_beginner') !=''):
                     ?>
-                    <div class="gamewiki__info-beginner-feature position--relative">
-                        <img src="<?php echo hk_get_image(get_field('feature_main_beginer'),416,49); ?>" alt="img">
-                        <div class="gamewiki__info-beginner-title position--absolute">
-                            <h2 id="section2"><?php the_field('title_beginner'); ?></h2>
-                        </div>
+                    <div class="gamewiki__info-beginner-feature">                      
+                            <h2 class="title-section" id="section2"><?php the_field('title_beginner'); ?></h2>
                     </div>
-                <?php endif;
-            endif; ?>
+                <?php endif; ?>
             </div>
             <div class="gamewiki__info-beginner-news--feature">
                     <?php if(get_field('feature_beginer') && get_field('feature_beginer')!=''): ?>
@@ -27,14 +23,12 @@
             </div>
             <div class="gamewiki__info-beginner-news--post">
                 <div class="gamewiki__info-beginner-post--title position--relative">
-                    <?php if(get_field('feature_sub_beginer') &&  get_field('feature_sub_beginer') !=''):
-                        if(get_field('sub_title_beginner') && get_field('sub_title_beginner') !=''):
-                        ?>
-                            <img src="<?php echo hk_get_image(get_field('feature_sub_beginer'),416,49); ?>" alt="img">
-                            <div class="sub-title position--absolute">
-                                <h3><?php the_field('sub_title_beginner'); ?></h3>
-                            </div>
-                    <?php endif; endif; ?>
+                    <div class="sub-title-section row-divide">
+                        <?php if(get_field('icon_arrow') && get_field('icon_arrow')!=''): ?>
+                        <img src="<?php echo hk_get_image(get_field('icon_arrow'),24,33); ?>" alt="arrow" class="icon-arrow">
+                        <?php endif; ?>
+                        <h3><?php the_field('sub_title_beginner'); ?></h3>
+                    </div>
                 </div>
                 <div class="gamewiki__info-beginner-post">
                     <div class="for__beginner-post row-divide">

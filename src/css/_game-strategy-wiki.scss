@@ -485,10 +485,15 @@
                                                         a {
                                                             img {
                                                                 max-width: 200px;
+                                                                object-fit: cover;
+                                                                max-height: 90px;
                                                                 display: block;
                                                                 margin: 0 auto;
                                                                 @include MediaQuery($table) {
                                                                     max-width: 360px;
+                                                                    max-height: 135px;
+                                                                    height: 90%;
+                                                                    
                                                                 }
                                                             }
                                                         }

@@ -11,7 +11,7 @@
           <?php $list_post = get_sub_field('post_item_menu');?>
           <?php if($list_post): foreach ($list_post as $post) { ?>
             <a href="<?php the_permalink($post) ?>" class="menuCategory__item">
-              <?php the_title($post) ?>
+              <?php _e(get_the_title($post)) ?>
             </a>
         <?php }else: _e('');endif;?>
         </div>
