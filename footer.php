@@ -14,11 +14,7 @@
 					<i class="fab fa-facebook-square icon"></i>
 				</a>
 			</div>
-			<div class="ft_socail">
-				<a href="<?php echo get_theme_mod('link_twitter',__('https://twitter.com/')) ?>" target="_blank">
-				<i class="fab fa-twitter icon"></i>
-				</a>
-			</div>
+			
 		</div>
 		<div class="footer_big_menu">
 			<div class="container">
