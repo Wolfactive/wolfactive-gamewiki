@@ -28,7 +28,6 @@ if (tabItem && tabContent) {
 if (tabItemBottom && tabContentBottom) {
     tabItemBottom.forEach((jtem, i) => {
         jtem.onclick = () => {
-            console.log(event);
             for (let i = 0; i < tabItemBottom.length; i++) { tabItemBottom[i].classList.remove('active'); }
             jtem.classList.add('active');
             tabName = event.srcElement.id;

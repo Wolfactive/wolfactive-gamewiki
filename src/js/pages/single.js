@@ -74,11 +74,11 @@ if (domBody.length != 0) {
     } else if (protocol === "https:" || protocol === "http:") {
         freeAppUrl = `${protocol}//${hostname}/wp-json/ranking-api/v1/free`;
     }
-    console.log(freeAppUrl);
+    
     fetch(freeAppUrl)
         .then(response => response.json())
         .then((data) => {
-            console.log(data);
+            
             let content = ``;
             let freeGameRanking = document.querySelector('#freeGameRanking');
             data.forEach((item, i) => {

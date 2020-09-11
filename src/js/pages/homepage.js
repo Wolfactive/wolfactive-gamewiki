@@ -305,7 +305,7 @@ if ((window.location.pathname === "/" || window.location.pathname === "/wolfacti
     fetch(freeAppUrl)
         .then(response => response.json())
         .then((data) => {
-            console.log(data);
+            
             let content = ``;
             let freeGameRanking = document.querySelector('#freeGameRanking');
             data.forEach((item, i) => {
