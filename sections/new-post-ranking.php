@@ -33,7 +33,11 @@
                 <div class="gamewiki__post-tong-hop-item">
                     <div class="row-divide">
                         <div class="col-divide-4 gamewiki__tong-hop-item--feature position--relative">
-                            
+                            <div class="ranking-post position--absolute"> 
+                                <div class="ranking-post-item ranking-post-item-<?php _e($i);?>">
+                                    <?php echo $i ?>
+                                </div> 
+                            </div>
                             <a href="<?php the_permalink();?>">
                                 <img src="<?php echo hk_get_thumb(get_the_id(),150,75)?>" alt="img">
                             </a>
